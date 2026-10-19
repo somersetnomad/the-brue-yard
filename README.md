@@ -1,5 +1,7 @@
 # The Brue Yard
 
+Read the [case study](CASE-STUDY.md) for the brief and design decisions.
+
 Website prototype for **The Brue Yard Contemporary & Sculpture Meadows**, Bruton, Somerset.
 
 Open `index.html` in a browser, or serve the folder. The pages are plain HTML with no dependencies
