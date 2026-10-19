@@ -13,6 +13,17 @@ Open `index.html` in a browser. No build step and no dependencies (fonts load fr
 - Slide-out ticket drawer: date and time slots, ticket tiers, £3 school bus donation, live total
 - Journal sign-up with inline validation; supporter ribbon and footer links
 
+## Motion and interaction
+
+- Event cards flip to show length, suitability, what to bring, access detail and the next four dates.
+  Each date opens the booking drawer with that day already chosen.
+- A "Coming up" ticker under the hero lists the next dates. It pauses on hover, on focus or with its pause button.
+- When the last row of cards is short, a "Pick a date and go" tile fills the gap.
+- The hero animates in on load, the river on the contour map flows while it's on screen, and sections
+  rise into place as you scroll (in browsers with scroll-driven animations; content is fully visible otherwise).
+- The ticket total counts up as you add tickets.
+- All motion stops for visitors who choose reduced motion in their system settings.
+
 ## Accessibility
 
 Built to WCAG 2.1 AA: visible focus rings, `aria-live` updates for results and order totals,

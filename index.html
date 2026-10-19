@@ -374,6 +374,143 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
 .photo-note{font-size:13px;color:var(--stone);max-width:72ch;padding-top:var(--s2)}
 @media (max-width:960px){.hero__photo{grid-column:1 / -1}.hero__photo .ph{aspect-ratio:4/3}}
 @media (prefers-reduced-motion: reduce){.event:hover .ph img{transform:none}}
+
+/* ---------- Motion layer: flip cards, ticker, filler tile, scroll-linked reveals ---------- */
+:root{--shadow:rgba(24,25,26,.28);--ease:cubic-bezier(.2,.7,.2,1)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--shadow:rgba(0,0,0,.6)}}
+:root[data-theme="dark"]{--shadow:rgba(0,0,0,.6)}
+
+/* Flip cards */
+.event{background:transparent;border:0;perspective:1800px;transition:transform .35s var(--ease)}
+.event:hover{border-color:transparent}
+.event__flip{display:grid;flex:1;height:100%;transform-style:preserve-3d;transition:transform .75s var(--ease)}
+.face{grid-area:1 / 1;display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--rule);-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:box-shadow .35s var(--ease),border-color .2s}
+.face--back{transform:rotateY(180deg);background:var(--ink);color:var(--on-ink);border-color:var(--ink);padding:var(--s3);gap:var(--s2)}
+.event.is-flipped .event__flip{transform:rotateY(180deg)}
+@media (hover:hover){.events:not(.is-list) .event:hover{transform:translateY(-6px)}.events:not(.is-list) .event:hover .face--front{box-shadow:0 24px 40px -28px var(--shadow);border-color:var(--ink)}}
+.event:hover .face--front .ph img{transform:scale(1.04)}
+.event__actions{display:flex;gap:8px;align-items:center}
+.flip-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:1px solid var(--control);background:transparent;font-size:14px;font-weight:600;cursor:pointer}
+.flip-btn:hover{border-color:var(--ink);background:var(--wash)}
+.flip-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .5s var(--ease)}
+.flip-btn:hover svg{transform:rotate(-180deg)}
+.back__top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s2)}
+.back__top .eyebrow{color:var(--on-ink);opacity:.72}
+.face--back h3{font-size:22px;font-stretch:88%;line-height:1.1;margin-top:6px;color:var(--on-ink)}
+.face--back h3:focus{outline:none}
+.back__close{width:40px;height:40px;flex:none;border:1px solid rgba(127,127,127,.5);background:transparent;color:var(--on-ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.back__close:hover{border-color:var(--on-ink)}
+.back__close svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.back__more{font-family:var(--f-serif);font-size:16px;line-height:1.5;color:var(--on-ink);opacity:.9}
+.back__facts{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px;padding-block:var(--s2);border-block:1px solid rgba(127,127,127,.35)}
+.back__facts dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;padding-top:2px}
+.back__facts dd{margin:0}
+.back__dates{display:flex;flex-direction:column;gap:8px}
+.back__dates p{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.72}
+.back__dates ul{display:flex;flex-wrap:wrap;gap:6px}
+.date-pill{min-height:40px;padding:0 12px;border:1px solid rgba(127,127,127,.55);background:transparent;color:var(--on-ink);font-family:var(--f-mono);font-size:13px;cursor:pointer;font-variant-numeric:tabular-nums;transition:background .15s,color .15s,border-color .15s}
+.date-pill:hover{background:var(--ochre);border-color:var(--ochre);color:var(--on-ochre)}
+.face--back .event__foot{margin-top:auto;padding:var(--s2) 0 0;border-top:0}
+.face--back .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.face--back .btn:hover{background:var(--ochre);border-color:var(--ochre);color:var(--on-ochre)}
+.face--back :focus-visible{outline-color:var(--on-ink)}
+.face--back .price{color:var(--on-ink)}
+.event.is-entering{animation:cardIn .55s var(--ease) both;animation-delay:calc(var(--i, 0) * 60ms)}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px)}}
+
+/* List view keeps the flip, laid out as rows */
+.events.is-list .event{display:block;grid-template-columns:none;border:0}
+.events.is-list .face--front{display:grid;grid-template-rows:auto 1fr;align-content:start;grid-template-columns:200px 1fr 220px;border-width:0 0 1px;background:transparent}
+.events.is-list .face--front:hover{background:var(--surface)}
+.events.is-list .face--front > .ph{grid-row:1 / span 2;aspect-ratio:1/1;align-self:start;margin:var(--s3) var(--s3) var(--s3) 0;border:0}
+.events.is-list .face--front .event__date{grid-column:2;flex-direction:row;justify-content:flex-start;align-items:baseline;gap:var(--s2);border-bottom:0;padding:var(--s3) var(--s3) 0 0}
+.events.is-list .face--front .event__body{grid-column:2;padding:var(--s1) var(--s3) var(--s3) 0}
+.events.is-list .face--front .event__foot{grid-column:3;grid-row:1 / span 2;flex-direction:column;align-items:flex-start;justify-content:center;border-top:0;padding:var(--s3) 0}
+.events.is-list .event__flip{transform:none!important}
+.events.is-list .face--back{display:none;transform:none;margin-block:var(--s1)}
+.events.is-list .event.is-flipped .face--front{display:none}
+.events.is-list .event.is-flipped .face--back{display:flex;animation:rise .45s var(--ease) both}
+@media (max-width:820px){
+  .events.is-list .face--front{grid-template-columns:96px 1fr}
+  .events.is-list .face--front > .ph{margin:var(--s2) var(--s2) 0 0;grid-row:1}
+  .events.is-list .face--front .event__date{grid-column:2;flex-direction:column;gap:4px;padding:var(--s2) 0 0}
+  .events.is-list .face--front .event__body,.events.is-list .face--front .event__foot{grid-column:1 / -1;grid-row:auto}
+  .events.is-list .face--front .event__foot{flex-direction:row;align-items:center;justify-content:space-between;padding:0 0 var(--s2)}
+}
+
+/* Filler tile: fills the end of a short last row with what's coming up */
+.filler{background:var(--wash);border:1px solid var(--wash);padding:var(--s3);display:flex;flex-direction:column;gap:var(--s2);min-width:0}
+.filler h3{font-size:24px;font-stretch:88%;line-height:1.1}
+.filler ol{display:grid;grid-template-columns:repeat(var(--fcols,1),minmax(0,1fr));gap:0 var(--s3)}
+.filler li{border-top:1px solid color-mix(in srgb, var(--ochre) 30%, transparent)}
+.filler li:last-child,.filler li:nth-last-child(-n+1){border-bottom:0}
+.filler button{width:100%;display:grid;grid-template-columns:76px 1fr auto;gap:var(--s2);align-items:baseline;text-align:left;padding:12px 0;background:none;border:0;cursor:pointer;min-height:48px}
+.filler button .d{font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums;color:var(--ochre);font-weight:500}
+.filler button .t{font-weight:600;font-size:15px;line-height:1.3}
+.filler button .go{font-size:13px;color:var(--stone);transition:transform .25s var(--ease),color .2s}
+.filler button:hover .t{text-decoration:underline;text-underline-offset:3px}
+.filler button:hover .go{transform:translateX(4px);color:var(--ink)}
+.filler .note{margin-top:auto}
+
+/* Ticker */
+.ticker{border-bottom:1px solid var(--rule);background:var(--surface);overflow:hidden}
+.ticker__row{display:flex;align-items:center}
+.ticker__label{flex:none;align-self:stretch;display:flex;align-items:center;gap:10px;padding:0 var(--s3) 0 max(24px,env(safe-area-inset-left,0px));background:var(--ochre);color:var(--on-ochre);font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;position:relative;z-index:1}
+.ticker__label .pulse{background:var(--on-ochre)}
+.ticker__label .pulse::after{border-color:var(--on-ochre)}
+.ticker__viewport{flex:1;overflow:hidden;min-width:0;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent)}
+.ticker__track{display:flex;width:max-content;animation:tick 70s linear infinite}
+.ticker:hover .ticker__track,.ticker:focus-within .ticker__track,.ticker.is-paused .ticker__track{animation-play-state:paused}
+.ticker ul{display:flex}
+.ticker li{flex:none}
+.ticker button{display:flex;align-items:baseline;gap:10px;padding:14px var(--s3);background:none;border:0;border-right:1px solid var(--rule);cursor:pointer;white-space:nowrap;font-size:15px;min-height:48px}
+.ticker button .d{font-family:var(--f-mono);font-size:12px;color:var(--ochre);font-variant-numeric:tabular-nums}
+.ticker button:hover .t{text-decoration:underline;text-underline-offset:3px}
+.ticker__pause{flex:none;width:48px;align-self:stretch;border:0;border-left:1px solid var(--rule);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ticker__pause svg{width:14px;height:14px;fill:currentColor}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.ticker__track{animation:none}.ticker__viewport{overflow-x:auto;mask-image:none}.ticker__pause{display:none}}
+
+/* Hero entrance: one orchestrated moment on load */
+@media (prefers-reduced-motion: no-preference){
+  .hero .badge,.hero h1 .t1,.hero h1 .t2,.hero__artists,.hero .meta,.hero__actions{animation:rise .9s var(--ease) both}
+  .hero h1 .t1{animation-delay:.08s}.hero h1 .t2{animation-delay:.2s}.hero__artists{animation-delay:.3s}.hero .meta{animation-delay:.4s}.hero__actions{animation-delay:.5s}
+  .hero__photo .ph{animation:unveil 1.3s var(--ease) .1s both}
+  .hero__photo .ph img{animation:settle 2.4s var(--ease) .1s both}
+}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+@keyframes unveil{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes settle{from{transform:scale(1.12)}}
+
+/* Hover details */
+.site .ph img,.panel .ph img{transition:transform .8s var(--ease)}
+.site:hover .ph img,.panel:hover .ph img{transform:scale(1.04)}
+.link-arrow{display:inline-block;transition:transform .25s var(--ease)}
+.link-arrow:hover{transform:translateX(4px)}
+.btn{transition:background .15s,color .15s,border-color .15s,transform .2s var(--ease)}
+.btn:active{transform:scale(.98)}
+.count b{display:inline-block}
+.count.bump b{animation:bump .4s var(--ease)}
+@keyframes bump{40%{transform:translateY(-3px);color:var(--ochre)}}
+.tray__total.bump{animation:bump .4s var(--ease)}
+
+/* Scroll-linked reveals and parallax where the browser supports it; content is fully visible otherwise */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .section-head,.site,.mode,.access__item,.panel,.essay__body,.essay__head,.journal,.supporters li{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
+    .plate-wide .ph img{animation:drift linear both;animation-timeline:view();animation-range:cover}
+    .mode li::before{animation:grow linear both;animation-timeline:view();animation-range:entry 20% entry 90%;transform-origin:left}
+  }
+}
+@keyframes reveal{from{opacity:.15;transform:translateY(36px)}}
+@keyframes drift{from{transform:scale(1.14) translateY(-5%)}to{transform:scale(1.14) translateY(5%)}}
+@keyframes grow{from{transform:scaleX(0)}}
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion: no-preference){
+    .site-header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--ochre);transform-origin:left;animation:progress linear both;animation-timeline:scroll(root)}
+  }
+}
+@keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 </style>
 </head>
 <body>
@@ -435,6 +572,17 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           <div class="ph ph--4x5" data-alt="Echoes Across the Valley, North Meadow"><img src="https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=1200&amp;h=1500&amp;q=72" srcset="https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=480&amp;h=600&amp;q=72 480w, https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=800&amp;h=1000&amp;q=72 800w, https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=1200&amp;h=1500&amp;q=72 1200w, https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=1600&amp;h=2000&amp;q=72 1600w" sizes="(max-width: 960px) 100vw, 40vw" width="1200" height="1500" alt="A sculpture standing in open grass, framed by trees" fetchpriority="high" decoding="async"></div>
           <figcaption><span class="credit">North Meadow, autumn</span><span class="credit">Photo: <a href="https://unsplash.com/photos/a-sculpture-in-a-park-surrounded-by-trees-cxPmPNHk5Ew" target="_blank" rel="noopener">Kristina Kutleša</a> / Unsplash</span></figcaption>
         </figure>
+      </div>
+    </section>
+
+    <!-- Ticker -->
+    <section class="ticker" id="ticker" aria-label="Coming up at the Yard">
+      <div class="ticker__row">
+        <p class="ticker__label"><span class="pulse" aria-hidden="true"></span>Coming up</p>
+        <div class="ticker__viewport">
+          <div class="ticker__track" id="ticker-track"></div>
+        </div>
+        <button type="button" class="ticker__pause" id="ticker-pause" aria-pressed="false" aria-label="Pause the coming-up list"><svg viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg></button>
       </div>
     </section>
 
@@ -787,6 +935,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     }
     return out;
   }
+  const EXTRA = {"echoes": {"more": "The exhibition fills the Threshing Barn and carries on outside along the North Meadow. Allow time for both: the meadow route is 1.2 km on mown paths and takes about 40 minutes at a gentle pace.", "duration": "Allow 1½–2 hours", "suitable": "All ages", "bring": "Boots for the meadow after rain", "accessnote": "Step-free barn. Audio-described tour on the first Sunday of each month."}, "preview": {"more": "The technicians and curators show how a two-tonne bronze is lifted into a Grade II barn without touching the oak roof. Hard hats and hi-vis are provided. Groups of twelve.", "duration": "45 minutes", "suitable": "Ages 12+", "bring": "Closed-toe shoes", "accessnote": "Step-free route. Standing tour, with stools on request."}, "twilight": {"more": "Walk the river path at dusk with a guide, past all four commissions, then settle on the North Meadow for telescopes with Bruton Astronomical Society. If heavy rain cancels the walk, we email you by 15:00.", "duration": "2 hours", "suitable": "Ages 8+", "bring": "Warm layers. We lend red-filter torches.", "accessnote": "Relaxed pace with audio description throughout. Uneven ground."}, "matinee": {"more": "The Somerset String Ensemble play an hour of chamber music, from Purcell to two new pieces written in response to the exhibition. Tea and cake in the Granary afterwards.", "duration": "60 minutes, no interval", "suitable": "All ages. Babes in arms welcome.", "bring": "Nothing. Cushions provided.", "accessnote": "Step-free, hearing loop, wheelchair spaces on the front row."}, "clay": {"more": "Families work with clay dug from the Brue banks. Children model river stones, small figures or a pot, and we fire them in the courtyard kiln for collection the following weekend.", "duration": "90 minutes", "suitable": "Ages 5–12 with an adult", "bring": "Clothes that can get muddy. Aprons provided.", "accessnote": "BSL interpreter at every session. Step-free courtyard."}, "rewilding": {"more": "Ecologists from the Somerset Wildlife Trust report on the otters, water voles and kingfishers returning to the new wet meadow, then take questions over tea. An optional short walk to the scrape follows.", "duration": "75 minutes with tea", "suitable": "Adults and older children", "bring": "Binoculars, if you have them", "accessnote": "Relaxed session in a step-free room with seating throughout."}, "folk": {"more": "A monthly evening of Somerset songs and tunes by lamplight in the Community Barn, with a different guest each month and a short floor-singers’ spot. The bar opens at 19:00.", "duration": "2 hours with interval", "suitable": "All ages. Under 14s with an adult.", "bring": "A song, if you’d like a floor spot", "accessnote": "BSL interpreter on stage. Step-free, with a hearing loop."}};
   const PHOTOS = {"hero": {"id": "photo-1690798646116-fe4f5a0e2f1b", "who": "Kristina Kutleša", "href": "https://unsplash.com/photos/a-sculpture-in-a-park-surrounded-by-trees-cxPmPNHk5Ew", "alt": "A sculpture standing in open grass, framed by trees"}, "echoes": {"id": "photo-1771612559799-76daebaf37e4", "who": "R_ INVSCIMENTO", "href": "https://unsplash.com/photos/two-abstract-sculptures-in-a-grassy-park-setting-ulYHhAT0JoM", "alt": "Two abstract sculptures in a grassy setting"}, "preview": {"id": "photo-1759882607916-8119897a8262", "who": "Felicia Montenegro", "href": "https://unsplash.com/photos/modern-geometric-sculpture-on-brick-wall-background-p8ToWZwJq68", "alt": "A geometric sculpture against an old brick wall"}, "twilight": {"id": "photo-1444080748397-f442aa95c3e5", "who": "Ryan Hutton", "href": "https://unsplash.com/photos/worms-eye-view-of-trees-during-night-time-Jztmx9yqjBw", "alt": "Treetops against a night sky full of stars"}, "matinee": {"id": "photo-1465847899084-d164df4dedc6", "who": "Larisa Birta", "href": "https://unsplash.com/photos/people-playing-violin-inside-dim-room-slbOcNlWNHA", "alt": "Musicians playing violins in a dimly lit room"}, "clay": {"id": "photo-1589051088132-06f36a22012a", "who": "Anne Nygård", "href": "https://unsplash.com/photos/hands-shaping-ceramic-bowl-rim-G4IB-r6nsJI", "alt": "Hands covered in wet clay shaping the rim of a bowl"}, "rewilding": {"id": "photo-1492789005862-689be487dff9", "who": "Jez Timms", "href": "https://unsplash.com/photos/body-of-water-surrounded-with-grass-and-trees-during-daytime-SEJO1i-YwGU", "alt": "Still water edged with long grass and trees"}, "folk": {"id": "photo-1519139270028-ab664cf42264", "who": "Kael Bloom", "href": "https://unsplash.com/photos/person-playing-stringed-instrument-0Fko0cLI2VQ", "alt": "A musician playing a stringed instrument"}, "barn": {"id": "photo-1767447612728-30dd863a8c9c", "who": "Julia Fiander", "href": "https://unsplash.com/photos/sheep-grazing-near-a-stone-barn-in-a-green-field-eaqXTZQtF7M", "alt": "Sheep grazing beside a stone barn in a green field"}, "meadow": {"id": "photo-1674991469416-16680c23e7e3", "who": "Ben Tovee", "href": "https://unsplash.com/photos/a-field-of-tall-dry-grass-with-trees-in-the-background-VQ4MF632-Hc", "alt": "Tall autumn grass with trees beyond"}, "stonewall": {"id": "photo-1768573490160-fa6629effe62", "who": "T", "href": "https://unsplash.com/photos/dark-wooden-planks-on-stone-wall-with-grassy-background-qgQJsKZ2Nvc", "alt": "Dark timber boarding on a stone wall"}, "river": {"id": "photo-1708624329681-f5fd84d1c58f", "who": "Julia Fiander", "href": "https://unsplash.com/photos/a-river-running-through-a-lush-green-forest-TjP6EmZQrWo", "alt": "A shallow river running between green banks"}, "vessels": {"id": "photo-1631125915902-d8abe9225ff2", "who": "Yana Hurska", "href": "https://unsplash.com/photos/3-brown-clay-vases-on-white-concrete-table-zeGT9j4ltRA", "alt": "Three terracotta vessels on a pale table"}};
   const CLOSED = ["2026-12-24","2026-12-25","2026-12-26","2027-01-01"];
   const END = D(2027, 2, 28);
@@ -923,7 +1072,24 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     ctx.font = "500 10px 'IBM Plex Mono', monospace"; ctx.fillText("200 m", 82, H - 21);
     // north
     ctx.fillText("N ↑", W - 36, 18);
+    topo = { snap: ctx.getImageData(0, 0, canvas.width, canvas.height), ry, W, H, dpr, surf };
   }
+  let topo = null, topoOn = false, topoRaf = 0, topoT = 0;
+  function flow(now) {
+    if (!topo || !topoOn) return;
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.putImageData(topo.snap, 0, 0);
+    ctx.setTransform(topo.dpr, 0, 0, topo.dpr, 0, 0);
+    ctx.save(); ctx.beginPath();
+    for (let x = 0; x <= topo.W; x += 3) { const y = topo.ry(x); x ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+    ctx.setLineDash([3, 22]); ctx.lineDashOffset = -now / 60; ctx.strokeStyle = topo.surf; ctx.globalAlpha = .9; ctx.lineWidth = 1.4; ctx.lineCap = "round"; ctx.stroke();
+    ctx.restore();
+    topoRaf = requestAnimationFrame(flow);
+  }
+  if ("IntersectionObserver" in window) new IntersectionObserver(es => es.forEach(en => {
+    topoOn = en.isIntersecting && !reduced.matches; cancelAnimationFrame(topoRaf);
+    if (topoOn) topoRaf = requestAnimationFrame(flow);
+  })).observe(canvas);
   if ("ResizeObserver" in window) new ResizeObserver(() => drawTopo()).observe(canvas);
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => drawTopo());
   new MutationObserver(() => drawTopo()).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
@@ -1017,7 +1183,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     const hits = inRange(e, dateRange(state.date)); const d = hits[0];
     if (!d) return { text: "", today: false };
     const today = sameDay(d, TODAY);
-    const base = today ? "Today" : fmt(d, { weekday: "short", day: "numeric", month: "short" });
+    const base = today ? "Today" : fmt(d, { weekday: "short", day: "numeric", month: "short" }).replace(",", "");
     return { text: (state.date === "all" ? (today ? "Today" : "Next: " + base) : base) + (state.date !== "all" && hits.length > 1 ? ` + ${hits.length - 1} more` : ""), today };
   }
   function phSrc(id, w, r) { return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${Math.round(w * r)}&q=72`; }
@@ -1026,23 +1192,97 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     const set = [400, 640, 960, 1280].map(w => `${phSrc(p.id, w, 2 / 3)} ${w}w`).join(", ");
     return `<figure class="ph ph--3x2" data-alt="${esc(e.title)}"><img src="${phSrc(p.id, 960, 2 / 3)}" srcset="${set}" sizes="(max-width: 820px) 100vw, 33vw" width="960" height="640" alt="${esc(p.alt)}" loading="lazy" decoding="async"></figure>`;
   }
-  function card(e) {
-    const cat = CATS.find(c => c.id === e.cat); const n = nextLabel(e);
+  const shortDate = d => fmt(d, { weekday: "short", day: "numeric", month: "short" }).replace(",", "");
+  function card(e, i) {
+    const cat = CATS.find(c => c.id === e.cat); const n = nextLabel(e); const x = EXTRA[e.id] || {};
     const chips = e.access.map(a => `<li class="chip">${ACCESS[a].icon}${ACCESS[a].label}</li>`).join("");
-    return `<li class="event">
-      ${photoFrame(e)}
-      <div class="event__date"><span class="eyebrow eyebrow--accent">${cat.eyebrow}</span><span class="event__next${n.today ? " is-today" : ""}">${n.text}</span></div>
-      <div class="event__body">
-        <h3>${esc(e.title)}</h3>
-        <p class="event__desc">${esc(e.desc)}</p>
-        <dl class="event__facts"><dt>When</dt><dd>${esc(e.when)}</dd><dt>Where</dt><dd>${esc(e.where)}</dd></dl>
-        <ul class="chips" aria-label="Access">${chips}</ul>
-        ${PHOTOS[e.photo] ? `<p class="credit">Photo: <a href="${PHOTOS[e.photo].href}" target="_blank" rel="noopener">${esc(PHOTOS[e.photo].who)}</a> / Unsplash</p>` : ""}
+    const [p1, p2] = e.price.split(" · ");
+    const dates = inRange(e, dateRange(state.date)).slice(0, 4).map(d =>
+      `<li><button type="button" class="date-pill" data-book="${e.id}" data-date="${iso(d)}" aria-label="Book ${esc(e.title)} on ${fmt(d, { weekday: "long", day: "numeric", month: "long" })}">${sameDay(d, TODAY) ? "Today" : shortDate(d)}</button></li>`).join("");
+    const credit = PHOTOS[e.photo] ? `<p class="credit">Photo: <a href="${PHOTOS[e.photo].href}" target="_blank" rel="noopener">${esc(PHOTOS[e.photo].who)}</a> / Unsplash</p>` : "";
+    return `<li class="event" data-id="${e.id}" style="--i:${i}">
+      <div class="event__flip">
+        <article class="face face--front" aria-labelledby="ev-${e.id}">
+          ${photoFrame(e)}
+          <div class="event__date"><span class="eyebrow eyebrow--accent">${cat.eyebrow}</span><span class="event__next${n.today ? " is-today" : ""}">${n.text}</span></div>
+          <div class="event__body">
+            <h3 id="ev-${e.id}">${esc(e.title)}</h3>
+            <p class="event__desc">${esc(e.desc)}</p>
+            <dl class="event__facts"><dt>When</dt><dd>${esc(e.when)}</dd><dt>Where</dt><dd>${esc(e.where)}</dd></dl>
+            <ul class="chips" aria-label="Access">${chips}</ul>
+            ${credit}
+          </div>
+          <div class="event__foot"><span class="price"><b>${p1}</b> · ${p2}</span>
+            <span class="event__actions">
+              <button type="button" class="flip-btn" data-flip aria-expanded="false" aria-controls="evb-${e.id}">More info <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 6A4.5 4.5 0 0 1 11 4.5M11.5 8A4.5 4.5 0 0 1 3 9.5"/><path d="M11 1.5v3H8M3 12.5v-3h3"/></svg><span class="sr-only"> about ${esc(e.title)}</span></button>
+              <button type="button" class="btn btn--sm" data-book="${e.id}" aria-label="Book ${esc(e.title)}">Book</button>
+            </span>
+          </div>
+        </article>
+        <article class="face face--back" id="evb-${e.id}" aria-labelledby="evb-t-${e.id}" aria-hidden="true" inert>
+          <div class="back__top">
+            <div><p class="eyebrow">${cat.eyebrow}</p><h3 id="evb-t-${e.id}" tabindex="-1">${esc(e.title)}</h3></div>
+            <button type="button" class="back__close" data-unflip aria-label="Back to summary of ${esc(e.title)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
+          </div>
+          <p class="back__more">${esc(x.more || e.desc)}</p>
+          <dl class="back__facts">
+            <dt>Length</dt><dd>${esc(x.duration || "")}</dd>
+            <dt>Suits</dt><dd>${esc(x.suitable || "")}</dd>
+            <dt>Bring</dt><dd>${esc(x.bring || "")}</dd>
+            <dt>Access</dt><dd>${esc(x.accessnote || "")}</dd>
+          </dl>
+          ${dates ? `<div class="back__dates"><p>Choose a date</p><ul>${dates}</ul></div>` : ""}
+          <div class="event__foot"><span class="price"><b>${p1}</b> · ${p2}</span>
+            <button type="button" class="btn btn--sm" data-book="${e.id}" aria-label="Book ${esc(e.title)}">Book</button></div>
+        </article>
       </div>
-      <div class="event__foot"><span class="price"><b>${e.price.split(" · ")[0]}</b> · ${e.price.split(" · ")[1]}</span>
-        <button type="button" class="btn btn--sm" data-book="${e.id}" aria-label="Book ${esc(e.title)}">Book</button></div>
     </li>`;
   }
+  function flip(li, on, focus = true) {
+    if (!li) return;
+    li.classList.toggle("is-flipped", on);
+    const front = $(".face--front", li), back = $(".face--back", li), btn = $("[data-flip]", li);
+    front.inert = on; back.inert = !on;
+    on ? front.setAttribute("aria-hidden", "true") : front.removeAttribute("aria-hidden");
+    on ? back.removeAttribute("aria-hidden") : back.setAttribute("aria-hidden", "true");
+    btn.setAttribute("aria-expanded", String(on));
+    if (focus) setTimeout(() => (on ? $("h3", back) : btn).focus({ preventScroll: true }), reduced.matches ? 0 : 380);
+  }
+  document.addEventListener("click", e => {
+    const f = e.target.closest("[data-flip]"); if (f) { const li = f.closest(".event"); $$(".event.is-flipped").forEach(o => o !== li && flip(o, false, false)); flip(li, true); return; }
+    const u = e.target.closest("[data-unflip]"); if (u) flip(u.closest(".event"), false);
+  });
+  $("#events").addEventListener("keydown", e => { if (e.key === "Escape") { const li = e.target.closest(".event.is-flipped"); if (li) { e.stopPropagation(); flip(li, false); } } });
+
+  /* Upcoming occurrences across the programme, used by the ticker and the filler tile */
+  function upcoming(limit, range, perEvent = 1) {
+    const [a, b] = range || [TODAY, END];
+    const all = [];
+    LIVE.forEach(e => e.upcoming.forEach(d => { if (d >= a && d <= b) all.push({ e, d }); }));
+    all.sort((p, q) => p.d - q.d || p.e.title.localeCompare(q.e.title));
+    const count = {}, out = [];
+    for (const o of all) { const n = count[o.e.id] || 0; if (n >= perEvent) continue; count[o.e.id] = n + 1; out.push(o); if (out.length >= limit) break; }
+    return out;
+  }
+  const occButton = (o, cls = "") => `<button type="button" class="${cls}" data-book="${o.e.id}" data-date="${iso(o.d)}"><span class="d">${sameDay(o.d, TODAY) ? "Today" : shortDate(o.d)}</span><span class="t">${esc(o.e.title)}</span><span class="go" aria-hidden="true">Book →</span></button>`;
+
+  function fillGap(list, shown) {
+    const old = $(".filler", list); old && old.remove();
+    if (state.view !== "grid" || !shown.length) return;
+    const cols = getComputedStyle(list).gridTemplateColumns.split(" ").filter(Boolean).length;
+    const rem = shown.length % cols; if (cols < 2 || rem === 0) return;
+    const span = cols - rem;
+    const items = upcoming(span > 1 ? 8 : 5, dateRange(state.date));
+    if (!items.length) return;
+    const li = document.createElement("li");
+    li.className = "filler"; li.style.gridColumn = `span ${span}`; li.style.setProperty("--fcols", span > 1 ? 2 : 1);
+    li.innerHTML = `<p class="eyebrow eyebrow--accent">${state.date === "all" ? "Next at the Yard" : "Also in these dates"}</p>
+      <h3>Pick a date and go</h3>
+      <ol>${items.map(o => `<li>${occButton(o)}</li>`).join("")}</ol>
+      <p class="note">Every date opens the booking drawer with that day already chosen.</p>`;
+    list.appendChild(li);
+  }
+  let rendered = false;
   function render() {
     $$("#date-filter button").forEach(b => b.setAttribute("aria-pressed", b.dataset.date === state.date));
     $$("[role=tab]", catWrap).forEach(b => {
@@ -1054,14 +1294,36 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     $$(".view-toggle button").forEach(b => b.setAttribute("aria-pressed", b.dataset.view === state.view));
     const list = $("#events"); list.classList.toggle("is-list", state.view === "list");
     const shown = LIVE.filter(e => matches(e));
-    list.innerHTML = shown.length ? shown.map(card).join("")
+    list.innerHTML = shown.length ? shown.map((e, i) => card(e, i)).join("")
       : `<li class="empty"><p>Nothing matches those filters. Try another date range or remove an access filter.</p><button type="button" class="btn btn--ghost btn--sm" id="empty-clear">Clear all filters</button></li>`;
     const ec = $("#empty-clear"); ec && ec.addEventListener("click", () => $("#clear-filters").click());
-    $("#results-count").innerHTML = `Showing <b>${shown.length}</b> of <b>${LIVE.length}</b> events`;
+    const rc = $("#results-count"); const prev = rc.dataset.n;
+    rc.innerHTML = `Showing <b>${shown.length}</b> of <b>${LIVE.length}</b> events`;
+    if (prev !== undefined && prev !== String(shown.length) && !reduced.matches) { rc.classList.remove("bump"); void rc.offsetWidth; rc.classList.add("bump"); }
+    rc.dataset.n = shown.length;
+    if (rendered && !reduced.matches) $$(".event", list).forEach(li => li.classList.add("is-entering"));
+    rendered = true;
+    fillGap(list, shown);
     $("#clear-filters").hidden = !(state.date !== "all" || state.cat !== "all" || state.access.size);
   }
   render();
   setTimeout(sweep, 0);
+  let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => fillGap($("#events"), LIVE.filter(e => matches(e))), 150); });
+
+  /* ---------- Ticker ---------- */
+  (function ticker() {
+    const items = upcoming(14, null, 2);
+    const listHTML = `<ul>${items.map(o => `<li>${occButton(o)}</li>`).join("")}</ul>`;
+    const track = $("#ticker-track");
+    track.innerHTML = listHTML + listHTML;
+    const dup = track.children[1]; dup.setAttribute("aria-hidden", "true"); dup.inert = true;
+    const t = $("#ticker"), pb = $("#ticker-pause");
+    pb.addEventListener("click", () => {
+      const p = !t.classList.contains("is-paused"); t.classList.toggle("is-paused", p);
+      pb.setAttribute("aria-pressed", String(p)); pb.setAttribute("aria-label", p ? "Play the coming-up list" : "Pause the coming-up list");
+      pb.innerHTML = p ? '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z"/></svg>' : '<svg viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>';
+    });
+  })();
 
   /* ---------- Booking drawer ---------- */
   const drawer = $("#booking"), scrim = $("#scrim");
@@ -1115,6 +1377,16 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
   }
   function cap() { return bk.slot && selDate() ? Math.min(remaining(bk.eventId, selDate(), bk.slot), 30) : 30; }
 
+  let shownTotal = 0, raf = 0;
+  function tweenTotal(to) {
+    const el = $("#tray-total"); cancelAnimationFrame(raf);
+    if (reduced.matches || to === shownTotal) { shownTotal = to; el.textContent = money.format(to); return; }
+    const from = shownTotal, t0 = performance.now();
+    el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump");
+    const stepT = now => { const k = Math.min(1, (now - t0) / 320), v = from + (to - from) * (1 - Math.pow(1 - k, 3));
+      el.textContent = money.format(Math.round(v * 100) / 100); if (k < 1) raf = requestAnimationFrame(stepT); else shownTotal = to; };
+    raf = requestAnimationFrame(stepT);
+  }
   function renderTotals(announce = true) {
     TIERS.forEach(t => {
       $("#qty-" + t.id).textContent = bk.qty[t.id];
@@ -1132,7 +1404,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     rows.push(`<div class="total"><dt>Total</dt><dd>${money.format(total())}</dd></div>`);
     $("#bk-summary").innerHTML = rows.join("");
     const t = money.format(total());
-    $("#tray-total").textContent = t;
+    tweenTotal(total());
     $("#tray-what").textContent = !d ? "Choose a date to begin" : !bk.slot ? `${when} · choose a time` : q ? `${q} ticket${q > 1 ? "s" : ""} · ${when}` : `${when} · add tickets`;
     const btn = $("#checkout");
     btn.textContent = `Proceed to Secure Checkout — ${t}`;
@@ -1194,20 +1466,22 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     ["#drawer-body", "#tray", "#steps"].forEach(s => $(s).hidden = true);
     $("#confirm").hidden = false; $("#confirm").focus();
   });
-  function resetBooking(eventId) {
+  function resetBooking(eventId, dateIso) {
     bk.eventId = LIVE.some(e => e.id === eventId) ? eventId : (LIVE[0] && LIVE[0].id);
     bk.date = null; bk.slot = null; bk.qty = { adult: 0, conc: 0, free: 0 }; bk.donate = false;
     $("#bk-event").value = bk.eventId; $("#bk-donate").checked = false; $("#tray-error").textContent = "";
     ["#drawer-body", "#tray", "#steps"].forEach(s => $(s).hidden = false); $("#confirm").hidden = true;
     const e = ev();
-    if (e.upcoming[0]) { bk.date = iso(e.upcoming[0]); const free = e.slots.find(s => remaining(e.id, e.upcoming[0], s) > 0); if (free && e.slots.length === 1) bk.slot = free; }
+    const pick = (dateIso && e.upcoming.find(d => iso(d) === dateIso)) || e.upcoming[0];
+    if (pick) { bk.date = iso(pick); const free = e.slots.find(s => remaining(e.id, pick, s) > 0); if (free && e.slots.length === 1) bk.slot = free; }
     renderDates(); renderTimes(); renderTotals(false);
     $("#drawer-body").scrollTop = 0;
+    const chosen = bk.date && $(`#date-${bk.date}`); chosen && chosen.closest(".radio-chip").scrollIntoView({ block: "nearest" });
   }
   $("#new-booking").addEventListener("click", () => { resetBooking(bk.eventId); $("#bk-event").focus(); });
 
-  function openBooking(eventId, opener) {
-    resetBooking(eventId);
+  function openBooking(eventId, opener, dateIso) {
+    resetBooking(eventId, dateIso);
     $$("[data-book]").forEach(b => b.setAttribute("aria-expanded", "false"));
     opener && opener.setAttribute("aria-expanded", "true");
     showModal(drawer, () => $("#booking-close").focus(), scrim);
@@ -1220,7 +1494,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     const b = e.target.closest("[data-book]"); if (!b) return;
     e.preventDefault();
     if (openModal === menu) { const id = b.dataset.book; menuBtn.setAttribute("aria-expanded", "false"); menu.classList.remove("is-open"); menu.hidden = true; openModal = null; lastFocus = menuBtn; openBooking(id, null); lastFocus = menuBtn; return; }
-    openBooking(b.dataset.book, b);
+    openBooking(b.dataset.book, b, b.dataset.date);
   });
   $$("[data-book]").forEach(b => { b.setAttribute("aria-controls", "booking"); b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-expanded", "false"); });
   new MutationObserver(() => $$("#events [data-book]").forEach(b => { b.setAttribute("aria-controls", "booking"); b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-expanded", "false"); })).observe($("#events"), { childList: true });
