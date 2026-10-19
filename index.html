@@ -17,7 +17,7 @@
   --rule:#E5E5E3; --control:#85878B; --ochre:#B84A28; --on-ochre:#FFFFFF;
   --wash:#F3E7E0; --focus:#1F24D8; --live:#1E8A44; --scrim:rgba(24,25,26,.5);
   --contour:#C3C1BA; --contour-index:#7E8085; --river:#B84A28;
-  --on-ink:#F8F7F4;
+  --on-ink:#F8F7F4; --ph:#E7E1D6;
   --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --f-serif:"Newsreader",Georgia,"Times New Roman",serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -28,13 +28,13 @@
   --paper:#131415; --surface:#1B1C1E; --ink:#EEECE7; --stone:#A9ACB1;
   --rule:#2E3033; --control:#7A7D82; --ochre:#E58A66; --on-ochre:#131415;
   --wash:#2A1E19; --focus:#9EA2FF; --live:#4BCB7B; --scrim:rgba(0,0,0,.62);
-  --contour:#3A3C40; --contour-index:#6E7176; --river:#E58A66; --on-ink:#131415;
+  --contour:#3A3C40; --contour-index:#6E7176; --river:#E58A66; --on-ink:#131415; --ph:#26231F;
   color-scheme:dark}}
 :root[data-theme="dark"]{
   --paper:#131415; --surface:#1B1C1E; --ink:#EEECE7; --stone:#A9ACB1;
   --rule:#2E3033; --control:#7A7D82; --ochre:#E58A66; --on-ochre:#131415;
   --wash:#2A1E19; --focus:#9EA2FF; --live:#4BCB7B; --scrim:rgba(0,0,0,.62);
-  --contour:#3A3C40; --contour-index:#6E7176; --river:#E58A66; --on-ink:#131415;
+  --contour:#3A3C40; --contour-index:#6E7176; --river:#E58A66; --on-ink:#131415; --ph:#26231F;
   color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
@@ -343,6 +343,37 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
 .confirm h3{font-size:32px;font-stretch:80%;line-height:1}
 .confirm p{font-family:var(--f-serif);font-size:18px;color:var(--stone)}
 .ref{font-family:var(--f-mono);font-size:28px;letter-spacing:.06em;color:var(--ochre)}
+
+/* Photography system: fixed-ratio frames, warm placeholder tone, credits, graceful fallback */
+.ph{position:relative;overflow:hidden;background:var(--ph);max-width:100%;margin:0}
+.ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.ph--4x5{aspect-ratio:4/5}.ph--3x2{aspect-ratio:3/2}.ph--21x9{aspect-ratio:21/9}.ph--1x1{aspect-ratio:1/1}
+.ph.is-missing img{opacity:0}
+.ph.is-missing::after{content:attr(data-alt);position:absolute;inset:auto 16px 16px 16px;font-family:var(--f-serif);font-style:italic;font-size:15px;color:var(--stone)}
+.ph.is-missing{background:repeating-linear-gradient(-12deg,transparent 0 14px,var(--rule) 14px 15px) var(--ph)}
+.credit{font-family:var(--f-mono);font-size:11px;letter-spacing:.02em;color:var(--stone);line-height:1.5}
+.credit a{color:inherit;text-underline-offset:2px}
+.credit a:hover{color:var(--ink)}
+.hero__photo{grid-column:8 / span 5;display:flex;flex-direction:column;gap:var(--s1);margin:0}
+.hero__photo .ph{box-shadow:0 0 0 1px var(--rule)}
+.hero__photo figcaption{display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap}
+.hero__text{grid-column:1 / span 7}
+.event .ph{border-bottom:1px solid var(--rule)}
+.event:hover .ph img{transform:scale(1.035)}
+.events.is-list .event{grid-template-columns:200px 1fr 200px}
+.events.is-list .event > .ph{grid-row:1 / span 2;aspect-ratio:1/1;align-self:start;margin:var(--s3) var(--s3) var(--s3) 0;border:0}
+.events.is-list .event__date{grid-column:2}
+.events.is-list .event__body{grid-column:2}
+.events.is-list .event__foot{grid-column:3;grid-row:1 / span 2}
+@media (max-width:820px){.events.is-list .event{grid-template-columns:96px 1fr}.events.is-list .event > .ph{margin:var(--s2) var(--s2) 0 0;grid-row:1}.events.is-list .event__date{grid-column:2}.events.is-list .event__body,.events.is-list .event__foot{grid-column:1 / -1;grid-row:auto}}
+.site .ph{margin-bottom:var(--s2)}
+.plate-wide{margin:var(--s8) 0 0;display:flex;flex-direction:column;gap:var(--s1)}
+.essay__head .plate{aspect-ratio:4/5;margin-top:var(--s2)}
+.panel .ph{margin:calc(var(--s5) * -1) calc(var(--s5) * -1) var(--s1)}
+@media (max-width:860px){.panel .ph{margin:calc(var(--s3) * -1) calc(var(--s3) * -1) var(--s1)}}
+.photo-note{font-size:13px;color:var(--stone);max-width:72ch;padding-top:var(--s2)}
+@media (max-width:960px){.hero__photo{grid-column:1 / -1}.hero__photo .ph{aspect-ratio:4/3}}
+@media (prefers-reduced-motion: reduce){.event:hover .ph img{transform:none}}
 </style>
 </head>
 <body>
@@ -400,11 +431,9 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
             <a class="link-arrow" href="#essay">Read Exhibition Essay &amp; Audio Guide →</a>
           </div>
         </div>
-        <figure class="hero__figure">
-          <div class="plate">
-            <canvas id="topo" role="img" aria-label="Contour map of the Brue valley around the Yard, with the river drawn in terracotta and four new commission sites marked along its banks."></canvas>
-          </div>
-          <figcaption>Fig. 1 — The Brue valley below Bruton. Contours at 10 m intervals; N1–N4 mark the new riverside commissions.</figcaption>
+        <figure class="hero__photo">
+          <div class="ph ph--4x5" data-alt="Echoes Across the Valley, North Meadow"><img src="https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=1200&amp;h=1500&amp;q=72" srcset="https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=480&amp;h=600&amp;q=72 480w, https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=800&amp;h=1000&amp;q=72 800w, https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=1200&amp;h=1500&amp;q=72 1200w, https://images.unsplash.com/photo-1690798646116-fe4f5a0e2f1b?auto=format&amp;fit=crop&amp;w=1600&amp;h=2000&amp;q=72 1600w" sizes="(max-width: 960px) 100vw, 40vw" width="1200" height="1500" alt="A sculpture standing in open grass, framed by trees" fetchpriority="high" decoding="async"></div>
+          <figcaption><span class="credit">North Meadow, autumn</span><span class="credit">Photo: <a href="https://unsplash.com/photos/a-sculpture-in-a-park-surrounded-by-trees-cxPmPNHk5Ew" target="_blank" rel="noopener">Kristina Kutleša</a> / Unsplash</span></figcaption>
         </figure>
       </div>
     </section>
@@ -470,16 +499,25 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           <p>A working farmyard turned gallery: two stone barns, a granary and a meadow trail that follows the river east of the town.</p>
         </div>
         <ul class="sites">
-          <li class="site"><p class="eyebrow">Gallery 1 · Grade II</p><h3>The Threshing Barn</h3><p>The main exhibition hall, with its 1790s oak roof left open. Step-free throughout, with seating every 20 metres.</p></li>
-          <li class="site"><p class="eyebrow">1.2 km trail</p><h3>North Meadow &amp; Pavilions</h3><p>Four timber pavilions and the riverside commissions. Mown paths, two gentle gradients, all-terrain chairs to borrow.</p></li>
-          <li class="site"><p class="eyebrow">120 seats</p><h3>The Community Barn</h3><p>Our performance space for Sunday matinees, folk nights and school assemblies. Hearing loop installed.</p></li>
+          <li class="site"><figure class="ph ph--3x2" data-alt="The Threshing Barn"><img src="https://images.unsplash.com/photo-1767447612728-30dd863a8c9c?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72" srcset="https://images.unsplash.com/photo-1767447612728-30dd863a8c9c?auto=format&amp;fit=crop&amp;w=480&amp;h=320&amp;q=72 480w, https://images.unsplash.com/photo-1767447612728-30dd863a8c9c?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=72 800w, https://images.unsplash.com/photo-1767447612728-30dd863a8c9c?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72 1200w, https://images.unsplash.com/photo-1767447612728-30dd863a8c9c?auto=format&amp;fit=crop&amp;w=1600&amp;h=1067&amp;q=72 1600w" sizes="(max-width: 860px) 100vw, 33vw" width="1200" height="800" alt="Sheep grazing beside a stone barn in a green field" loading="lazy" decoding="async"></figure><p class="eyebrow">Gallery 1 · Grade II</p><h3>The Threshing Barn</h3><p>The main exhibition hall, with its 1790s oak roof left open. Step-free throughout, with seating every 20 metres.</p></li>
+          <li class="site"><figure class="ph ph--3x2" data-alt="North Meadow"><img src="https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72" srcset="https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=480&amp;h=320&amp;q=72 480w, https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=72 800w, https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72 1200w, https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=1600&amp;h=1067&amp;q=72 1600w" sizes="(max-width: 860px) 100vw, 33vw" width="1200" height="800" alt="Tall autumn grass with trees beyond" loading="lazy" decoding="async"></figure><p class="eyebrow">1.2 km trail</p><h3>North Meadow &amp; Pavilions</h3><p>Four timber pavilions and the riverside commissions. Mown paths, two gentle gradients, all-terrain chairs to borrow.</p></li>
+          <li class="site"><figure class="ph ph--3x2" data-alt="The Community Barn"><img src="https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72" srcset="https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=480&amp;h=320&amp;q=72 480w, https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=72 800w, https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72 1200w, https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=1600&amp;h=1067&amp;q=72 1600w" sizes="(max-width: 860px) 100vw, 33vw" width="1200" height="800" alt="Dark timber boarding on a stone wall" loading="lazy" decoding="async"></figure><p class="eyebrow">120 seats</p><h3>The Community Barn</h3><p>Our performance space for Sunday matinees, folk nights and school assemblies. Hearing loop installed.</p></li>
         </ul>
+
+        <figure class="plate-wide">
+          <div class="ph ph--21x9" data-alt="The River Brue"><img src="https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=1800&amp;h=771&amp;q=72" srcset="https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=800&amp;h=343&amp;q=72 800w, https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=1200&amp;h=514&amp;q=72 1200w, https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=1800&amp;h=771&amp;q=72 1800w, https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=2400&amp;h=1029&amp;q=72 2400w" sizes="100vw" width="1800" height="771" alt="A shallow river running between green banks" loading="lazy" decoding="async"></div>
+          <figcaption class="credit">The river path runs the length of the North Meadow, past all four new commissions. Photo: <a href="https://unsplash.com/photos/a-river-running-through-a-lush-green-forest-TjP6EmZQrWo" target="_blank" rel="noopener">Julia Fiander</a> / Unsplash</figcaption>
+        </figure>
 
         <article class="essay" id="essay" aria-labelledby="essay-title">
           <div class="essay__head">
             <p class="eyebrow">Exhibition essay · 8 min read</p>
             <h3 id="essay-title">Reading the valley with your feet</h3>
             <p class="eyebrow">By the curatorial team</p>
+            <figure class="hero__figure" style="margin:var(--s2) 0 0">
+              <div class="plate"><canvas id="topo" role="img" aria-label="Contour map of the Brue valley around the Yard, with the river drawn in terracotta and four new commission sites marked along its banks."></canvas></div>
+              <figcaption>Fig. 1 — The Brue valley below Bruton. Contours at 10 m intervals; N1–N4 mark the new riverside commissions.</figcaption>
+            </figure>
           </div>
           <div class="essay__body">
             <p>The Brue drops some forty metres between the Bruton weir and the meadow’s eastern hedge. You feel that fall before you see it. Echoes Across the Valley begins from that sensation: sculpture as a way of measuring ground, and the ground as a record of every hand that has worked it.</p>
@@ -560,6 +598,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     <section class="section" aria-label="Learning and support">
       <div class="wrap split">
         <article class="panel" id="learning" aria-labelledby="learning-title">
+          <figure class="ph ph--3x2" data-alt="Clay vessels from the Saturday workshop"><img src="https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72" srcset="https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?auto=format&amp;fit=crop&amp;w=480&amp;h=320&amp;q=72 480w, https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=72 800w, https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72 1200w, https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?auto=format&amp;fit=crop&amp;w=1600&amp;h=1067&amp;q=72 1600w" sizes="(max-width: 860px) 100vw, 50vw" width="1200" height="800" alt="Three terracotta vessels on a pale table" loading="lazy" decoding="async"></figure>
           <p class="eyebrow eyebrow--accent">Learning &amp; Community</p>
           <h2 id="learning-title">Schools, families and the town</h2>
           <p>Free visits for every Somerset state school, Saturday clay for families, and a monthly town forum in the Granary. The Community Barn is available to Bruton groups at cost.</p>
@@ -612,6 +651,8 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           <li>Brue Valley Landowners<small>Meadow access</small></li>
         </ul>
       </div>
+
+      <p class="photo-note">Photography on this prototype is stand-in imagery from Unsplash, used under the Unsplash Licence and credited on each image. It will be replaced by the commissioned shoot of the Yard, the barns and the exhibition.</p>
 
       <div class="legal">
         <nav aria-label="Footer">
@@ -746,6 +787,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     }
     return out;
   }
+  const PHOTOS = {"hero": {"id": "photo-1690798646116-fe4f5a0e2f1b", "who": "Kristina Kutleša", "href": "https://unsplash.com/photos/a-sculpture-in-a-park-surrounded-by-trees-cxPmPNHk5Ew", "alt": "A sculpture standing in open grass, framed by trees"}, "echoes": {"id": "photo-1771612559799-76daebaf37e4", "who": "R_ INVSCIMENTO", "href": "https://unsplash.com/photos/two-abstract-sculptures-in-a-grassy-park-setting-ulYHhAT0JoM", "alt": "Two abstract sculptures in a grassy setting"}, "preview": {"id": "photo-1759882607916-8119897a8262", "who": "Felicia Montenegro", "href": "https://unsplash.com/photos/modern-geometric-sculpture-on-brick-wall-background-p8ToWZwJq68", "alt": "A geometric sculpture against an old brick wall"}, "twilight": {"id": "photo-1444080748397-f442aa95c3e5", "who": "Ryan Hutton", "href": "https://unsplash.com/photos/worms-eye-view-of-trees-during-night-time-Jztmx9yqjBw", "alt": "Treetops against a night sky full of stars"}, "matinee": {"id": "photo-1465847899084-d164df4dedc6", "who": "Larisa Birta", "href": "https://unsplash.com/photos/people-playing-violin-inside-dim-room-slbOcNlWNHA", "alt": "Musicians playing violins in a dimly lit room"}, "clay": {"id": "photo-1589051088132-06f36a22012a", "who": "Anne Nygård", "href": "https://unsplash.com/photos/hands-shaping-ceramic-bowl-rim-G4IB-r6nsJI", "alt": "Hands covered in wet clay shaping the rim of a bowl"}, "rewilding": {"id": "photo-1492789005862-689be487dff9", "who": "Jez Timms", "href": "https://unsplash.com/photos/body-of-water-surrounded-with-grass-and-trees-during-daytime-SEJO1i-YwGU", "alt": "Still water edged with long grass and trees"}, "folk": {"id": "photo-1519139270028-ab664cf42264", "who": "Kael Bloom", "href": "https://unsplash.com/photos/person-playing-stringed-instrument-0Fko0cLI2VQ", "alt": "A musician playing a stringed instrument"}, "barn": {"id": "photo-1767447612728-30dd863a8c9c", "who": "Julia Fiander", "href": "https://unsplash.com/photos/sheep-grazing-near-a-stone-barn-in-a-green-field-eaqXTZQtF7M", "alt": "Sheep grazing beside a stone barn in a green field"}, "meadow": {"id": "photo-1674991469416-16680c23e7e3", "who": "Ben Tovee", "href": "https://unsplash.com/photos/a-field-of-tall-dry-grass-with-trees-in-the-background-VQ4MF632-Hc", "alt": "Tall autumn grass with trees beyond"}, "stonewall": {"id": "photo-1768573490160-fa6629effe62", "who": "T", "href": "https://unsplash.com/photos/dark-wooden-planks-on-stone-wall-with-grassy-background-qgQJsKZ2Nvc", "alt": "Dark timber boarding on a stone wall"}, "river": {"id": "photo-1708624329681-f5fd84d1c58f", "who": "Julia Fiander", "href": "https://unsplash.com/photos/a-river-running-through-a-lush-green-forest-TjP6EmZQrWo", "alt": "A shallow river running between green banks"}, "vessels": {"id": "photo-1631125915902-d8abe9225ff2", "who": "Yana Hurska", "href": "https://unsplash.com/photos/3-brown-clay-vases-on-white-concrete-table-zeGT9j4ltRA", "alt": "Three terracotta vessels on a pale table"}};
   const CLOSED = ["2026-12-24","2026-12-25","2026-12-26","2027-01-01"];
   const END = D(2027, 2, 28);
 
@@ -765,37 +807,37 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     { id: "talk", label: "Talks", eyebrow: "Talk · Lecture" }
   ];
   const EVENTS = [
-    { id: "echoes", cat: "exhibition", title: "Echoes Across the Valley",
+    { id: "echoes", photo: "echoes", cat: "exhibition", title: "Echoes Across the Valley",
       desc: "Bronze, stone and topography across the Threshing Barn and North Meadow, with new commissions on the River Brue.",
       when: "Daily · 10:00–17:00", where: "The Threshing Barn & North Meadow", price: "£12.50 · Under 25s free",
       access: ["stepfree","audio"], slots: ["10:30","12:00","14:00","15:30"],
       dates: days(D(2026,10,24), END, null, CLOSED) },
-    { id: "preview", cat: "talk", title: "Hard-Hat Preview: Installing the Echoes",
+    { id: "preview", photo: "preview", cat: "talk", title: "Hard-Hat Preview: Installing the Echoes",
       desc: "Walk the Threshing Barn with the install crew while the bronzes are craned into place. Short, standing tour.",
       when: "Install week · 11:00 & 14:00", where: "The Threshing Barn", price: "£12.50 · Under 25s free",
       access: ["stepfree"], slots: ["11:00","14:00"],
       dates: days(D(2026,10,19), D(2026,10,23)) },
-    { id: "twilight", cat: "walk", title: "Autumn Twilight Meadow Walk & Astronomy",
+    { id: "twilight", photo: "twilight", cat: "walk", title: "Autumn Twilight Meadow Walk & Astronomy",
       desc: "A guided dusk walk past the river commissions, ending with telescopes on the North Meadow with Bruton Astronomical Society.",
       when: "Friday evenings · 17:30–19:30", where: "North Meadow trail, meet at the Yard gate", price: "£12.50 · Under 25s free",
       access: ["relaxed","audio"], slots: ["17:30"],
       dates: days(D(2026,10,23), D(2026,12,18), [5]) },
-    { id: "matinee", cat: "performance", title: "Acoustic Matinee: The Somerset String Ensemble",
+    { id: "matinee", photo: "matinee", cat: "performance", title: "Acoustic Matinee: The Somerset String Ensemble",
       desc: "An hour of chamber music in the Community Barn, from Purcell to new pieces written for the exhibition.",
       when: "Sundays · 15:00", where: "The Community Barn", price: "£12.50 · Under 25s free",
       access: ["stepfree"], slots: ["15:00"],
       dates: days(D(2026,10,25), END, [0], CLOSED) },
-    { id: "clay", cat: "workshop", title: "Plein-Air Clay & Terracotta Workshop for Families",
+    { id: "clay", photo: "clay", cat: "workshop", title: "Plein-Air Clay & Terracotta Workshop for Families",
       desc: "Model river stones and small figures from local clay, then fire them in the courtyard kiln. Ages 5–12 with an adult.",
       when: "Saturdays · 10:30 & 13:30", where: "The Pottery Shed, South Courtyard", price: "£12.50 · Under 25s free",
       access: ["bsl","stepfree"], slots: ["10:30","13:30"],
       dates: days(D(2026,10,24), END, [6], CLOSED) },
-    { id: "rewilding", cat: "talk", title: "Rewilding the Brue: Conservation Talk & Tea",
+    { id: "rewilding", photo: "rewilding", cat: "talk", title: "Rewilding the Brue: Conservation Talk & Tea",
       desc: "Ecologists from the Somerset Wildlife Trust on otters, water voles and the new wet meadow, with tea and cake from 13:30.",
       when: "Wednesdays · 14:00", where: "The Granary Room", price: "£12.50 · Under 25s free",
       access: ["relaxed","stepfree"], slots: ["14:00"],
       dates: days(D(2026,10,21), END, [3], CLOSED) },
-    { id: "folk", cat: "performance", title: "Barn Sessions: Winter Folk Night",
+    { id: "folk", photo: "folk", cat: "performance", title: "Barn Sessions: Winter Folk Night",
       desc: "Monthly evening of Somerset songs and tunes by lamplight, with a BSL interpreter on stage for every set.",
       when: "Monthly Thursdays · 19:30", where: "The Community Barn", price: "£12.50 · Under 25s free",
       access: ["bsl","stepfree"], slots: ["19:30"],
@@ -803,6 +845,12 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
   ];
   EVENTS.forEach(e => e.upcoming = e.dates.filter(d => d >= TODAY));
   const LIVE = EVENTS.filter(e => e.upcoming.length);
+
+  /* ---------- Photo fallback ---------- */
+  const markMissing = im => { const f = im.closest(".ph"); f && f.classList.add("is-missing"); };
+  document.addEventListener("error", e => { if (e.target.tagName === "IMG") markMissing(e.target); }, true);
+  const sweep = () => $$(".ph img").forEach(im => { if (im.complete && im.naturalWidth === 0) markMissing(im); });
+  window.addEventListener("load", sweep);
 
   /* ---------- Topographic plate ---------- */
   const canvas = $("#topo");
@@ -970,18 +1018,26 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     if (!d) return { text: "", today: false };
     const today = sameDay(d, TODAY);
     const base = today ? "Today" : fmt(d, { weekday: "short", day: "numeric", month: "short" });
-    return { text: (state.date === "all" ? (today ? "Today" : "Next: " + base) : base) + (hits.length > 1 ? ` +${hits.length - 1} more` : ""), today };
+    return { text: (state.date === "all" ? (today ? "Today" : "Next: " + base) : base) + (state.date !== "all" && hits.length > 1 ? ` + ${hits.length - 1} more` : ""), today };
+  }
+  function phSrc(id, w, r) { return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${Math.round(w * r)}&q=72`; }
+  function photoFrame(e) {
+    const p = PHOTOS[e.photo]; if (!p) return "";
+    const set = [400, 640, 960, 1280].map(w => `${phSrc(p.id, w, 2 / 3)} ${w}w`).join(", ");
+    return `<figure class="ph ph--3x2" data-alt="${esc(e.title)}"><img src="${phSrc(p.id, 960, 2 / 3)}" srcset="${set}" sizes="(max-width: 820px) 100vw, 33vw" width="960" height="640" alt="${esc(p.alt)}" loading="lazy" decoding="async"></figure>`;
   }
   function card(e) {
     const cat = CATS.find(c => c.id === e.cat); const n = nextLabel(e);
     const chips = e.access.map(a => `<li class="chip">${ACCESS[a].icon}${ACCESS[a].label}</li>`).join("");
     return `<li class="event">
+      ${photoFrame(e)}
       <div class="event__date"><span class="eyebrow eyebrow--accent">${cat.eyebrow}</span><span class="event__next${n.today ? " is-today" : ""}">${n.text}</span></div>
       <div class="event__body">
         <h3>${esc(e.title)}</h3>
         <p class="event__desc">${esc(e.desc)}</p>
         <dl class="event__facts"><dt>When</dt><dd>${esc(e.when)}</dd><dt>Where</dt><dd>${esc(e.where)}</dd></dl>
         <ul class="chips" aria-label="Access">${chips}</ul>
+        ${PHOTOS[e.photo] ? `<p class="credit">Photo: <a href="${PHOTOS[e.photo].href}" target="_blank" rel="noopener">${esc(PHOTOS[e.photo].who)}</a> / Unsplash</p>` : ""}
       </div>
       <div class="event__foot"><span class="price"><b>${e.price.split(" · ")[0]}</b> · ${e.price.split(" · ")[1]}</span>
         <button type="button" class="btn btn--sm" data-book="${e.id}" aria-label="Book ${esc(e.title)}">Book</button></div>
@@ -1005,6 +1061,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     $("#clear-filters").hidden = !(state.date !== "all" || state.cat !== "all" || state.access.size);
   }
   render();
+  setTimeout(sweep, 0);
 
   /* ---------- Booking drawer ---------- */
   const drawer = $("#booking"), scrim = $("#scrim");

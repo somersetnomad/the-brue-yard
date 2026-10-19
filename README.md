@@ -22,3 +22,20 @@ modal dialogs with focus trapping and Escape to close, and light and dark colour
 
 Event data, slot availability and checkout are mocked in `index.html`. The checkout button
 ends at a "basket held" screen where a real ticketing integration would take over.
+
+## Photography
+
+The page uses stand-in photography from [Unsplash](https://unsplash.com), under the free
+Unsplash Licence (no Unsplash+ images). Every image carries a photographer credit. Images are
+hotlinked from `images.unsplash.com` with responsive `srcset` sizes, as Unsplash asks.
+
+To swap in the commissioned shoot, replace the photo IDs in the `PHOTOS` object in the script
+(event cards) and the `<img>` tags in the hero, grounds and learning sections. Frames are fixed
+ratio (4:5 hero, 3:2 cards, 21:9 river plate), so any photo cropped to those ratios drops in.
+
+If an image fails to load, its frame falls back to a captioned placeholder rather than a broken icon.
+
+## Viewing it live
+
+Turn on GitHub Pages under **Settings → Pages → Deploy from a branch → `main` / root**.
+The site then appears at `https://somersetnomad.github.io/the-brue-yard/`.
