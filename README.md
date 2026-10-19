@@ -1,8 +1,35 @@
 # The Brue Yard
 
-Single-page prototype for **The Brue Yard Contemporary & Sculpture Meadows**, Bruton, Somerset.
+Website prototype for **The Brue Yard Contemporary & Sculpture Meadows**, Bruton, Somerset.
 
-Open `index.html` in a browser. No build step and no dependencies (fonts load from Google Fonts).
+Open `index.html` in a browser, or serve the folder. The pages are plain HTML with no dependencies
+(fonts load from Google Fonts), so the site runs without a build step.
+
+## Pages
+
+| Page | File |
+|---|---|
+| Home | `index.html` |
+| What's On (filterable programme) | `whats-on.html` |
+| Event pages (7) | `events/*.html` |
+| Exhibition: Echoes Across the Valley | `exhibitions/echoes-across-the-valley.html` |
+| Exhibitions & Grounds | `exhibitions.html` |
+| Plan Your Visit | `visit.html` |
+| Learning & Community | `learning.html` |
+| Support Us | `support.html` |
+| Accessibility, Governance, Venue Hire, Environment, Privacy | footer pages |
+| Not found | `404.html` |
+
+## How it's built
+
+- `assets/site.css`: all styles
+- `assets/site.js`: shared behaviour; each feature starts only when its markup is on the page
+- `assets/data.js`: events, photos and season dates (generated)
+- `src/partials/`: shared sections (hero, ticker, programme filters, booking drawer, footer)
+- `build.py`: the layout, page content and event data
+
+To change content, edit `build.py` or a partial, then run `python3 build.py`. It rewrites every page
+and `assets/data.js`. Commit the output; the live site never runs the build.
 
 ## What's in it
 

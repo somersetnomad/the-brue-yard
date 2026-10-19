@@ -1,0 +1,72 @@
+<div class="scrim" id="scrim" hidden></div>
+<div class="drawer" id="booking" role="dialog" aria-modal="true" aria-labelledby="booking-title" hidden>
+  <div class="drawer__head">
+    <div>
+      <p class="eyebrow eyebrow--accent">Tickets &amp; timed entry</p>
+      <h2 id="booking-title">Book your visit</h2>
+    </div>
+    <button class="icon-btn" type="button" id="booking-close" aria-label="Close booking">×</button>
+  </div>
+  <nav aria-label="Booking progress">
+    <div class="steps" id="steps">
+      <button type="button" data-step="1"><span class="k">Step 1</span><span class="l">Date &amp; time</span></button>
+      <button type="button" data-step="2"><span class="k">Step 2</span><span class="l">Tickets</span></button>
+      <button type="button" data-step="3"><span class="k">Step 3</span><span class="l">Donation</span></button>
+      <button type="button" data-step="4"><span class="k">Step 4</span><span class="l">Summary</span></button>
+    </div>
+  </nav>
+
+  <div class="drawer__body" id="drawer-body">
+    <section class="step" id="step-1" aria-labelledby="s1-title">
+      <h3 id="s1-title"><span class="mono">01</span>Choose a date and time</h3>
+      <label class="sr-only" for="bk-event">Event</label>
+      <select class="select" id="bk-event"></select>
+      <fieldset>
+        <legend>Date</legend>
+        <div class="chip-grid" id="bk-dates"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Entry time</legend>
+        <div class="chip-grid times" id="bk-times"></div>
+      </fieldset>
+    </section>
+
+    <section class="step" id="step-2" aria-labelledby="s2-title">
+      <h3 id="s2-title"><span class="mono">02</span>Tickets</h3>
+      <div id="bk-tiers"></div>
+      <p class="note">Under 25s and Somerset residents go free, but please reserve a place so we can manage numbers in the barns. Bring proof of age or a Somerset postcode.</p>
+    </section>
+
+    <section class="step" id="step-3" aria-labelledby="s3-title">
+      <h3 id="s3-title"><span class="mono">03</span>Support the Yard</h3>
+      <label class="donate" for="bk-donate">
+        <input type="checkbox" id="bk-donate">
+        <span><b>Add £3.00 to support our community rural school bus fund.</b><span>Brings children from outlying villages to the Yard. Gift Aid can be added at checkout.</span></span>
+      </label>
+    </section>
+
+    <section class="step" id="step-4" aria-labelledby="s4-title">
+      <h3 id="s4-title"><span class="mono">04</span>Summary</h3>
+      <dl class="summary" id="bk-summary"></dl>
+    </section>
+  </div>
+
+  <div class="tray" id="tray">
+    <div class="tray__line">
+      <span class="what" id="tray-what">Choose a date to begin</span>
+      <span class="tray__total" id="tray-total">£0.00</span>
+    </div>
+    <p class="sr-only" id="tray-live" aria-live="polite" aria-atomic="true"></p>
+    <p class="error" id="tray-error" role="alert"></p>
+    <button class="btn" type="button" id="checkout" aria-disabled="true" aria-describedby="tray-error">Proceed to Secure Checkout — £0.00</button>
+  </div>
+
+  <div class="confirm" id="confirm" hidden tabindex="-1">
+    <p class="eyebrow eyebrow--accent">Basket held for 15 minutes</p>
+    <h3>Ready for secure checkout</h3>
+    <p id="confirm-text"></p>
+    <p class="ref" id="confirm-ref"></p>
+    <p class="note">This prototype ends here. In production, this step hands over to the secure payment page.</p>
+    <button class="btn btn--ghost" type="button" id="new-booking">Start another booking</button>
+  </div>
+</div>

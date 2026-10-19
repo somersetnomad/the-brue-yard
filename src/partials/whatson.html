@@ -1,0 +1,48 @@
+<section class="section" id="whats-on" aria-labelledby="whatson-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow eyebrow--accent">Autumn / Winter 2026–27</p>
+            <h2 class="section-title" id="whatson-title">What’s On</h2>
+          </div>
+          <p>Exhibitions in the barns, evening walks on the meadow, Sunday music and Saturday clay. Filter by date, type of event or access provision.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter events">
+          <div class="filters__row">
+            <span class="filters__label" id="date-label">When</span>
+            <div class="tabs" role="group" aria-labelledby="date-label" id="date-filter">
+              <button type="button" data-date="all" aria-pressed="true">All dates</button>
+              <button type="button" data-date="today" aria-pressed="false">Today</button>
+              <button type="button" data-date="weekend" aria-pressed="false">This weekend</button>
+              <button type="button" data-date="month" aria-pressed="false">Upcoming month</button>
+            </div>
+          </div>
+          <div class="filters__row">
+            <span class="filters__label" id="cat-label">Type</span>
+            <div class="cat-tabs" role="tablist" aria-labelledby="cat-label" id="cat-filter"></div>
+          </div>
+          <div class="filters__row">
+            <span class="filters__label" id="access-label">Access needs</span>
+            <fieldset class="checks" aria-labelledby="access-label" id="access-filter">
+              <label class="check"><input type="checkbox" id="acc-stepfree" value="stepfree"> Step-free access</label>
+              <label class="check"><input type="checkbox" id="acc-bsl" value="bsl"> BSL interpreted</label>
+              <label class="check"><input type="checkbox" id="acc-relaxed" value="relaxed"> Relaxed / sensory-friendly</label>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="results-bar">
+          <div class="results-bar__left">
+            <p class="count" id="results-count" aria-live="polite" aria-atomic="true">Showing <b>7</b> of <b>7</b> events</p>
+            <button type="button" class="clear" id="clear-filters" hidden>Clear all filters</button>
+          </div>
+          <div class="view-toggle" role="group" aria-label="Display events as">
+            <button type="button" data-view="grid" aria-pressed="true"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>Grid</button>
+            <button type="button" data-view="list" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="14" height="2"/><rect x="1" y="7" width="14" height="2"/><rect x="1" y="12" width="14" height="2"/></svg>List</button>
+          </div>
+        </div>
+
+        <ul class="events" id="events" role="tabpanel" aria-labelledby="whatson-title"></ul>
+      </div>
+    </section>

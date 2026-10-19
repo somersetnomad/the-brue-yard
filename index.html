@@ -1,555 +1,16 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" data-root="">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="The Brue Yard Contemporary & Sculpture Meadows, Bruton, Somerset: exhibitions, events, visiting information and timed-entry tickets.">
 <title>The Brue Yard</title>
+<meta name="description" content="The Brue Yard Contemporary &amp; Sculpture Meadows in Bruton, Somerset: exhibitions, events, visiting information and timed-entry tickets.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%2318191A%27/%3E%3Cpath d=%27M4 22c6-6 10 2 16-4s6-6 8-6%27 fill=%27none%27 stroke=%27%23B84A28%27 stroke-width=%273%27 stroke-linecap=%27round%27/%3E%3Cpath d=%27M4 14c6-6 10 2 16-4%27 fill=%27none%27 stroke=%27%23F8F7F4%27 stroke-width=%271.5%27 stroke-linecap=%27round%27 opacity=%27.7%27/%3E%3C/svg%3E">
 <meta name="theme-color" content="#18191A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&display=swap">
-<style>
-/* Layout: a 12-column editorial grid on archival paper; white panels only where something is operable (cards, drawer, forms). */
-:root{
-  --paper:#F8F7F4; --surface:#FFFFFF; --ink:#18191A; --stone:#5E6166;
-  --rule:#E5E5E3; --control:#85878B; --ochre:#B84A28; --on-ochre:#FFFFFF;
-  --wash:#F3E7E0; --focus:#1F24D8; --live:#1E8A44; --scrim:rgba(24,25,26,.5);
-  --contour:#C3C1BA; --contour-index:#7E8085; --river:#B84A28;
-  --on-ink:#F8F7F4; --ph:#E7E1D6;
-  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --f-serif:"Newsreader",Georgia,"Times New Roman",serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:40px;--s6:48px;--s8:64px;--s10:80px;--s12:96px;
-  --wrap:1280px; --header-h:72px;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --paper:#131415; --surface:#1B1C1E; --ink:#EEECE7; --stone:#A9ACB1;
-  --rule:#2E3033; --control:#7A7D82; --ochre:#E58A66; --on-ochre:#131415;
-  --wash:#2A1E19; --focus:#9EA2FF; --live:#4BCB7B; --scrim:rgba(0,0,0,.62);
-  --contour:#3A3C40; --contour-index:#6E7176; --river:#E58A66; --on-ink:#131415; --ph:#26231F;
-  color-scheme:dark}}
-:root[data-theme="dark"]{
-  --paper:#131415; --surface:#1B1C1E; --ink:#EEECE7; --stone:#A9ACB1;
-  --rule:#2E3033; --control:#7A7D82; --ochre:#E58A66; --on-ochre:#131415;
-  --wash:#2A1E19; --focus:#9EA2FF; --live:#4BCB7B; --scrim:rgba(0,0,0,.62);
-  --contour:#3A3C40; --contour-index:#6E7176; --river:#E58A66; --on-ink:#131415; --ph:#26231F;
-  color-scheme:dark}
-
-*,*::before,*::after{box-sizing:border-box}
-[hidden]{display:none!important}
-img{max-width:100%}
-body{margin:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-body{background:var(--paper);color:var(--ink);font-family:var(--f-display);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
-a{color:inherit}
-h1,h2,h3,h4{margin:0;text-wrap:balance;font-weight:700}
-p{margin:0}
-ul,ol{margin:0;padding:0;list-style:none}
-button,input,select{font:inherit;color:inherit}
-:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:2px}
-.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.skip{position:absolute;left:16px;top:-80px;z-index:100;background:var(--ink);color:var(--on-ink);padding:12px 16px;font-weight:600;text-decoration:none}
-.skip:focus{top:calc(8px + env(safe-area-inset-top,0px))}
-
-.wrap{max-width:calc(var(--wrap) + 96px);margin-inline:auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
-@media (max-width:480px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
-
-.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone)}
-.eyebrow--accent{color:var(--ochre)}
-.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
-
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 var(--s3);border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);font-weight:600;font-size:15px;letter-spacing:.01em;text-decoration:none;cursor:pointer;border-radius:0;transition:background .15s,color .15s}
-.btn:hover{background:var(--ochre);border-color:var(--ochre);color:var(--on-ochre)}
-.btn--ghost{background:transparent;color:var(--ink)}
-.btn--ghost:hover{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
-.btn--sm{min-height:40px;padding:0 var(--s2);font-size:14px}
-.btn[aria-disabled="true"]{background:var(--rule);border-color:var(--rule);color:var(--stone);cursor:not-allowed}
-.link-arrow{font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;color:var(--ochre)}
-.link-arrow:hover{text-decoration-thickness:2px}
-
-/* Utility strip */
-.utility{background:var(--ink);color:var(--on-ink);font-size:13px}
-.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);padding-block:10px;flex-wrap:wrap}
-.status{display:flex;align-items:center;gap:10px}
-.pulse{position:relative;width:8px;height:8px;border-radius:50%;background:var(--live);flex:none}
-.pulse::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--live);animation:pulse 2s ease-out infinite;opacity:0}
-@keyframes pulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.6);opacity:0}}
-.utility nav ul{display:flex;gap:var(--s2)}
-.utility a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
-.utility .sep{opacity:.5}
-.utility :focus-visible{outline-color:#9EA2FF}
-
-/* Header */
-.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--rule)}
-.site-header .wrap{display:flex;align-items:center;gap:var(--s3);min-height:var(--header-h)}
-.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.05;margin-right:auto}
-.brand b{font-weight:800;font-stretch:115%;font-size:20px;letter-spacing:.06em}
-.brand span{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;color:var(--stone);margin-top:4px}
-.primary-nav ul{display:flex;gap:var(--s3)}
-.primary-nav a{text-decoration:none;font-size:15px;font-weight:500;padding-block:8px;border-bottom:2px solid transparent}
-.primary-nav a:hover{border-color:var(--ochre)}
-.burger{display:none;width:48px;height:48px;border:1px solid var(--rule);background:var(--surface);cursor:pointer;align-items:center;justify-content:center}
-.burger span,.burger span::before,.burger span::after{display:block;width:20px;height:2px;background:var(--ink);position:relative}
-.burger span::before,.burger span::after{content:"";position:absolute;left:0}
-.burger span::before{top:-6px}.burger span::after{top:6px}
-.book-short{display:none}
-@media (max-width:1080px){.primary-nav{display:none}.burger{display:inline-flex}}
-@media (max-width:520px){.book-long{display:none}.book-short{display:inline}.brand b{font-size:17px}.site-header .btn{padding:0 var(--s2)}}
-
-/* Mobile menu */
-.menu{position:fixed;inset:0;z-index:80;background:var(--surface);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);opacity:0;transform:translateY(-8px);transition:opacity .2s,transform .2s}
-.menu.is-open{opacity:1;transform:none}
-.menu__top{display:flex;justify-content:space-between;align-items:center;min-height:var(--header-h);border-bottom:1px solid var(--rule)}
-.menu__list{display:flex;flex-direction:column;padding-block:var(--s3)}
-.menu__list a{display:block;padding:14px 0;font-size:28px;font-weight:700;font-stretch:88%;text-decoration:none;border-bottom:1px solid var(--rule)}
-.menu__list a:hover{color:var(--ochre)}
-.menu .wrap{width:100%}
-.icon-btn{width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--rule);background:var(--surface);cursor:pointer;font-size:22px;line-height:1}
-.icon-btn:hover{border-color:var(--ink)}
-
-/* Sections */
-section{scroll-margin-top:calc(var(--header-h) + 16px)}
-.section{padding-block:var(--s12)}
-.section + .section{border-top:1px solid var(--rule)}
-.section-head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s3);margin-bottom:var(--s6);align-items:end}
-.section-head > div{grid-column:1 / span 7;display:flex;flex-direction:column;gap:var(--s2)}
-.section-head > p{grid-column:8 / span 5;color:var(--stone);font-family:var(--f-serif);font-size:18px;line-height:1.5}
-.section-title{font-size:clamp(32px,4vw,48px);font-stretch:85%;font-weight:700;letter-spacing:-.01em;line-height:1.02}
-@media (max-width:860px){.section-head{grid-template-columns:1fr}.section-head > div,.section-head > p{grid-column:auto}.section{padding-block:var(--s8)}}
-
-/* Hero */
-.hero{padding-block:var(--s8) var(--s10);border-bottom:1px solid var(--rule)}
-.hero__grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s3);align-items:start}
-.hero__text{grid-column:1 / span 7;display:flex;flex-direction:column;gap:var(--s3);min-width:0}
-.badge{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border:1px solid var(--ochre);color:var(--ochre);font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-.hero h1{display:flex;flex-direction:column;gap:var(--s1)}
-.hero h1 .t1{font-size:clamp(44px,7.4vw,104px);font-weight:750;font-stretch:72%;line-height:.9;letter-spacing:-.015em;text-transform:uppercase}
-.hero h1 .t2{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:clamp(24px,2.8vw,38px);line-height:1.15;color:var(--stone)}
-.hero__artists{font-family:var(--f-serif);font-size:20px;line-height:1.45;max-width:36ch}
-.meta{display:grid;grid-template-columns:repeat(3,auto);gap:0;border-block:1px solid var(--rule);justify-content:start}
-.meta div{padding:var(--s2) var(--s3) var(--s2) 0;display:flex;flex-direction:column;gap:4px;min-width:0}
-.meta div + div{padding-left:var(--s3);border-left:1px solid var(--rule)}
-.meta dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone)}
-.meta dd{margin:0;font-size:15px;font-weight:500}
-.hero__actions{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
-.hero__figure{grid-column:9 / span 4;margin:0;display:flex;flex-direction:column;gap:var(--s1)}
-.plate{background:var(--surface);border:1px solid var(--rule);aspect-ratio:4/5;max-width:100%;position:relative}
-.plate canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-height:1.5}
-@media (max-width:960px){.hero__text{grid-column:1 / -1}.hero__figure{grid-column:1 / -1}.plate{aspect-ratio:3/2}}
-@media (max-width:620px){.meta{grid-template-columns:1fr}.meta div + div{padding-left:0;border-left:0;border-top:1px solid var(--rule)}}
-
-/* Filters */
-.filters{background:var(--surface);border:1px solid var(--rule);display:grid;grid-template-columns:1fr;}
-.filters__row{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;padding:var(--s2) var(--s3);border-bottom:1px solid var(--rule)}
-.filters__row:last-child{border-bottom:0}
-.filters__label{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);min-width:120px}
-.tabs{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--control)}
-.tabs button{border:0;border-right:1px solid var(--control);background:transparent;padding:10px 16px;min-height:44px;font-size:14px;font-weight:500;cursor:pointer}
-.tabs button:last-child{border-right:0}
-.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
-.tabs button:hover:not([aria-pressed="true"]){background:var(--wash)}
-.cat-tabs{display:flex;flex-wrap:wrap;gap:var(--s3)}
-.cat-tabs button{border:0;background:none;padding:10px 0;min-height:44px;font-size:16px;font-weight:600;cursor:pointer;border-bottom:2px solid transparent;color:var(--stone)}
-.cat-tabs button[aria-selected="true"]{color:var(--ink);border-color:var(--ochre)}
-.cat-tabs button:hover{color:var(--ink)}
-.cat-tabs .n{font-family:var(--f-mono);font-size:12px;font-weight:400;margin-left:4px;color:var(--stone)}
-.checks{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s3);border:0;padding:0;margin:0}
-.check{display:inline-flex;align-items:center;gap:10px;font-size:15px;cursor:pointer;min-height:44px}
-.check input{width:20px;height:20px;accent-color:var(--ochre);margin:0}
-.results-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s2);padding-block:var(--s3)}
-.results-bar__left{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
-.count{font-size:15px}
-.count b{font-variant-numeric:tabular-nums}
-.clear{background:none;border:0;padding:8px 0;min-height:44px;cursor:pointer;font-weight:600;color:var(--ochre);text-decoration:underline;text-underline-offset:4px}
-.view-toggle{display:flex;border:1px solid var(--control)}
-.view-toggle button{display:inline-flex;align-items:center;gap:8px;border:0;background:transparent;padding:0 14px;min-height:44px;font-size:14px;cursor:pointer}
-.view-toggle button + button{border-left:1px solid var(--control)}
-.view-toggle button[aria-pressed="true"]{background:var(--ink);color:var(--on-ink)}
-.view-toggle svg{width:16px;height:16px;fill:currentColor}
-
-/* Event cards */
-.events{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:var(--s3)}
-.event{background:var(--surface);border:1px solid var(--rule);display:flex;flex-direction:column;min-width:0;transition:border-color .15s}
-.event:hover{border-color:var(--ink)}
-.event__date{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);padding:var(--s2) var(--s3);border-bottom:1px solid var(--rule)}
-.event__next{font-family:var(--f-mono);font-size:13px;font-weight:500;font-variant-numeric:tabular-nums}
-.event__next.is-today{color:var(--ochre)}
-.event__body{padding:var(--s3);display:flex;flex-direction:column;gap:var(--s2);flex:1}
-.event h3{font-size:24px;font-stretch:88%;line-height:1.1;letter-spacing:-.005em}
-.event__desc{font-family:var(--f-serif);font-size:17px;line-height:1.45;color:var(--stone)}
-.event__facts{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14px;margin:0}
-.event__facts dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);padding-top:2px}
-.event__facts dd{margin:0}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;padding:4px 8px;border:1px solid var(--rule);background:var(--paper);white-space:nowrap}
-.chip svg{width:12px;height:12px;fill:currentColor}
-.event__foot{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);padding:var(--s2) var(--s3);border-top:1px solid var(--rule);margin-top:auto}
-.price{font-size:14px}
-.price b{font-weight:600}
-
-.events.is-list{grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
-.events.is-list .event{display:grid;grid-template-columns:180px 1fr 220px;border-width:0 0 1px;background:transparent}
-.events.is-list .event:hover{background:var(--surface)}
-.events.is-list .event__date{flex-direction:column;align-items:flex-start;border-bottom:0;padding:var(--s3) var(--s2) var(--s3) 0;gap:6px}
-.events.is-list .event__body{padding:var(--s3) var(--s3) var(--s3) 0}
-.events.is-list .event__foot{flex-direction:column;align-items:flex-start;justify-content:center;border-top:0;padding:var(--s3) 0}
-@media (max-width:820px){.events.is-list .event{grid-template-columns:1fr}.events.is-list .event__date{padding-bottom:0;flex-direction:row;justify-content:space-between;width:100%}.events.is-list .event__body{padding:var(--s2) 0}.events.is-list .event__foot{flex-direction:row;align-items:center;justify-content:space-between;padding-top:0}}
-.empty{border:1px dashed var(--control);padding:var(--s6) var(--s3);text-align:center;display:flex;flex-direction:column;gap:var(--s2);align-items:center;background:var(--surface)}
-.empty p{font-family:var(--f-serif);font-size:18px;max-width:44ch}
-
-/* Grounds */
-.sites{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
-.site{padding:var(--s3) var(--s3) var(--s3) 0;display:flex;flex-direction:column;gap:var(--s1)}
-.site + .site{padding-left:var(--s3);border-left:1px solid var(--rule)}
-.site h3{font-size:22px;font-stretch:90%}
-.site p{font-family:var(--f-serif);font-size:17px;color:var(--stone);line-height:1.5}
-.essay{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s3);margin-top:var(--s8);padding-top:var(--s6);border-top:1px solid var(--rule)}
-.essay__head{grid-column:1 / span 4;display:flex;flex-direction:column;gap:var(--s2)}
-.essay__head h3{font-size:28px;font-stretch:85%;line-height:1.1}
-.essay__body{grid-column:6 / span 7;display:flex;flex-direction:column;gap:var(--s2);font-family:var(--f-serif);font-size:19px;line-height:1.6;max-width:62ch}
-.essay__body > p:first-child::first-letter{font-family:var(--f-display);font-weight:800;font-stretch:72%;float:left;font-size:72px;line-height:.85;padding:6px 10px 0 0;color:var(--ochre)}
-.audio{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);font-family:var(--f-display);font-size:14px;padding-top:var(--s2);border-top:1px solid var(--rule)}
-@media (max-width:860px){.sites{grid-template-columns:1fr}.site,.site + .site{padding-left:0;border-left:0;border-bottom:1px solid var(--rule)}.essay__head,.essay__body{grid-column:1 / -1}}
-
-/* Plan your visit */
-.visit{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s3)}
-.address{grid-column:1 / span 4;display:flex;flex-direction:column;gap:var(--s3)}
-.address address{font-style:normal;font-size:22px;font-weight:600;line-height:1.3}
-.hours{width:100%;border-collapse:collapse;font-size:15px}
-.hours th,.hours td{text-align:left;padding:10px 0;border-bottom:1px solid var(--rule);font-weight:400}
-.hours td{text-align:right;font-family:var(--f-mono);font-size:14px;font-variant-numeric:tabular-nums}
-.hours caption{text-align:left;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);padding-bottom:8px}
-.transit{grid-column:6 / span 7;display:flex;flex-direction:column}
-.mode{display:grid;grid-template-columns:160px 1fr;gap:var(--s3);padding-block:var(--s3);border-top:1px solid var(--rule)}
-.mode:last-child{border-bottom:1px solid var(--rule)}
-.mode h3{font-size:18px;display:flex;flex-direction:column;gap:4px}
-.mode h3 .mono{font-size:12px;font-weight:400;color:var(--ochre);letter-spacing:.04em}
-.mode ul{display:flex;flex-direction:column;gap:10px;font-size:16px}
-.mode li{padding-left:20px;position:relative}
-.mode li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px;background:var(--ink)}
-.access{margin-top:var(--s8);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
-.access__item{background:var(--surface);border:1px solid var(--rule);padding:var(--s3);display:flex;flex-direction:column;gap:var(--s1)}
-.access__item h3{font-size:19px}
-.access__item p{font-size:15px;color:var(--stone)}
-.access__item .mono{color:var(--ochre);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-@media (max-width:960px){.address,.transit{grid-column:1 / -1}.access{grid-template-columns:1fr}}
-@media (max-width:560px){.mode{grid-template-columns:1fr;gap:var(--s2)}}
-
-/* Learning + Support */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
-.panel{border:1px solid var(--rule);background:var(--surface);padding:var(--s5);display:flex;flex-direction:column;gap:var(--s2)}
-.panel h2{font-size:32px;font-stretch:85%;line-height:1.05}
-.panel p{font-family:var(--f-serif);font-size:18px;color:var(--stone);line-height:1.5}
-.panel .btn{align-self:flex-start;margin-top:var(--s1)}
-.panel--accent{background:var(--wash);border-color:var(--wash)}
-@media (max-width:860px){.split{grid-template-columns:1fr}.panel{padding:var(--s3)}}
-
-/* Footer */
-.footer{background:var(--surface);border-top:1px solid var(--rule);padding-block:var(--s10) var(--s4)}
-.footer__grid{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s3)}
-.journal{grid-column:1 / span 6;display:flex;flex-direction:column;gap:var(--s2)}
-.journal h2{font-size:clamp(28px,3vw,40px);font-stretch:80%;line-height:1}
-.journal p{font-family:var(--f-serif);font-size:18px;color:var(--stone);max-width:46ch}
-.field{display:flex;flex-direction:column;gap:6px;margin-top:var(--s1)}
-.field label{font-weight:600;font-size:14px}
-.field__row{display:flex;gap:0;max-width:520px}
-.field input{flex:1;min-width:0;min-height:52px;padding:0 var(--s2);border:1px solid var(--control);border-right:0;background:var(--paper);font-size:16px;border-radius:0}
-.field input[aria-invalid="true"]{border-color:var(--ochre);box-shadow:inset 0 0 0 1px var(--ochre)}
-.field .btn{min-height:52px}
-.hint{font-size:13px;color:var(--stone)}
-.error{font-size:14px;color:var(--ochre);font-weight:600;min-height:21px}
-.success{font-size:15px;font-weight:600;color:var(--ink);padding:var(--s2);border-left:3px solid var(--live);background:var(--paper)}
-.foot-address{grid-column:8 / span 5;display:flex;flex-direction:column;gap:var(--s2);font-size:15px}
-.foot-address .brand{margin:0}
-.supporters{margin-top:var(--s8);padding-block:var(--s3);border-block:1px solid var(--rule);display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s5)}
-.supporters ul{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s5);align-items:center}
-.supporters li{font-weight:700;font-stretch:90%;font-size:16px;letter-spacing:.01em}
-.supporters li small{display:block;font-weight:400;font-family:var(--f-mono);font-size:11px;color:var(--stone);letter-spacing:.04em}
-.legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);padding-top:var(--s3);font-size:14px;color:var(--stone)}
-.legal ul{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3)}
-.legal a{color:var(--ink);text-underline-offset:3px}
-@media (max-width:860px){.journal,.foot-address{grid-column:1 / -1}}
-
-/* Drawer */
-.scrim{position:fixed;inset:0;z-index:70;background:var(--scrim);opacity:0;transition:opacity .25s}
-.scrim.is-open{opacity:1}
-.drawer{position:fixed;top:0;right:0;bottom:0;z-index:75;width:min(560px,100%);background:var(--surface);border-left:1px solid var(--rule);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .32s cubic-bezier(.2,.7,.2,1);padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px)}
-.drawer.is-open{transform:none}
-.drawer__head{padding:var(--s3) var(--s3) var(--s2);display:flex;justify-content:space-between;gap:var(--s2);align-items:flex-start}
-.drawer__head h2{font-size:28px;font-stretch:85%;line-height:1.05;margin-top:6px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--rule)}
-.steps button{border:0;background:none;padding:12px 8px 10px;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:2px;border-bottom:3px solid var(--rule);min-height:56px}
-.steps button + button{border-left:1px solid var(--rule)}
-.steps .k{font-family:var(--f-mono);font-size:11px;color:var(--stone);letter-spacing:.06em}
-.steps .l{font-size:13px;font-weight:600;line-height:1.2}
-.steps button.is-done{border-bottom-color:var(--ink)}
-.steps button.is-done .k::after{content:" ✓"}
-.steps button[aria-current="step"]{border-bottom-color:var(--ochre)}
-.drawer__body{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:0 var(--s3)}
-.step{padding-block:var(--s4);border-bottom:1px solid var(--rule);display:flex;flex-direction:column;gap:var(--s2);scroll-margin-top:8px}
-.step:last-child{border-bottom:0}
-.step h3{font-size:20px;display:flex;gap:12px;align-items:baseline}
-.step h3 .mono{font-size:12px;color:var(--ochre);font-weight:500}
-.step fieldset{border:0;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
-.step legend{font-size:14px;font-weight:600;padding:0;margin-bottom:10px}
-.select{min-height:48px;padding:0 var(--s2);border:1px solid var(--control);background:var(--paper);font-size:15px;width:100%;border-radius:0}
-.chip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:8px}
-.chip-grid.times{grid-template-columns:repeat(auto-fill,minmax(112px,1fr))}
-.radio-chip{position:relative}
-.radio-chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
-.radio-chip span{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:64px;padding:8px;border:1px solid var(--control);background:var(--surface);text-align:center;line-height:1.2;gap:2px}
-.radio-chip .d1{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--stone)}
-.radio-chip .d2{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
-.radio-chip .d3{font-size:12px;color:var(--stone)}
-.radio-chip input:checked + span{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
-.radio-chip input:checked + span .d1,.radio-chip input:checked + span .d3{color:var(--on-ink)}
-.radio-chip input:focus-visible + span{outline:3px solid var(--focus);outline-offset:2px}
-.radio-chip input:disabled + span{background:var(--paper);border-style:dashed;color:var(--stone);text-decoration:line-through}
-.radio-chip input:disabled + span .d3{text-decoration:none}
-.radio-chip input:not(:disabled):not(:checked) + span:hover{border-color:var(--ink)}
-.tier{display:grid;grid-template-columns:1fr auto;gap:var(--s2);align-items:center;padding-block:var(--s2);border-top:1px solid var(--rule)}
-.tier:last-child{border-bottom:1px solid var(--rule)}
-.tier__name{font-weight:600;font-size:16px}
-.tier__meta{font-size:13px;color:var(--stone)}
-.tier__price{font-family:var(--f-mono);font-size:14px;font-variant-numeric:tabular-nums}
-.stepper{display:flex;align-items:center;border:1px solid var(--control)}
-.stepper button{width:44px;height:44px;border:0;background:var(--surface);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.stepper button:hover:not(:disabled){background:var(--wash)}
-.stepper button:disabled{color:var(--control);cursor:not-allowed}
-.stepper output{width:40px;text-align:center;font-family:var(--f-mono);font-size:16px;font-variant-numeric:tabular-nums;border-inline:1px solid var(--rule);line-height:44px}
-.donate{display:flex;gap:var(--s2);align-items:flex-start;padding:var(--s2);border:1px solid var(--control);cursor:pointer;background:var(--paper)}
-.donate:has(input:checked){border-color:var(--ochre);background:var(--wash)}
-.donate input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--ochre);flex:none}
-.donate b{display:block;font-size:16px}
-.donate span span{font-size:14px;color:var(--stone)}
-.summary{margin:0;display:flex;flex-direction:column;font-size:15px}
-.summary div{display:flex;justify-content:space-between;gap:var(--s2);padding-block:8px;border-bottom:1px solid var(--rule)}
-.summary dd{margin:0;font-family:var(--f-mono);font-variant-numeric:tabular-nums;text-align:right}
-.summary .total{border-bottom:0;font-weight:700;font-size:17px;padding-top:12px}
-.note{font-size:13px;color:var(--stone)}
-.tray{border-top:1px solid var(--ink);background:var(--surface);padding:var(--s2) var(--s3) calc(var(--s2) + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:10px}
-.tray__line{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);font-size:14px}
-.tray__line .what{color:var(--stone);min-width:0}
-.tray__total{font-family:var(--f-mono);font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}
-.tray .btn{width:100%;min-height:56px;font-size:16px}
-.tray .error{min-height:0}
-.confirm{padding:var(--s5) var(--s3);display:flex;flex-direction:column;gap:var(--s2);flex:1;overflow-y:auto}
-.confirm h3{font-size:32px;font-stretch:80%;line-height:1}
-.confirm p{font-family:var(--f-serif);font-size:18px;color:var(--stone)}
-.ref{font-family:var(--f-mono);font-size:28px;letter-spacing:.06em;color:var(--ochre)}
-
-/* Photography system: fixed-ratio frames, warm placeholder tone, credits, graceful fallback */
-.ph{position:relative;overflow:hidden;background:var(--ph);max-width:100%;margin:0}
-.ph img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
-.ph--4x5{aspect-ratio:4/5}.ph--3x2{aspect-ratio:3/2}.ph--21x9{aspect-ratio:21/9}.ph--1x1{aspect-ratio:1/1}
-.ph.is-missing img{opacity:0}
-.ph.is-missing::after{content:attr(data-alt);position:absolute;inset:auto 16px 16px 16px;font-family:var(--f-serif);font-style:italic;font-size:15px;color:var(--stone)}
-.ph.is-missing{background:repeating-linear-gradient(-12deg,transparent 0 14px,var(--rule) 14px 15px) var(--ph)}
-.credit{font-family:var(--f-mono);font-size:11px;letter-spacing:.02em;color:var(--stone);line-height:1.5}
-.credit a{color:inherit;text-underline-offset:2px}
-.credit a:hover{color:var(--ink)}
-.hero__photo{grid-column:8 / span 5;display:flex;flex-direction:column;gap:var(--s1);margin:0}
-.hero__photo .ph{box-shadow:0 0 0 1px var(--rule)}
-.hero__photo figcaption{display:flex;justify-content:space-between;gap:var(--s2);flex-wrap:wrap}
-.hero__text{grid-column:1 / span 7}
-.event .ph{border-bottom:1px solid var(--rule)}
-.event:hover .ph img{transform:scale(1.035)}
-.events.is-list .event{grid-template-columns:200px 1fr 200px}
-.events.is-list .event > .ph{grid-row:1 / span 2;aspect-ratio:1/1;align-self:start;margin:var(--s3) var(--s3) var(--s3) 0;border:0}
-.events.is-list .event__date{grid-column:2}
-.events.is-list .event__body{grid-column:2}
-.events.is-list .event__foot{grid-column:3;grid-row:1 / span 2}
-@media (max-width:820px){.events.is-list .event{grid-template-columns:96px 1fr}.events.is-list .event > .ph{margin:var(--s2) var(--s2) 0 0;grid-row:1}.events.is-list .event__date{grid-column:2}.events.is-list .event__body,.events.is-list .event__foot{grid-column:1 / -1;grid-row:auto}}
-.site .ph{margin-bottom:var(--s2)}
-.plate-wide{margin:var(--s8) 0 0;display:flex;flex-direction:column;gap:var(--s1)}
-.essay__head .plate{aspect-ratio:4/5;margin-top:var(--s2)}
-.panel .ph{margin:calc(var(--s5) * -1) calc(var(--s5) * -1) var(--s1)}
-@media (max-width:860px){.panel .ph{margin:calc(var(--s3) * -1) calc(var(--s3) * -1) var(--s1)}}
-.photo-note{font-size:13px;color:var(--stone);max-width:72ch;padding-top:var(--s2)}
-@media (max-width:960px){.hero__photo{grid-column:1 / -1}.hero__photo .ph{aspect-ratio:4/3}}
-@media (prefers-reduced-motion: reduce){.event:hover .ph img{transform:none}}
-
-/* ---------- Motion layer: flip cards, ticker, filler tile, scroll-linked reveals ---------- */
-:root{--shadow:rgba(24,25,26,.28);--ease:cubic-bezier(.2,.7,.2,1)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--shadow:rgba(0,0,0,.6)}}
-:root[data-theme="dark"]{--shadow:rgba(0,0,0,.6)}
-
-/* Flip cards */
-.event{background:transparent;border:0;perspective:1800px;transition:transform .35s var(--ease)}
-.event:hover{border-color:transparent}
-.event__flip{display:grid;flex:1;height:100%;transform-style:preserve-3d;transition:transform .75s var(--ease)}
-.face{grid-area:1 / 1;display:flex;flex-direction:column;min-width:0;background:var(--surface);border:1px solid var(--rule);-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:box-shadow .35s var(--ease),border-color .2s}
-.face--back{transform:rotateY(180deg);background:var(--ink);color:var(--on-ink);border-color:var(--ink);padding:var(--s3);gap:var(--s2)}
-.event.is-flipped .event__flip{transform:rotateY(180deg)}
-@media (hover:hover){.events:not(.is-list) .event:hover{transform:translateY(-6px)}.events:not(.is-list) .event:hover .face--front{box-shadow:0 24px 40px -28px var(--shadow);border-color:var(--ink)}}
-.event:hover .face--front .ph img{transform:scale(1.04)}
-.event__actions{display:flex;gap:8px;align-items:center}
-.flip-btn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:1px solid var(--control);background:transparent;font-size:14px;font-weight:600;cursor:pointer}
-.flip-btn:hover{border-color:var(--ink);background:var(--wash)}
-.flip-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;transition:transform .5s var(--ease)}
-.flip-btn:hover svg{transform:rotate(-180deg)}
-.back__top{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s2)}
-.back__top .eyebrow{color:var(--on-ink);opacity:.72}
-.face--back h3{font-size:22px;font-stretch:88%;line-height:1.1;margin-top:6px;color:var(--on-ink)}
-.face--back h3:focus{outline:none}
-.back__close{width:40px;height:40px;flex:none;border:1px solid rgba(127,127,127,.5);background:transparent;color:var(--on-ink);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
-.back__close:hover{border-color:var(--on-ink)}
-.back__close svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
-.back__more{font-family:var(--f-serif);font-size:16px;line-height:1.5;color:var(--on-ink);opacity:.9}
-.back__facts{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:14px;padding-block:var(--s2);border-block:1px solid rgba(127,127,127,.35)}
-.back__facts dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.72;padding-top:2px}
-.back__facts dd{margin:0}
-.back__dates{display:flex;flex-direction:column;gap:8px}
-.back__dates p{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.72}
-.back__dates ul{display:flex;flex-wrap:wrap;gap:6px}
-.date-pill{min-height:40px;padding:0 12px;border:1px solid rgba(127,127,127,.55);background:transparent;color:var(--on-ink);font-family:var(--f-mono);font-size:13px;cursor:pointer;font-variant-numeric:tabular-nums;transition:background .15s,color .15s,border-color .15s}
-.date-pill:hover{background:var(--ochre);border-color:var(--ochre);color:var(--on-ochre)}
-.face--back .event__foot{margin-top:auto;padding:var(--s2) 0 0;border-top:0}
-.face--back .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-.face--back .btn:hover{background:var(--ochre);border-color:var(--ochre);color:var(--on-ochre)}
-.face--back :focus-visible{outline-color:var(--on-ink)}
-.face--back .price{color:var(--on-ink)}
-.event.is-entering{animation:cardIn .55s var(--ease) both;animation-delay:calc(var(--i, 0) * 60ms)}
-@keyframes cardIn{from{opacity:0;transform:translateY(18px)}}
-
-/* List view keeps the flip, laid out as rows */
-.events.is-list .event{display:block;grid-template-columns:none;border:0}
-.events.is-list .face--front{display:grid;grid-template-rows:auto 1fr;align-content:start;grid-template-columns:200px 1fr 220px;border-width:0 0 1px;background:transparent}
-.events.is-list .face--front:hover{background:var(--surface)}
-.events.is-list .face--front > .ph{grid-row:1 / span 2;aspect-ratio:1/1;align-self:start;margin:var(--s3) var(--s3) var(--s3) 0;border:0}
-.events.is-list .face--front .event__date{grid-column:2;flex-direction:row;justify-content:flex-start;align-items:baseline;gap:var(--s2);border-bottom:0;padding:var(--s3) var(--s3) 0 0}
-.events.is-list .face--front .event__body{grid-column:2;padding:var(--s1) var(--s3) var(--s3) 0}
-.events.is-list .face--front .event__foot{grid-column:3;grid-row:1 / span 2;flex-direction:column;align-items:flex-start;justify-content:center;border-top:0;padding:var(--s3) 0}
-.events.is-list .event__flip{transform:none!important}
-.events.is-list .face--back{display:none;transform:none;margin-block:var(--s1)}
-.events.is-list .event.is-flipped .face--front{display:none}
-.events.is-list .event.is-flipped .face--back{display:flex;animation:rise .45s var(--ease) both}
-@media (max-width:820px){
-  .events.is-list .face--front{grid-template-columns:96px 1fr}
-  .events.is-list .face--front > .ph{margin:var(--s2) var(--s2) 0 0;grid-row:1}
-  .events.is-list .face--front .event__date{grid-column:2;flex-direction:column;gap:4px;padding:var(--s2) 0 0}
-  .events.is-list .face--front .event__body,.events.is-list .face--front .event__foot{grid-column:1 / -1;grid-row:auto}
-  .events.is-list .face--front .event__foot{flex-direction:row;align-items:center;justify-content:space-between;padding:0 0 var(--s2)}
-}
-
-/* Filler tile: fills the end of a short last row with what's coming up */
-.filler{background:var(--wash);border:1px solid var(--wash);padding:var(--s3);display:flex;flex-direction:column;gap:var(--s2);min-width:0}
-.filler h3{font-size:24px;font-stretch:88%;line-height:1.1}
-.filler ol{display:grid;grid-template-columns:repeat(var(--fcols,1),minmax(0,1fr));gap:0 var(--s3)}
-.filler li{border-top:1px solid color-mix(in srgb, var(--ochre) 30%, transparent)}
-.filler li:last-child,.filler li:nth-last-child(-n+1){border-bottom:0}
-.filler ol button{width:100%;display:grid;grid-template-columns:76px 1fr auto;gap:var(--s2);align-items:baseline;text-align:left;padding:12px 0;background:none;border:0;cursor:pointer;min-height:48px}
-.filler ol button .d{font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums;color:var(--ochre);font-weight:500}
-.filler ol button .t{font-weight:600;font-size:15px;line-height:1.3}
-.filler ol button .go{font-size:13px;color:var(--stone);transition:transform .25s var(--ease),color .2s}
-.filler ol button:hover .t{text-decoration:underline;text-underline-offset:3px}
-.filler ol button:hover .go{transform:translateX(4px);color:var(--ink)}
-.filler .note{font-size:13px;color:var(--stone)}
-.filler ol.swap{animation:rise .4s var(--ease) both}
-.filler li.none{padding:12px 0;font-family:var(--f-serif);font-size:16px;color:var(--stone);border-top:1px solid color-mix(in srgb, var(--ochre) 30%, transparent)}
-.strip{flex:1;margin-top:var(--s2);display:flex;flex-direction:column;gap:10px}
-.strip__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);flex-wrap:wrap}
-.strip__reset{background:none;border:0;padding:6px 0;font-size:13px;font-weight:600;color:var(--ochre);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-.strip__days{flex:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));grid-auto-rows:minmax(58px,1fr);gap:4px}
-.day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px 2px 7px;min-height:58px;border:1px solid color-mix(in srgb, var(--ochre) 22%, transparent);background:var(--surface);cursor:pointer;transition:background .15s,color .15s,border-color .15s,transform .2s var(--ease)}
-.day .w{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--stone)}
-.day .n{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
-.day .dots{display:flex;gap:3px;height:4px}
-.day .dots i{width:4px;height:4px;border-radius:50%;background:var(--ochre)}
-.day:hover:not(:disabled){border-color:var(--ink);transform:translateY(-2px)}
-.day.is-today{border-color:var(--ochre)}
-.day[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
-.day[aria-pressed="true"] .w{color:var(--on-ink)}
-.day[aria-pressed="true"] .dots i{background:var(--on-ink)}
-.day:disabled{background:transparent;cursor:default;opacity:.55}
-
-/* Ticker */
-.ticker{border-bottom:1px solid var(--rule);background:var(--surface);overflow:hidden}
-.ticker__row{display:flex;align-items:center}
-.ticker__label{flex:none;align-self:stretch;display:flex;align-items:center;gap:10px;padding:0 var(--s3) 0 max(24px,env(safe-area-inset-left,0px));background:var(--ochre);color:var(--on-ochre);font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;position:relative;z-index:1}
-.ticker__label .pulse{background:var(--on-ochre)}
-.ticker__label .pulse::after{border-color:var(--on-ochre)}
-.ticker__viewport{flex:1;overflow:hidden;min-width:0;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 92%,transparent)}
-.ticker__track{display:flex;width:max-content;animation:tick 70s linear infinite}
-.ticker:hover .ticker__track,.ticker:focus-within .ticker__track,.ticker.is-paused .ticker__track{animation-play-state:paused}
-.ticker ul{display:flex}
-.ticker li{flex:none}
-.ticker button{display:flex;align-items:baseline;gap:10px;padding:14px var(--s3);background:none;border:0;border-right:1px solid var(--rule);cursor:pointer;white-space:nowrap;font-size:15px;min-height:48px}
-.ticker button .d{font-family:var(--f-mono);font-size:12px;color:var(--ochre);font-variant-numeric:tabular-nums}
-.ticker button:hover .t{text-decoration:underline;text-underline-offset:3px}
-.ticker__pause{flex:none;width:48px;align-self:stretch;border:0;border-left:1px solid var(--rule);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center}
-.ticker__pause svg{width:14px;height:14px;fill:currentColor}
-@keyframes tick{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion: reduce){.ticker__track{animation:none}.ticker__viewport{overflow-x:auto;mask-image:none}.ticker__pause{display:none}}
-
-/* Hero entrance: one orchestrated moment on load */
-@media (prefers-reduced-motion: no-preference){
-  .hero .badge,.hero h1 .t1,.hero h1 .t2,.hero__artists,.hero .meta,.hero__actions{animation:rise .9s var(--ease) both}
-  .hero h1 .t1{animation-delay:.08s}.hero h1 .t2{animation-delay:.2s}.hero__artists{animation-delay:.3s}.hero .meta{animation-delay:.4s}.hero__actions{animation-delay:.5s}
-  .hero__photo .ph{animation:unveil 1.3s var(--ease) .1s both}
-  .hero__photo .ph img{animation:settle 2.4s var(--ease) .1s both}
-}
-@keyframes rise{from{opacity:0;transform:translateY(22px)}}
-@keyframes unveil{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
-@keyframes settle{from{transform:scale(1.12)}}
-
-/* Hover details */
-.site .ph img,.panel .ph img{transition:transform .8s var(--ease)}
-.site:hover .ph img,.panel:hover .ph img{transform:scale(1.04)}
-.link-arrow{display:inline-block;transition:transform .25s var(--ease)}
-.link-arrow:hover{transform:translateX(4px)}
-.btn{transition:background .15s,color .15s,border-color .15s,transform .2s var(--ease)}
-.btn:active{transform:scale(.98)}
-.count b{display:inline-block}
-.count.bump b{animation:bump .4s var(--ease)}
-@keyframes bump{40%{transform:translateY(-3px);color:var(--ochre)}}
-.tray__total.bump{animation:bump .4s var(--ease)}
-
-/* Scroll-linked reveals and parallax where the browser supports it; content is fully visible otherwise */
-@supports (animation-timeline: view()){
-  @media (prefers-reduced-motion: no-preference){
-    .section-head,.site,.mode,.access__item,.panel,.essay__body,.essay__head,.journal,.supporters li{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 70%}
-    .plate-wide .ph img{animation:drift linear both;animation-timeline:view();animation-range:cover}
-    .mode li::before{animation:grow linear both;animation-timeline:view();animation-range:entry 20% entry 90%;transform-origin:left}
-  }
-}
-@keyframes reveal{from{opacity:.15;transform:translateY(36px)}}
-@keyframes drift{from{transform:scale(1.14) translateY(-5%)}to{transform:scale(1.14) translateY(5%)}}
-@keyframes grow{from{transform:scaleX(0)}}
-@supports (animation-timeline: scroll()){
-  @media (prefers-reduced-motion: no-preference){
-    .site-header::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--ochre);transform-origin:left;animation:progress linear both;animation-timeline:scroll(root)}
-  }
-}
-@keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-
-/* Essay: sticky map, pull quote, commission finder */
-@media (min-width:861px){.essay__head{position:sticky;top:calc(var(--header-h) + 24px);align-self:start}}
-.pull{margin:var(--s3) 0 0;padding:var(--s2) 0 var(--s2) var(--s3);border-left:3px solid var(--ochre)}
-.pull p{font-family:var(--f-serif);font-style:italic;font-size:clamp(26px,2.6vw,34px);line-height:1.2;color:var(--ink);text-wrap:balance}
-.commissions{margin-top:var(--s4);display:flex;flex-direction:column;gap:var(--s2);font-family:var(--f-display)}
-.commissions__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);flex-wrap:wrap}
-.commissions h4{font-size:20px;font-stretch:90%}
-.commissions ol{border-top:1px solid var(--ink)}
-.comm{width:100%;display:grid;grid-template-columns:48px 1fr auto;gap:var(--s2);align-items:start;text-align:left;padding:var(--s2) 12px var(--s2) 0;background:none;border:0;border-bottom:1px solid var(--rule);cursor:pointer;transition:background .2s,padding .3s var(--ease)}
-.comm__k{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--ink);font-family:var(--f-mono);font-size:13px;font-weight:500;transition:background .2s,color .2s,border-color .2s}
-.comm__b{display:flex;flex-direction:column;gap:4px;min-width:0}
-.comm__b b{font-size:17px}
-.comm__b span{font-family:var(--f-serif);font-size:16px;line-height:1.45;color:var(--stone)}
-.comm__m{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;text-align:right;display:flex;flex-direction:column;gap:2px;padding-top:2px}
-.comm__m small{font-size:10px;color:var(--stone);letter-spacing:.04em}
-.comm:hover{background:var(--surface);padding-left:12px}
-.comm:hover .comm__k{border-color:var(--ochre);color:var(--ochre)}
-.comm[aria-pressed="true"]{background:var(--wash);padding-left:12px}
-.comm[aria-pressed="true"] .comm__k{background:var(--ochre);border-color:var(--ochre);color:var(--on-ochre)}
-@media (max-width:560px){.comm{grid-template-columns:44px 1fr}.comm__m{grid-column:2;text-align:left;flex-direction:row;gap:6px}}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&amp;display=swap">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -560,9 +21,9 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
       <p class="status"><span class="pulse" aria-hidden="true"></span><span><b>Open today:</b> 10:00 – 17:00 <span style="opacity:.75">(Meadow trail closes at dusk)</span></span></p>
       <nav aria-label="Quick links">
         <ul>
-          <li><a href="#visit">Getting to Bruton</a></li>
+          <li><a href="visit.html#getting-here">Getting to Bruton</a></li>
           <li class="sep" aria-hidden="true">|</li>
-          <li><a href="#access">Access Information</a></li>
+          <li><a href="accessibility.html">Access Information</a></li>
         </ul>
       </nav>
     </div>
@@ -570,18 +31,12 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="#main" aria-label="The Brue Yard, Bruton, Somerset — home">
+      <a class="brand" href="index.html" aria-label="The Brue Yard, Bruton, Somerset: home">
         <b>THE BRUE YARD</b>
         <span>· BRUTON, SOMERSET</span>
       </a>
       <nav class="primary-nav" aria-label="Primary">
-        <ul>
-          <li><a href="#whats-on">What’s On</a></li>
-          <li><a href="#grounds">Exhibitions &amp; Grounds</a></li>
-          <li><a href="#visit">Plan Your Visit</a></li>
-          <li><a href="#learning">Learning &amp; Community</a></li>
-          <li><a href="#support">Support Us</a></li>
-        </ul>
+        <ul><li><a href="whats-on.html">What’s On</a></li><li><a href="exhibitions.html">Exhibitions &amp; Grounds</a></li><li><a href="visit.html">Plan Your Visit</a></li><li><a href="learning.html">Learning &amp; Community</a></li><li><a href="support.html">Support Us</a></li></ul>
       </nav>
       <button class="btn" type="button" data-book="echoes"><span class="book-long">Book Tickets / Timed Entry</span><span class="book-short">Book</span></button>
       <button class="burger" type="button" id="menu-trigger" aria-expanded="false" aria-controls="mobile-menu"><span aria-hidden="true"></span><span class="sr-only">Open menu</span></button>
@@ -589,7 +44,6 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero__grid">
         <div class="hero__text">
@@ -603,7 +57,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           </dl>
           <div class="hero__actions">
             <button class="btn" type="button" data-book="echoes">Book Timed Entry</button>
-            <a class="link-arrow" href="#essay">Read Exhibition Essay &amp; Audio Guide →</a>
+            <a class="link-arrow" href="exhibitions/echoes-across-the-valley.html#essay">Read Exhibition Essay &amp; Audio Guide →</a>
           </div>
         </div>
         <figure class="hero__photo">
@@ -613,7 +67,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
       </div>
     </section>
 
-    <!-- Ticker -->
+
     <section class="ticker" id="ticker" aria-label="Coming up at the Yard">
       <div class="ticker__row">
         <p class="ticker__label"><span class="pulse" aria-hidden="true"></span>Coming up</p>
@@ -624,57 +78,24 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
       </div>
     </section>
 
-    <!-- What's On -->
-    <section class="section" id="whats-on" aria-labelledby="whatson-title">
+
+    <section class="section" id="whats-on" aria-labelledby="hl-title">
       <div class="wrap">
         <div class="section-head">
           <div>
             <p class="eyebrow eyebrow--accent">Autumn / Winter 2026–27</p>
-            <h2 class="section-title" id="whatson-title">What’s On</h2>
+            <h2 class="section-title" id="hl-title">What’s On</h2>
           </div>
-          <p>Exhibitions in the barns, evening walks on the meadow, Sunday music and Saturday clay. Filter by date, type of event or access provision.</p>
+          <p>Exhibitions in the barns, evening walks on the meadow, Sunday music and Saturday clay. Turn any card over for times, what to bring and access details.</p>
         </div>
-
-        <div class="filters" role="group" aria-label="Filter events">
-          <div class="filters__row">
-            <span class="filters__label" id="date-label">When</span>
-            <div class="tabs" role="group" aria-labelledby="date-label" id="date-filter">
-              <button type="button" data-date="all" aria-pressed="true">All dates</button>
-              <button type="button" data-date="today" aria-pressed="false">Today</button>
-              <button type="button" data-date="weekend" aria-pressed="false">This weekend</button>
-              <button type="button" data-date="month" aria-pressed="false">Upcoming month</button>
-            </div>
-          </div>
-          <div class="filters__row">
-            <span class="filters__label" id="cat-label">Type</span>
-            <div class="cat-tabs" role="tablist" aria-labelledby="cat-label" id="cat-filter"></div>
-          </div>
-          <div class="filters__row">
-            <span class="filters__label" id="access-label">Access needs</span>
-            <fieldset class="checks" aria-labelledby="access-label" id="access-filter">
-              <label class="check"><input type="checkbox" id="acc-stepfree" value="stepfree"> Step-free access</label>
-              <label class="check"><input type="checkbox" id="acc-bsl" value="bsl"> BSL interpreted</label>
-              <label class="check"><input type="checkbox" id="acc-relaxed" value="relaxed"> Relaxed / sensory-friendly</label>
-            </fieldset>
-          </div>
+        <ul class="events" data-cards="echoes,twilight,clay"><li class="event-static"><a href="events/echoes-across-the-valley.html">Echoes Across the Valley</a></li><li class="event-static"><a href="events/twilight-meadow-walk.html">Autumn Twilight Meadow Walk &amp; Astronomy</a></li><li class="event-static"><a href="events/family-clay-workshop.html">Plein-Air Clay &amp; Terracotta Workshop for Families</a></li></ul>
+        <div class="more-row">
+          <p><b>7 events</b> this season, with filters for dates, type and access needs.</p>
+          <a class="btn btn--ghost" href="whats-on.html">See the full programme</a>
         </div>
-
-        <div class="results-bar">
-          <div class="results-bar__left">
-            <p class="count" id="results-count" aria-live="polite" aria-atomic="true">Showing <b>7</b> of <b>7</b> events</p>
-            <button type="button" class="clear" id="clear-filters" hidden>Clear all filters</button>
-          </div>
-          <div class="view-toggle" role="group" aria-label="Display events as">
-            <button type="button" data-view="grid" aria-pressed="true"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="1" width="6" height="6"/><rect x="9" y="1" width="6" height="6"/><rect x="1" y="9" width="6" height="6"/><rect x="9" y="9" width="6" height="6"/></svg>Grid</button>
-            <button type="button" data-view="list" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="1" y="2" width="14" height="2"/><rect x="1" y="7" width="14" height="2"/><rect x="1" y="12" width="14" height="2"/></svg>List</button>
-          </div>
-        </div>
-
-        <ul class="events" id="events" role="tabpanel" aria-labelledby="whatson-title"></ul>
       </div>
     </section>
 
-    <!-- Grounds -->
     <section class="section" id="grounds" aria-labelledby="grounds-title">
       <div class="wrap">
         <div class="section-head">
@@ -689,112 +110,38 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           <li class="site"><figure class="ph ph--3x2" data-alt="North Meadow"><img src="https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72" srcset="https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=480&amp;h=320&amp;q=72 480w, https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=72 800w, https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72 1200w, https://images.unsplash.com/photo-1674991469416-16680c23e7e3?auto=format&amp;fit=crop&amp;w=1600&amp;h=1067&amp;q=72 1600w" sizes="(max-width: 860px) 100vw, 33vw" width="1200" height="800" alt="Tall autumn grass with trees beyond" loading="lazy" decoding="async"></figure><p class="eyebrow">1.2 km trail</p><h3>North Meadow &amp; Pavilions</h3><p>Four timber pavilions and the riverside commissions. Mown paths, two gentle gradients, all-terrain chairs to borrow.</p></li>
           <li class="site"><figure class="ph ph--3x2" data-alt="The Community Barn"><img src="https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72" srcset="https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=480&amp;h=320&amp;q=72 480w, https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=72 800w, https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72 1200w, https://images.unsplash.com/photo-1768573490160-fa6629effe62?auto=format&amp;fit=crop&amp;w=1600&amp;h=1067&amp;q=72 1600w" sizes="(max-width: 860px) 100vw, 33vw" width="1200" height="800" alt="Dark timber boarding on a stone wall" loading="lazy" decoding="async"></figure><p class="eyebrow">120 seats</p><h3>The Community Barn</h3><p>Our performance space for Sunday matinees, folk nights and school assemblies. Hearing loop installed.</p></li>
         </ul>
-
         <figure class="plate-wide">
           <div class="ph ph--21x9" data-alt="The River Brue"><img src="https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=1800&amp;h=771&amp;q=72" srcset="https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=800&amp;h=343&amp;q=72 800w, https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=1200&amp;h=514&amp;q=72 1200w, https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=1800&amp;h=771&amp;q=72 1800w, https://images.unsplash.com/photo-1708624329681-f5fd84d1c58f?auto=format&amp;fit=crop&amp;w=2400&amp;h=1029&amp;q=72 2400w" sizes="100vw" width="1800" height="771" alt="A shallow river running between green banks" loading="lazy" decoding="async"></div>
           <figcaption class="credit">The river path runs the length of the North Meadow, past all four new commissions. Photo: <a href="https://unsplash.com/photos/a-river-running-through-a-lush-green-forest-TjP6EmZQrWo" target="_blank" rel="noopener">Julia Fiander</a> / Unsplash</figcaption>
         </figure>
-
-        <article class="essay" id="essay" aria-labelledby="essay-title">
-          <div class="essay__head">
-            <p class="eyebrow">Exhibition essay · 8 min read</p>
-            <h3 id="essay-title">Reading the valley with your feet</h3>
-            <p class="eyebrow">By the curatorial team</p>
-            <figure class="hero__figure" style="margin:var(--s2) 0 0">
-              <div class="plate"><canvas id="topo" role="img" aria-label="Contour map of the Brue valley around the Yard, with the river drawn in terracotta and four new commission sites marked along its banks."></canvas></div>
-              <figcaption>Fig. 1 — The Brue valley below Bruton. Contours at 10 m intervals; N1–N4 mark the new riverside commissions.</figcaption>
-            </figure>
-          </div>
-          <div class="essay__body">
-            <p>The Brue drops some forty metres between the Bruton weir and the meadow’s eastern hedge. You feel that fall before you see it. Echoes Across the Valley begins from that sensation: sculpture as a way of measuring ground, and the ground as a record of every hand that has worked it.</p>
-            <p>In the Threshing Barn, cast forms hold the negative space of rooms and stairwells, set against the barn’s own worn threshing floor. Out on the North Meadow, walked lines and gathered stone answer the river’s contours. Four new commissions sit on the banks themselves, each placed where the flood line of 1917 once reached.</p>
-            <div class="audio">
-              <span><b>Audio guide</b> · 14 stops · 52 min</span>
-              <span>Large-print and Easy Read versions at the Welcome Desk</span>
-            </div>
-            <blockquote class="pull"><p>You feel that fall before you see it.</p></blockquote>
-            <section class="commissions" aria-labelledby="comm-title">
-              <div class="commissions__head">
-                <h4 id="comm-title">Four new commissions on the river</h4>
-                <p class="note" id="comm-hint">Choose one to find it on the map</p>
-              </div>
-              <ol>
-                <li><button type="button" class="comm" data-comm="0" aria-pressed="false"><span class="comm__k">N1</span><span class="comm__b"><b>Weir Line</b><span>A course of cut blue lias laid across the old weir. In winter the river runs straight over it.</span></span><span class="comm__m">180 m<small>from the gate</small></span></button></li>
-                <li><button type="button" class="comm" data-comm="1" aria-pressed="false"><span class="comm__k">N2</span><span class="comm__b"><b>Flood Mark, 1917</b><span>A bronze band set into the bank at the height the water reached in the great flood of June 1917.</span></span><span class="comm__m">420 m<small>from the gate</small></span></button></li>
-                <li><button type="button" class="comm" data-comm="2" aria-pressed="false"><span class="comm__k">N3</span><span class="comm__b"><b>Holt</b><span>A hollow form cast from an otter holt on the south bank, open at both ends so the river can pass through.</span></span><span class="comm__m">690 m<small>from the gate</small></span></button></li>
-                <li><button type="button" class="comm" data-comm="3" aria-pressed="false"><span class="comm__k">N4</span><span class="comm__b"><b>Eastern Hedge</b><span>Field stones gathered from the meadow and walked into a single line along its last hedge.</span></span><span class="comm__m">1.1 km<small>from the gate</small></span></button></li>
-              </ol>
-              <p class="note" id="comm-live" aria-live="polite"></p>
-            </section>
-          </div>
-        </article>
+        <div class="more-row">
+          <p>Read the exhibition essay and find the four riverside commissions on the map.</p>
+          <a class="btn btn--ghost" href="exhibitions/echoes-across-the-valley.html">About the exhibition</a>
+        </div>
       </div>
     </section>
 
-    <!-- Plan your visit -->
-    <section class="section" id="visit" aria-labelledby="visit-title">
+    <section class="section" aria-labelledby="visit-band-title">
       <div class="wrap">
         <div class="section-head">
           <div>
             <p class="eyebrow eyebrow--accent">Getting to Bruton</p>
-            <h2 class="section-title" id="visit-title">Plan Your Visit</h2>
+            <h2 class="section-title" id="visit-band-title">Plan Your Visit</h2>
           </div>
-          <p>Bruton has its own railway station, eight minutes’ walk from our gate. Most visitors arrive by train or on foot from the High Street.</p>
+          <p>Bruton has its own railway station, eight minutes’ walk from our gate.</p>
         </div>
-
-        <div class="visit">
-          <div class="address">
-            <address>The Brue Yard<br>Dropping Lane<br>Bruton, Somerset<br><span class="mono">BA10 0NL</span></address>
-            <table class="hours">
-              <caption>Opening hours</caption>
-              <tbody>
-                <tr><th scope="row">Tuesday – Sunday</th><td>10:00 – 17:00</td></tr>
-                <tr><th scope="row">Monday (Oct preview week)</th><td>10:00 – 17:00</td></tr>
-                <tr><th scope="row">Meadow trail</th><td>closes at dusk</td></tr>
-                <tr><th scope="row">Quiet sensory hour, Thu</th><td>10:00 – 11:30</td></tr>
-                <tr><th scope="row">Closed</th><td>24 – 26 Dec, 1 Jan</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="transit" aria-label="How to get here">
-            <div class="mode">
-              <h3>By train <span class="mono">8 min walk</span></h3>
-              <ul>
-                <li>Signposted 8-minute foot walk from Bruton Railway Station.</li>
-                <li>GWR direct links to Westbury, Bath and Weymouth.</li>
-                <li>For London Paddington, change at Castle Cary (one stop).</li>
-              </ul>
-            </div>
-            <div class="mode">
-              <h3>On foot <span class="mono">from the High Street</span></h3>
-              <ul>
-                <li>Walk down to the river and cross at Church Bridge.</li>
-                <li>Follow Station Road south, then turn left into Dropping Lane.</li>
-                <li>Pavements are level; the lane has one short slope at the gate.</li>
-              </ul>
-            </div>
-            <div class="mode">
-              <h3>By road &amp; parking <span class="mono">4 EV bays</span></h3>
-              <ul>
-                <li>4 accessible EV charging bays on site, beside the Welcome Desk.</li>
-                <li>Bicycle racks in the courtyard.</li>
-                <li>Overflow parking at Station Road, a 4-minute level walk.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="access" id="access" aria-labelledby="access-title">
-          <h3 class="sr-only" id="access-title">Access information</h3>
-          <div class="access__item"><p class="mono">Free to borrow</p><h3>All-terrain wheelchairs</h3><p>Manual all-terrain wheelchairs for the meadow paths. Ask at the Welcome Desk or reserve when you book.</p></div>
-          <div class="access__item"><p class="mono">Every Thursday</p><h3>Quiet sensory hour</h3><p>10:00–11:30. Lower lighting in the barns, no audio, fewer visitors and a quiet room in the Granary.</p></div>
-          <div class="access__item"><p class="mono">At the Welcome Desk</p><h3>Visual stories &amp; tactile maps</h3><p>Visual story guides showing each space before you arrive, plus tactile large-print site maps.</p></div>
+        <ul class="band">
+          <li><p class="eyebrow">Open</p><h3>Tuesday – Sunday</h3><p class="mono">10:00 – 17:00</p><p>Meadow trail until dusk. Quiet sensory hour Thursdays 10:00–11:30.</p></li>
+          <li><p class="eyebrow">By train</p><h3>8 minutes on foot</h3><p class="mono">Bruton station</p><p>Direct GWR trains from Bath, Westbury and Weymouth. Change at Castle Cary for London.</p></li>
+          <li><p class="eyebrow">Access</p><h3>Step-free barns</h3><p class="mono">All-terrain chairs</p><p>Free to borrow for the meadow. Visual stories and tactile maps at the desk.</p></li>
+        </ul>
+        <div class="more-row">
+          <p>Dropping Lane, Bruton, Somerset BA10 0NL</p>
+          <a class="btn btn--ghost" href="visit.html">Opening times, travel and access</a>
         </div>
       </div>
     </section>
 
-    <!-- Learning & Support -->
     <section class="section" aria-label="Learning and support">
       <div class="wrap split">
         <article class="panel" id="learning" aria-labelledby="learning-title">
@@ -803,7 +150,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           <h2 id="learning-title">Schools, families and the town</h2>
           <p>Free visits for every Somerset state school, Saturday clay for families, and a monthly town forum in the Granary. The Community Barn is available to Bruton groups at cost.</p>
           <p class="credit">Photo: <a href="https://unsplash.com/photos/3-brown-clay-vases-on-white-concrete-table-zeGT9j4ltRA" target="_blank" rel="noopener">Yana Hurska</a> / Unsplash</p>
-          <a class="btn btn--ghost" href="#whats-on" data-cat-link="workshop">See family workshops</a>
+          <a class="btn btn--ghost" href="whats-on.html?cat=workshop">See family workshops</a>
         </article>
         <article class="panel panel--accent" id="support" aria-labelledby="support-title">
           <figure class="ph ph--3x2" data-alt="Somerset countryside on the school bus route"><img src="https://images.unsplash.com/photo-1601142917255-1c16c3e0ae06?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72" srcset="https://images.unsplash.com/photo-1601142917255-1c16c3e0ae06?auto=format&amp;fit=crop&amp;w=480&amp;h=320&amp;q=72 480w, https://images.unsplash.com/photo-1601142917255-1c16c3e0ae06?auto=format&amp;fit=crop&amp;w=800&amp;h=533&amp;q=72 800w, https://images.unsplash.com/photo-1601142917255-1c16c3e0ae06?auto=format&amp;fit=crop&amp;w=1200&amp;h=800&amp;q=72 1200w, https://images.unsplash.com/photo-1601142917255-1c16c3e0ae06?auto=format&amp;fit=crop&amp;w=1600&amp;h=1067&amp;q=72 1600w" sizes="(max-width: 860px) 100vw, 50vw" width="1200" height="800" alt="Wooded hills and fields in the Somerset countryside" loading="lazy" decoding="async"></figure>
@@ -811,13 +158,14 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           <h2 id="support-title">Keep the rural school bus running</h2>
           <p>Last year £3 donations at booking brought 1,140 pupils from Wincanton, Castle Cary and Frome to the Yard. Become a Friend from £45 a year.</p>
           <p class="credit">Photo: <a href="https://unsplash.com/photos/green-trees-on-hill-under-white-sky-during-daytime-9n1BygTOb4E" target="_blank" rel="noopener">Haydon</a> / Unsplash</p>
-          <a class="btn" href="#support">Become a Friend</a>
+          <a class="btn" href="support.html">Become a Friend</a>
         </article>
       </div>
     </section>
+
   </main>
 
-  <footer class="footer">
+<footer class="footer">
     <div class="wrap">
       <div class="footer__grid">
         <div class="journal">
@@ -842,6 +190,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
           <p>Dropping Lane, Bruton, Somerset BA10 0NL</p>
           <p class="mono">Box office: 01749 555 018</p>
           <p class="note">Registered charity no. 1189034</p>
+          <ul class="foot-nav" aria-label="Site"><li><a href="whats-on.html">What’s On</a></li><li><a href="exhibitions.html">Exhibitions &amp; Grounds</a></li><li><a href="visit.html">Plan Your Visit</a></li><li><a href="learning.html">Learning &amp; Community</a></li><li><a href="support.html">Support Us</a></li></ul>
         </div>
       </div>
 
@@ -860,20 +209,20 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
       <div class="legal">
         <nav aria-label="Footer">
           <ul>
-            <li><a href="#access">Accessibility Statement</a></li>
-            <li><a href="#support">Code of Governance</a></li>
-            <li><a href="#learning">Venue Hire</a></li>
-            <li><a href="#grounds">Environmental Policy</a></li>
-            <li><a href="#main">Privacy Policy</a></li>
+            <li><a href="accessibility.html">Accessibility Statement</a></li>
+            <li><a href="governance.html">Code of Governance</a></li>
+            <li><a href="venue-hire.html">Venue Hire</a></li>
+            <li><a href="environment.html">Environmental Policy</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </nav>
         <p>© 2026 The Brue Yard Contemporary &amp; Sculpture Meadows</p>
       </div>
     </div>
   </footer>
+
 </div>
 
-<!-- Mobile menu -->
 <div class="menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" hidden>
   <div class="wrap menu__top">
     <span class="brand"><b>THE BRUE YARD</b><span>· BRUTON, SOMERSET</span></span>
@@ -881,17 +230,17 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
   </div>
   <nav class="wrap" aria-label="Primary (mobile)">
     <ul class="menu__list">
-      <li><a href="#whats-on">What’s On</a></li>
-      <li><a href="#grounds">Exhibitions &amp; Grounds</a></li>
-      <li><a href="#visit">Plan Your Visit</a></li>
-      <li><a href="#learning">Learning &amp; Community</a></li>
-      <li><a href="#support">Support Us</a></li>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="whats-on.html">What’s On</a></li>
+      <li><a href="exhibitions.html">Exhibitions &amp; Grounds</a></li>
+      <li><a href="visit.html">Plan Your Visit</a></li>
+      <li><a href="learning.html">Learning &amp; Community</a></li>
+      <li><a href="support.html">Support Us</a></li>
     </ul>
     <button class="btn" type="button" data-book="echoes" style="width:100%">Book Tickets / Timed Entry</button>
   </nav>
 </div>
 
-<!-- Booking drawer -->
 <div class="scrim" id="scrim" hidden></div>
 <div class="drawer" id="booking" role="dialog" aria-modal="true" aria-labelledby="booking-title" hidden>
   <div class="drawer__head">
@@ -965,690 +314,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
   </div>
 </div>
 
-<script>
-(() => {
-  "use strict";
-  /* ---------- Helpers ---------- */
-  const $ = (s, r = document) => r.querySelector(s);
-  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const money = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
-  const day0 = d => { const x = new Date(d); x.setHours(0,0,0,0); return x; };
-  const D = (y, m, d) => new Date(y, m - 1, d);
-  const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
-  const sameDay = (a, b) => a.getTime() === b.getTime();
-  const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
-  const fmt = (d, o) => d.toLocaleDateString("en-GB", o);
-  const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const TODAY = day0(new Date());
-
-  function days(from, to, dows, skip = []) {
-    const out = [];
-    for (let x = new Date(from); x <= to; x = addDays(x, 1)) {
-      if (dows && !dows.includes(x.getDay())) continue;
-      if (skip.includes(iso(x))) continue;
-      out.push(new Date(x));
-    }
-    return out;
-  }
-  const EXTRA = {"echoes": {"more": "The exhibition fills the Threshing Barn and carries on outside along the North Meadow. Allow time for both: the meadow route is 1.2 km on mown paths and takes about 40 minutes at a gentle pace.", "duration": "Allow 1½–2 hours", "suitable": "All ages", "bring": "Boots for the meadow after rain", "accessnote": "Step-free barn. Audio-described tour on the first Sunday of each month."}, "preview": {"more": "The technicians and curators show how a two-tonne bronze is lifted into a Grade II barn without touching the oak roof. Hard hats and hi-vis are provided. Groups of twelve.", "duration": "45 minutes", "suitable": "Ages 12+", "bring": "Closed-toe shoes", "accessnote": "Step-free route. Standing tour, with stools on request."}, "twilight": {"more": "Walk the river path at dusk with a guide, past all four commissions, then settle on the North Meadow for telescopes with Bruton Astronomical Society. If heavy rain cancels the walk, we email you by 15:00.", "duration": "2 hours", "suitable": "Ages 8+", "bring": "Warm layers. We lend red-filter torches.", "accessnote": "Relaxed pace with audio description throughout. Uneven ground."}, "matinee": {"more": "The Somerset String Ensemble play an hour of chamber music, from Purcell to two new pieces written in response to the exhibition. Tea and cake in the Granary afterwards.", "duration": "60 minutes, no interval", "suitable": "All ages. Babes in arms welcome.", "bring": "Nothing. Cushions provided.", "accessnote": "Step-free, hearing loop, wheelchair spaces on the front row."}, "clay": {"more": "Families work with clay dug from the Brue banks. Children model river stones, small figures or a pot, and we fire them in the courtyard kiln for collection the following weekend.", "duration": "90 minutes", "suitable": "Ages 5–12 with an adult", "bring": "Clothes that can get muddy. Aprons provided.", "accessnote": "BSL interpreter at every session. Step-free courtyard."}, "rewilding": {"more": "Ecologists from the Somerset Wildlife Trust report on the otters, water voles and kingfishers returning to the new wet meadow, then take questions over tea. An optional short walk to the scrape follows.", "duration": "75 minutes with tea", "suitable": "Adults and older children", "bring": "Binoculars, if you have them", "accessnote": "Relaxed session in a step-free room with seating throughout."}, "folk": {"more": "A monthly evening of Somerset songs and tunes by lamplight in the Community Barn, with a different guest each month and a short floor-singers’ spot. The bar opens at 19:00.", "duration": "2 hours with interval", "suitable": "All ages. Under 14s with an adult.", "bring": "A song, if you’d like a floor spot", "accessnote": "BSL interpreter on stage. Step-free, with a hearing loop."}};
-  const PHOTOS = {"hero": {"id": "photo-1690798646116-fe4f5a0e2f1b", "who": "Kristina Kutleša", "href": "https://unsplash.com/photos/a-sculpture-in-a-park-surrounded-by-trees-cxPmPNHk5Ew", "alt": "A sculpture standing in open grass, framed by trees"}, "echoes": {"id": "photo-1771612559799-76daebaf37e4", "who": "R_ INVSCIMENTO", "href": "https://unsplash.com/photos/two-abstract-sculptures-in-a-grassy-park-setting-ulYHhAT0JoM", "alt": "Two abstract sculptures in a grassy setting"}, "preview": {"id": "photo-1759882607916-8119897a8262", "who": "Felicia Montenegro", "href": "https://unsplash.com/photos/modern-geometric-sculpture-on-brick-wall-background-p8ToWZwJq68", "alt": "A geometric sculpture against an old brick wall"}, "twilight": {"id": "photo-1444080748397-f442aa95c3e5", "who": "Ryan Hutton", "href": "https://unsplash.com/photos/worms-eye-view-of-trees-during-night-time-Jztmx9yqjBw", "alt": "Treetops against a night sky full of stars"}, "matinee": {"id": "photo-1465847899084-d164df4dedc6", "who": "Larisa Birta", "href": "https://unsplash.com/photos/people-playing-violin-inside-dim-room-slbOcNlWNHA", "alt": "Musicians playing violins in a dimly lit room"}, "clay": {"id": "photo-1589051088132-06f36a22012a", "who": "Anne Nygård", "href": "https://unsplash.com/photos/hands-shaping-ceramic-bowl-rim-G4IB-r6nsJI", "alt": "Hands covered in wet clay shaping the rim of a bowl"}, "rewilding": {"id": "photo-1492789005862-689be487dff9", "who": "Jez Timms", "href": "https://unsplash.com/photos/body-of-water-surrounded-with-grass-and-trees-during-daytime-SEJO1i-YwGU", "alt": "Still water edged with long grass and trees"}, "folk": {"id": "photo-1519139270028-ab664cf42264", "who": "Kael Bloom", "href": "https://unsplash.com/photos/person-playing-stringed-instrument-0Fko0cLI2VQ", "alt": "A musician playing a stringed instrument"}, "barn": {"id": "photo-1767447612728-30dd863a8c9c", "who": "Julia Fiander", "href": "https://unsplash.com/photos/sheep-grazing-near-a-stone-barn-in-a-green-field-eaqXTZQtF7M", "alt": "Sheep grazing beside a stone barn in a green field"}, "meadow": {"id": "photo-1674991469416-16680c23e7e3", "who": "Ben Tovee", "href": "https://unsplash.com/photos/a-field-of-tall-dry-grass-with-trees-in-the-background-VQ4MF632-Hc", "alt": "Tall autumn grass with trees beyond"}, "stonewall": {"id": "photo-1768573490160-fa6629effe62", "who": "T", "href": "https://unsplash.com/photos/dark-wooden-planks-on-stone-wall-with-grassy-background-qgQJsKZ2Nvc", "alt": "Dark timber boarding on a stone wall"}, "river": {"id": "photo-1708624329681-f5fd84d1c58f", "who": "Julia Fiander", "href": "https://unsplash.com/photos/a-river-running-through-a-lush-green-forest-TjP6EmZQrWo", "alt": "A shallow river running between green banks"}, "vessels": {"id": "photo-1631125915902-d8abe9225ff2", "who": "Yana Hurska", "href": "https://unsplash.com/photos/3-brown-clay-vases-on-white-concrete-table-zeGT9j4ltRA", "alt": "Three terracotta vessels on a pale table"}};
-  const CLOSED = ["2026-12-24","2026-12-25","2026-12-26","2027-01-01"];
-  const END = D(2027, 2, 28);
-
-  /* ---------- Data ---------- */
-  const ACCESS = {
-    stepfree: { label: "Step-free", icon: '<svg viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="2" r="1.5"/><path d="M4 4h3v3h2.5L11 10.5 10 11 8.8 8.5H5.5a1.5 1.5 0 0 1-1.5-1.5z"/></svg>' },
-    bsl: { label: "BSL interpreted", icon: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 11V5l1-3 1 3V1.5l1 .2V5l1-3.5 1 .3L7.5 6 10 4.5l.7.7L7 9.5V11z"/></svg>' },
-    relaxed: { label: "Relaxed", icon: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1a5 5 0 1 0 0 10A5 5 0 0 0 6 1zm-2 3.5a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zm4 0a.8.8 0 1 1 0 1.6.8.8 0 0 1 0-1.6zM3.6 7.4h4.8A2.6 2.6 0 0 1 6 9a2.6 2.6 0 0 1-2.4-1.6z"/></svg>' },
-    audio: { label: "Audio described", icon: '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1 4.5h2L6 2v8L3 7.5H1zM8 3.5a3.5 3.5 0 0 1 0 5l-.7-.7a2.5 2.5 0 0 0 0-3.6zm1.5-1.5a5.6 5.6 0 0 1 0 8l-.7-.7a4.6 4.6 0 0 0 0-6.6z"/></svg>' }
-  };
-  const CATS = [
-    { id: "all", label: "All" },
-    { id: "exhibition", label: "Exhibitions", eyebrow: "Exhibition" },
-    { id: "performance", label: "Performances", eyebrow: "Performance · Music" },
-    { id: "workshop", label: "Workshops", eyebrow: "Workshop · Family" },
-    { id: "walk", label: "Outdoor Walks", eyebrow: "Outdoor · Tour" },
-    { id: "talk", label: "Talks", eyebrow: "Talk · Lecture" }
-  ];
-  const EVENTS = [
-    { id: "echoes", photo: "echoes", cat: "exhibition", title: "Echoes Across the Valley",
-      desc: "Bronze, stone and topography across the Threshing Barn and North Meadow, with new commissions on the River Brue.",
-      when: "Daily · 10:00–17:00", where: "The Threshing Barn & North Meadow", price: "£12.50 · Under 25s free",
-      access: ["stepfree","audio"], slots: ["10:30","12:00","14:00","15:30"],
-      dates: days(D(2026,10,24), END, null, CLOSED) },
-    { id: "preview", photo: "preview", cat: "talk", title: "Hard-Hat Preview: Installing the Echoes",
-      desc: "Walk the Threshing Barn with the install crew while the bronzes are craned into place. Short, standing tour.",
-      when: "Install week · 11:00 & 14:00", where: "The Threshing Barn", price: "£12.50 · Under 25s free",
-      access: ["stepfree"], slots: ["11:00","14:00"],
-      dates: days(D(2026,10,19), D(2026,10,23)) },
-    { id: "twilight", photo: "twilight", cat: "walk", title: "Autumn Twilight Meadow Walk & Astronomy",
-      desc: "A guided dusk walk past the river commissions, ending with telescopes on the North Meadow with Bruton Astronomical Society.",
-      when: "Friday evenings · 17:30–19:30", where: "North Meadow trail, meet at the Yard gate", price: "£12.50 · Under 25s free",
-      access: ["relaxed","audio"], slots: ["17:30"],
-      dates: days(D(2026,10,23), D(2026,12,18), [5]) },
-    { id: "matinee", photo: "matinee", cat: "performance", title: "Acoustic Matinee: The Somerset String Ensemble",
-      desc: "An hour of chamber music in the Community Barn, from Purcell to new pieces written for the exhibition.",
-      when: "Sundays · 15:00", where: "The Community Barn", price: "£12.50 · Under 25s free",
-      access: ["stepfree"], slots: ["15:00"],
-      dates: days(D(2026,10,25), END, [0], CLOSED) },
-    { id: "clay", photo: "clay", cat: "workshop", title: "Plein-Air Clay & Terracotta Workshop for Families",
-      desc: "Model river stones and small figures from local clay, then fire them in the courtyard kiln. Ages 5–12 with an adult.",
-      when: "Saturdays · 10:30 & 13:30", where: "The Pottery Shed, South Courtyard", price: "£12.50 · Under 25s free",
-      access: ["bsl","stepfree"], slots: ["10:30","13:30"],
-      dates: days(D(2026,10,24), END, [6], CLOSED) },
-    { id: "rewilding", photo: "rewilding", cat: "talk", title: "Rewilding the Brue: Conservation Talk & Tea",
-      desc: "Ecologists from the Somerset Wildlife Trust on otters, water voles and the new wet meadow, with tea and cake from 13:30.",
-      when: "Wednesdays · 14:00", where: "The Granary Room", price: "£12.50 · Under 25s free",
-      access: ["relaxed","stepfree"], slots: ["14:00"],
-      dates: days(D(2026,10,21), END, [3], CLOSED) },
-    { id: "folk", photo: "folk", cat: "performance", title: "Barn Sessions: Winter Folk Night",
-      desc: "Monthly evening of Somerset songs and tunes by lamplight, with a BSL interpreter on stage for every set.",
-      when: "Monthly Thursdays · 19:30", where: "The Community Barn", price: "£12.50 · Under 25s free",
-      access: ["bsl","stepfree"], slots: ["19:30"],
-      dates: [D(2026,11,12), D(2026,12,10), D(2027,1,14), D(2027,2,11)] }
-  ];
-  EVENTS.forEach(e => e.upcoming = e.dates.filter(d => d >= TODAY));
-  const LIVE = EVENTS.filter(e => e.upcoming.length);
-
-  /* ---------- Photo fallback ---------- */
-  const markMissing = im => { const f = im.closest(".ph"); f && f.classList.add("is-missing"); };
-  document.addEventListener("error", e => { if (e.target.tagName === "IMG") markMissing(e.target); }, true);
-  const sweep = () => $$(".ph img").forEach(im => { if (im.complete && im.naturalWidth === 0) markMissing(im); });
-  window.addEventListener("load", sweep);
-
-  /* ---------- Topographic plate ---------- */
-  const canvas = $("#topo");
-  function drawTopo() {
-    const r = canvas.getBoundingClientRect();
-    if (!r.width) return;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.round(r.width * dpr); canvas.height = Math.round(r.height * dpr);
-    const ctx = canvas.getContext("2d");
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const W = r.width, H = r.height;
-    const cs = getComputedStyle(document.documentElement);
-    const c1 = cs.getPropertyValue("--contour").trim(), c2 = cs.getPropertyValue("--contour-index").trim();
-    const river = cs.getPropertyValue("--river").trim(), ink = cs.getPropertyValue("--ink").trim(), surf = cs.getPropertyValue("--surface").trim();
-    ctx.clearRect(0, 0, W, H);
-    const ry = x => H * (0.58 + 0.09 * Math.sin((x / W) * Math.PI * 2.1 + 0.7) + 0.03 * Math.sin((x / W) * 9));
-    const f = (x, y) => {
-      const d = Math.abs(y - ry(x)) / H;
-      const hill = 34 * Math.exp(-(((x - W * 0.28) / (W * 0.22)) ** 2 + ((y - H * 0.18) / (H * 0.16)) ** 2));
-      const hill2 = 22 * Math.exp(-(((x - W * 0.8) / (W * 0.2)) ** 2 + ((y - H * 0.92) / (H * 0.14)) ** 2));
-      return 58 + 150 * Math.pow(d, 0.95) + hill + hill2 + 7 * Math.sin(x * 0.019 + y * 0.011) + 5 * Math.cos(x * 0.031 - y * 0.023);
-    };
-    const step = 5, cols = Math.ceil(W / step) + 1, rows = Math.ceil(H / step) + 1;
-    const v = new Float32Array(cols * rows);
-    for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) v[j * cols + i] = f(i * step, j * step);
-    const labels = [];
-    for (let L = 60; L <= 200; L += 10) {
-      const major = L % 50 === 0;
-      ctx.beginPath(); ctx.strokeStyle = major ? c2 : c1; ctx.lineWidth = major ? 1.1 : 0.7;
-      let labelPt = null;
-      for (let j = 0; j < rows - 1; j++) for (let i = 0; i < cols - 1; i++) {
-        const a = v[j*cols+i], b = v[j*cols+i+1], c = v[(j+1)*cols+i+1], d = v[(j+1)*cols+i];
-        const k = (a > L ? 8 : 0) | (b > L ? 4 : 0) | (c > L ? 2 : 0) | (d > L ? 1 : 0);
-        if (k === 0 || k === 15) continue;
-        const x = i * step, y = j * step;
-        const T = [x + step * (L - a) / (b - a), y], R = [x + step, y + step * (L - b) / (c - b)];
-        const B = [x + step * (L - d) / (c - d), y + step], Lf = [x, y + step * (L - a) / (d - a)];
-        const seg = (p, q) => { ctx.moveTo(p[0], p[1]); ctx.lineTo(q[0], q[1]); if (major && !labelPt && p[0] > W * 0.06 && p[0] < W * 0.2) labelPt = p; };
-        switch (k) {
-          case 1: case 14: seg(Lf, B); break;
-          case 2: case 13: seg(B, R); break;
-          case 3: case 12: seg(Lf, R); break;
-          case 4: case 11: seg(T, R); break;
-          case 5: seg(Lf, T); seg(B, R); break;
-          case 6: case 9: seg(T, B); break;
-          case 7: case 8: seg(Lf, T); break;
-          case 10: seg(T, R); seg(Lf, B); break;
-        }
-      }
-      ctx.stroke();
-      if (labelPt) labels.push([labelPt, L]);
-    }
-    // river
-    ctx.beginPath(); ctx.strokeStyle = river; ctx.lineWidth = 2.4; ctx.lineCap = "round";
-    for (let x = 0; x <= W; x += 3) { const y = ry(x); x ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-    ctx.stroke();
-    ctx.font = "500 10px 'IBM Plex Mono', monospace"; ctx.textBaseline = "middle";
-    labels.forEach(([p, L]) => { const t = `${L}`; const w = ctx.measureText(t).width; ctx.fillStyle = surf; ctx.fillRect(p[0] - 2, p[1] - 6, w + 4, 12); ctx.fillStyle = c2; ctx.fillText(t, p[0], p[1]); });
-    // commission sites
-    const marks = [];
-    [0.18, 0.42, 0.63, 0.86].forEach((t, n) => {
-      const x = W * t, y = ry(x) + (n % 2 ? 14 : -14); marks.push([x, y]);
-      ctx.fillStyle = ink; ctx.fillRect(x - 4, y - 4, 8, 8);
-      ctx.fillStyle = ink; ctx.font = "500 11px 'IBM Plex Mono', monospace";
-      ctx.fillText(`N${n + 1}`, x + 8, y);
-    });
-    ctx.fillStyle = river; ctx.font = "italic 13px Newsreader, Georgia, serif";
-    ctx.fillText("River Brue", W * 0.52, ry(W * 0.52) + 22);
-    // scale bar
-    ctx.fillStyle = ink; ctx.fillRect(16, H - 22, 60, 2); ctx.fillRect(16, H - 26, 1, 8); ctx.fillRect(75, H - 26, 1, 8);
-    ctx.font = "500 10px 'IBM Plex Mono', monospace"; ctx.fillText("200 m", 82, H - 21);
-    // north
-    ctx.fillText("N ↑", W - 36, 18);
-    topo = { snap: ctx.getImageData(0, 0, canvas.width, canvas.height), ry, W, H, dpr, surf, marks, ochre: river, ink };
-    paintTopo(performance.now());
-  }
-  let commActive = -1;
-  function overlay(ctx, now) {
-    if (!topo || commActive < 0) return;
-    const [x, y] = topo.marks[commActive];
-    const pulse = topoOn ? 3 * Math.sin(now / 260) : 0;
-    ctx.save();
-    ctx.strokeStyle = topo.ochre; ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.arc(x, y, 14 + pulse, 0, Math.PI * 2); ctx.stroke();
-    ctx.globalAlpha = .35; ctx.beginPath(); ctx.arc(x, y, 22 + pulse * 1.6, 0, Math.PI * 2); ctx.stroke();
-    ctx.globalAlpha = 1; ctx.fillStyle = topo.ochre; ctx.fillRect(x - 5, y - 5, 10, 10);
-    ctx.restore();
-  }
-  function paintTopo(now) {
-    if (!topo) return;
-    const ctx = canvas.getContext("2d");
-    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.putImageData(topo.snap, 0, 0);
-    ctx.setTransform(topo.dpr, 0, 0, topo.dpr, 0, 0);
-    overlay(ctx, now);
-  }
-  let topo = null, topoOn = false, topoRaf = 0, topoT = 0;
-  function flow(now) {
-    if (!topo || !topoOn) return;
-    const ctx = canvas.getContext("2d");
-    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.putImageData(topo.snap, 0, 0);
-    ctx.setTransform(topo.dpr, 0, 0, topo.dpr, 0, 0);
-    ctx.save(); ctx.beginPath();
-    for (let x = 0; x <= topo.W; x += 3) { const y = topo.ry(x); x ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
-    ctx.setLineDash([3, 22]); ctx.lineDashOffset = -now / 60; ctx.strokeStyle = topo.surf; ctx.globalAlpha = .9; ctx.lineWidth = 1.4; ctx.lineCap = "round"; ctx.stroke();
-    ctx.restore();
-    overlay(ctx, now);
-    topoRaf = requestAnimationFrame(flow);
-  }
-  if ("IntersectionObserver" in window) new IntersectionObserver(es => es.forEach(en => {
-    topoOn = en.isIntersecting && !reduced.matches; cancelAnimationFrame(topoRaf);
-    if (topoOn) topoRaf = requestAnimationFrame(flow);
-  })).observe(canvas);
-  if ("ResizeObserver" in window) new ResizeObserver(() => drawTopo()).observe(canvas);
-  $$("[data-comm]").forEach(b => b.addEventListener("click", () => {
-    const i = +b.dataset.comm; commActive = commActive === i ? -1 : i;
-    $$("[data-comm]").forEach(o => o.setAttribute("aria-pressed", String(+o.dataset.comm === commActive)));
-    $("#comm-live").textContent = commActive < 0 ? "" : `N${commActive + 1} is marked on the map in terracotta.`;
-    if (!topoOn) paintTopo(performance.now());
-    if (matchMedia("(max-width:860px)").matches && commActive >= 0) canvas.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "center" });
-  }));
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => drawTopo());
-  new MutationObserver(() => drawTopo()).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  document.fonts && document.fonts.ready.then(drawTopo);
-
-  /* ---------- Modal plumbing (inert background + focus trap) ---------- */
-  const page = $("#page");
-  let lastFocus = null, openModal = null;
-  const focusables = el => $$('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])', el)
-    .filter(n => n.getClientRects().length && !n.closest("[hidden]"));
-  function showModal(el, onShown, extra) {
-    lastFocus = document.activeElement;
-    openModal = el;
-    el.hidden = false; if (extra) extra.hidden = false;
-    page.inert = true; document.body.style.overflow = "hidden";
-    requestAnimationFrame(() => requestAnimationFrame(() => { el.classList.add("is-open"); extra && extra.classList.add("is-open"); onShown && onShown(); }));
-  }
-  function hideModal(el, extra, after) {
-    el.classList.remove("is-open"); extra && extra.classList.remove("is-open");
-    const done = () => { el.hidden = true; if (extra) extra.hidden = true; page.inert = false; document.body.style.overflow = ""; openModal = null; after && after(); lastFocus && lastFocus.focus && lastFocus.focus(); };
-    reduced.matches ? done() : setTimeout(done, 320);
-  }
-  document.addEventListener("keydown", e => {
-    if (!openModal) return;
-    if (e.key === "Escape") { e.preventDefault(); openModal === drawer ? closeBooking() : closeMenu(); return; }
-    if (e.key !== "Tab") return;
-    const f = focusables(openModal); if (!f.length) return;
-    const first = f[0], last = f[f.length - 1];
-    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-  });
-
-  /* ---------- Mobile menu ---------- */
-  const menu = $("#mobile-menu"), menuBtn = $("#menu-trigger");
-  function openMenu() { menuBtn.setAttribute("aria-expanded", "true"); showModal(menu, () => $("#menu-close").focus()); }
-  function closeMenu(after) { menuBtn.setAttribute("aria-expanded", "false"); hideModal(menu, null, after); }
-  menuBtn.addEventListener("click", openMenu);
-  $("#menu-close").addEventListener("click", () => closeMenu());
-  $$(".menu__list a", menu).forEach(a => a.addEventListener("click", e => {
-    e.preventDefault(); const id = a.getAttribute("href");
-    lastFocus = null;
-    closeMenu(() => { const t = $(id); t.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth" }); t.setAttribute("tabindex", "-1"); t.focus({ preventScroll: true }); });
-  }));
-
-  /* ---------- What's On filters ---------- */
-  const state = { date: "all", cat: "all", access: new Set(), view: "grid" };
-  try { const v = localStorage.getItem("brue-view"); if (v === "list" || v === "grid") state.view = v; } catch (e) {}
-
-  function dateRange(key) {
-    if (key === "today") return [TODAY, TODAY];
-    if (key === "weekend") {
-      const dow = TODAY.getDay();
-      if (dow === 6) return [TODAY, addDays(TODAY, 1)];
-      if (dow === 0) return [TODAY, TODAY];
-      const sat = addDays(TODAY, 6 - dow); return [sat, addDays(sat, 1)];
-    }
-    if (key === "month") return [TODAY, addDays(TODAY, 30)];
-    return [TODAY, END];
-  }
-  const inRange = (e, [a, b]) => e.upcoming.filter(d => d >= a && d <= b);
-  function matches(e, ignoreCat) {
-    if (!ignoreCat && state.cat !== "all" && e.cat !== state.cat) return false;
-    for (const a of state.access) if (!e.access.includes(a)) return false;
-    return inRange(e, dateRange(state.date)).length > 0;
-  }
-
-  const catWrap = $("#cat-filter");
-  catWrap.innerHTML = CATS.map(c => `<button type="button" role="tab" id="tab-${c.id}" data-cat="${c.id}" aria-selected="${c.id === "all"}" aria-controls="events" tabindex="${c.id === "all" ? 0 : -1}">${c.label}<span class="n"></span></button>`).join("");
-  catWrap.addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if (b) { state.cat = b.dataset.cat; render(); } });
-  catWrap.addEventListener("keydown", e => {
-    const tabs = $$("[role=tab]", catWrap); const i = tabs.indexOf(document.activeElement);
-    if (i < 0) return;
-    let n = null;
-    if (e.key === "ArrowRight") n = (i + 1) % tabs.length;
-    if (e.key === "ArrowLeft") n = (i - 1 + tabs.length) % tabs.length;
-    if (e.key === "Home") n = 0; if (e.key === "End") n = tabs.length - 1;
-    if (n !== null) { e.preventDefault(); tabs[n].focus(); state.cat = tabs[n].dataset.cat; render(); }
-  });
-  $("#date-filter").addEventListener("click", e => { const b = e.target.closest("[data-date]"); if (b) { state.date = b.dataset.date; render(); } });
-  $$("#access-filter input").forEach(i => i.addEventListener("change", () => { i.checked ? state.access.add(i.value) : state.access.delete(i.value); render(); }));
-  $$(".view-toggle button").forEach(b => b.addEventListener("click", () => { state.view = b.dataset.view; try { localStorage.setItem("brue-view", state.view); } catch (e) {} render(); }));
-  $("#clear-filters").addEventListener("click", () => {
-    state.date = "all"; state.cat = "all"; state.access.clear();
-    $$("#access-filter input").forEach(i => i.checked = false);
-    render(); $("#tab-all").focus();
-  });
-  $$("[data-cat-link]").forEach(a => a.addEventListener("click", () => { state.cat = a.dataset.catLink; render(); }));
-
-  const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  function nextLabel(e) {
-    const hits = inRange(e, dateRange(state.date)); const d = hits[0];
-    if (!d) return { text: "", today: false };
-    const today = sameDay(d, TODAY);
-    const base = today ? "Today" : fmt(d, { weekday: "short", day: "numeric", month: "short" }).replace(",", "");
-    return { text: (state.date === "all" ? (today ? "Today" : "Next: " + base) : base) + (state.date !== "all" && hits.length > 1 ? ` + ${hits.length - 1} more` : ""), today };
-  }
-  function phSrc(id, w, r) { return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${Math.round(w * r)}&q=72`; }
-  function photoFrame(e) {
-    const p = PHOTOS[e.photo]; if (!p) return "";
-    const set = [400, 640, 960, 1280].map(w => `${phSrc(p.id, w, 2 / 3)} ${w}w`).join(", ");
-    return `<figure class="ph ph--3x2" data-alt="${esc(e.title)}"><img src="${phSrc(p.id, 960, 2 / 3)}" srcset="${set}" sizes="(max-width: 820px) 100vw, 33vw" width="960" height="640" alt="${esc(p.alt)}" loading="lazy" decoding="async"></figure>`;
-  }
-  const shortDate = d => fmt(d, { weekday: "short", day: "numeric", month: "short" }).replace(",", "");
-  function card(e, i) {
-    const cat = CATS.find(c => c.id === e.cat); const n = nextLabel(e); const x = EXTRA[e.id] || {};
-    const chips = e.access.map(a => `<li class="chip">${ACCESS[a].icon}${ACCESS[a].label}</li>`).join("");
-    const [p1, p2] = e.price.split(" · ");
-    const dates = inRange(e, dateRange(state.date)).slice(0, 4).map(d =>
-      `<li><button type="button" class="date-pill" data-book="${e.id}" data-date="${iso(d)}" aria-label="Book ${esc(e.title)} on ${fmt(d, { weekday: "long", day: "numeric", month: "long" })}">${sameDay(d, TODAY) ? "Today" : shortDate(d)}</button></li>`).join("");
-    const credit = PHOTOS[e.photo] ? `<p class="credit">Photo: <a href="${PHOTOS[e.photo].href}" target="_blank" rel="noopener">${esc(PHOTOS[e.photo].who)}</a> / Unsplash</p>` : "";
-    return `<li class="event" data-id="${e.id}" style="--i:${i}">
-      <div class="event__flip">
-        <article class="face face--front" aria-labelledby="ev-${e.id}">
-          ${photoFrame(e)}
-          <div class="event__date"><span class="eyebrow eyebrow--accent">${cat.eyebrow}</span><span class="event__next${n.today ? " is-today" : ""}">${n.text}</span></div>
-          <div class="event__body">
-            <h3 id="ev-${e.id}">${esc(e.title)}</h3>
-            <p class="event__desc">${esc(e.desc)}</p>
-            <dl class="event__facts"><dt>When</dt><dd>${esc(e.when)}</dd><dt>Where</dt><dd>${esc(e.where)}</dd></dl>
-            <ul class="chips" aria-label="Access">${chips}</ul>
-            ${credit}
-          </div>
-          <div class="event__foot"><span class="price"><b>${p1}</b> · ${p2}</span>
-            <span class="event__actions">
-              <button type="button" class="flip-btn" data-flip aria-expanded="false" aria-controls="evb-${e.id}">More info <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 6A4.5 4.5 0 0 1 11 4.5M11.5 8A4.5 4.5 0 0 1 3 9.5"/><path d="M11 1.5v3H8M3 12.5v-3h3"/></svg><span class="sr-only"> about ${esc(e.title)}</span></button>
-              <button type="button" class="btn btn--sm" data-book="${e.id}" aria-label="Book ${esc(e.title)}">Book</button>
-            </span>
-          </div>
-        </article>
-        <article class="face face--back" id="evb-${e.id}" aria-labelledby="evb-t-${e.id}" aria-hidden="true" inert>
-          <div class="back__top">
-            <div><p class="eyebrow">${cat.eyebrow}</p><h3 id="evb-t-${e.id}" tabindex="-1">${esc(e.title)}</h3></div>
-            <button type="button" class="back__close" data-unflip aria-label="Back to summary of ${esc(e.title)}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13"/></svg></button>
-          </div>
-          <p class="back__more">${esc(x.more || e.desc)}</p>
-          <dl class="back__facts">
-            <dt>Length</dt><dd>${esc(x.duration || "")}</dd>
-            <dt>Suits</dt><dd>${esc(x.suitable || "")}</dd>
-            <dt>Bring</dt><dd>${esc(x.bring || "")}</dd>
-            <dt>Access</dt><dd>${esc(x.accessnote || "")}</dd>
-          </dl>
-          ${dates ? `<div class="back__dates"><p>Choose a date</p><ul>${dates}</ul></div>` : ""}
-          <div class="event__foot"><span class="price"><b>${p1}</b> · ${p2}</span>
-            <button type="button" class="btn btn--sm" data-book="${e.id}" aria-label="Book ${esc(e.title)}">Book</button></div>
-        </article>
-      </div>
-    </li>`;
-  }
-  function flip(li, on, focus = true) {
-    if (!li) return;
-    li.classList.toggle("is-flipped", on);
-    const front = $(".face--front", li), back = $(".face--back", li), btn = $("[data-flip]", li);
-    front.inert = on; back.inert = !on;
-    on ? front.setAttribute("aria-hidden", "true") : front.removeAttribute("aria-hidden");
-    on ? back.removeAttribute("aria-hidden") : back.setAttribute("aria-hidden", "true");
-    btn.setAttribute("aria-expanded", String(on));
-    if (focus) setTimeout(() => (on ? $("h3", back) : btn).focus({ preventScroll: true }), reduced.matches ? 0 : 380);
-  }
-  document.addEventListener("click", e => {
-    const f = e.target.closest("[data-flip]"); if (f) { const li = f.closest(".event"); $$(".event.is-flipped").forEach(o => o !== li && flip(o, false, false)); flip(li, true); return; }
-    const u = e.target.closest("[data-unflip]"); if (u) flip(u.closest(".event"), false);
-  });
-  $("#events").addEventListener("keydown", e => { if (e.key === "Escape") { const li = e.target.closest(".event.is-flipped"); if (li) { e.stopPropagation(); flip(li, false); } } });
-
-  /* Upcoming occurrences across the programme, used by the ticker and the filler tile */
-  function upcoming(limit, range, perEvent = 1) {
-    const [a, b] = range || [TODAY, END];
-    const all = [];
-    LIVE.forEach(e => e.upcoming.forEach(d => { if (d >= a && d <= b) all.push({ e, d }); }));
-    all.sort((p, q) => p.d - q.d || p.e.title.localeCompare(q.e.title));
-    const count = {}, out = [];
-    for (const o of all) { const n = count[o.e.id] || 0; if (n >= perEvent) continue; count[o.e.id] = n + 1; out.push(o); if (out.length >= limit) break; }
-    return out;
-  }
-  const occButton = (o, cls = "") => `<button type="button" class="${cls}" data-book="${o.e.id}" data-date="${iso(o.d)}"><span class="d">${sameDay(o.d, TODAY) ? "Today" : shortDate(o.d)}</span><span class="t">${esc(o.e.title)}</span><span class="go" aria-hidden="true">Book →</span></button>`;
-
-  let tileDay = null;
-  function fillGap(list, shown) {
-    const old = $(".filler", list);
-    const cols = getComputedStyle(list).gridTemplateColumns.split(" ").filter(Boolean).length;
-    const key = `${cols}|${shown.length}|${state.date}|${state.view}`;
-    if (old && old.dataset.key === key) return;
-    old && old.remove();
-    if (state.view !== "grid" || !shown.length) return;
-    const rem = shown.length % cols; if (cols < 2 || rem === 0) return;
-    const span = cols - rem;
-    const nDays = span > 1 ? 14 : 7;
-    const days = Array.from({ length: nDays }, (_, i) => addDays(TODAY, i));
-    const onDay = d => LIVE.filter(e => e.upcoming.some(x => sameDay(x, d)));
-    if (tileDay && !days.some(d => iso(d) === tileDay)) tileDay = null;
-    const li = document.createElement("li");
-    li.dataset.key = key;
-    li.className = "filler"; li.style.gridColumn = `span ${span}`; li.style.setProperty("--fcols", span > 1 ? 2 : 1);
-    const draw = () => {
-      let items, eyebrow, heading;
-      if (tileDay) {
-        const d = new Date(tileDay + "T00:00:00");
-        items = onDay(d).map(e => ({ e, d }));
-        eyebrow = sameDay(d, TODAY) ? "Today" : fmt(d, { weekday: "long" });
-        heading = `On ${sameDay(d, TODAY) ? "today" : shortDate(d)}`;
-      } else {
-        items = upcoming(span > 1 ? 8 : 5, dateRange(state.date));
-        eyebrow = state.date === "all" ? "Next at the Yard" : "Also in these dates";
-        heading = "Pick a date and go";
-      }
-      const cells = days.map(d => {
-        const n = onDay(d).length, v = iso(d);
-        const label = `${fmt(d, { weekday: "long", day: "numeric", month: "long" })}: ${n ? n + (n > 1 ? " events" : " event") : "nothing on"}`;
-        return `<button type="button" class="day${sameDay(d, TODAY) ? " is-today" : ""}" data-day="${v}" aria-pressed="${tileDay === v}" aria-label="${label}" ${n ? "" : "disabled"}>
-          <span class="w" aria-hidden="true">${fmt(d, { weekday: "short" }).slice(0, 2)}</span><span class="n" aria-hidden="true">${d.getDate()}</span>
-          <span class="dots" aria-hidden="true">${"<i></i>".repeat(Math.min(n, 4))}</span></button>`;
-      }).join("");
-      li.innerHTML = `<p class="eyebrow eyebrow--accent">${eyebrow}</p>
-        <h3>${heading}</h3>
-        <ol aria-live="polite">${items.length ? items.map(o => `<li>${occButton(o)}</li>`).join("") : `<li class="none">Nothing on that day.</li>`}</ol>
-        <div class="strip">
-          <div class="strip__head"><span class="eyebrow">Next ${nDays} days</span>${tileDay ? `<button type="button" class="strip__reset" data-day-reset>Show all upcoming</button>` : `<span class="note">Choose a day to see what’s on</span>`}</div>
-          <div class="strip__days" role="group" aria-label="Choose a day">${cells}</div>
-        </div>`;
-    };
-    draw();
-    li.addEventListener("click", e => {
-      const b = e.target.closest("[data-day]"), r = e.target.closest("[data-day-reset]");
-      if (!b && !r) return;
-      const key = b ? b.dataset.day : null;
-      tileDay = r || tileDay === key ? null : key;
-      draw();
-      const f = tileDay ? $(`[data-day="${tileDay}"]`, li) : $(`[data-day]:not([disabled])`, li);
-      f && requestAnimationFrame(() => f.focus({ preventScroll: true }));
-      if (!reduced.matches) { const ol = $("ol", li); ol.classList.remove("swap"); void ol.offsetWidth; ol.classList.add("swap"); }
-    });
-    list.appendChild(li);
-  }
-  let rendered = false;
-  function render() {
-    $$("#date-filter button").forEach(b => b.setAttribute("aria-pressed", b.dataset.date === state.date));
-    $$("[role=tab]", catWrap).forEach(b => {
-      const on = b.dataset.cat === state.cat; b.setAttribute("aria-selected", on); b.tabIndex = on ? 0 : -1;
-      const n = LIVE.filter(e => matches(e, true) && (b.dataset.cat === "all" || e.cat === b.dataset.cat)).length;
-      $(".n", b).textContent = n;
-    });
-    $("#events").setAttribute("aria-labelledby", "tab-" + state.cat);
-    $$(".view-toggle button").forEach(b => b.setAttribute("aria-pressed", b.dataset.view === state.view));
-    const list = $("#events"); list.classList.toggle("is-list", state.view === "list");
-    const shown = LIVE.filter(e => matches(e));
-    list.innerHTML = shown.length ? shown.map((e, i) => card(e, i)).join("")
-      : `<li class="empty"><p>Nothing matches those filters. Try another date range or remove an access filter.</p><button type="button" class="btn btn--ghost btn--sm" id="empty-clear">Clear all filters</button></li>`;
-    const ec = $("#empty-clear"); ec && ec.addEventListener("click", () => $("#clear-filters").click());
-    const rc = $("#results-count"); const prev = rc.dataset.n;
-    rc.innerHTML = `Showing <b>${shown.length}</b> of <b>${LIVE.length}</b> events`;
-    if (prev !== undefined && prev !== String(shown.length) && !reduced.matches) { rc.classList.remove("bump"); void rc.offsetWidth; rc.classList.add("bump"); }
-    rc.dataset.n = shown.length;
-    if (rendered && !reduced.matches) $$(".event", list).forEach(li => li.classList.add("is-entering"));
-    rendered = true;
-    fillGap(list, shown);
-    $("#clear-filters").hidden = !(state.date !== "all" || state.cat !== "all" || state.access.size);
-  }
-  render();
-  setTimeout(sweep, 0);
-  let rz; window.addEventListener("resize", () => { clearTimeout(rz); rz = setTimeout(() => fillGap($("#events"), LIVE.filter(e => matches(e))), 150); });
-
-  /* ---------- Ticker ---------- */
-  (function ticker() {
-    const items = upcoming(14, null, 2);
-    const listHTML = `<ul>${items.map(o => `<li>${occButton(o)}</li>`).join("")}</ul>`;
-    const track = $("#ticker-track");
-    track.innerHTML = listHTML + listHTML;
-    const dup = track.children[1]; dup.setAttribute("aria-hidden", "true"); dup.inert = true;
-    const t = $("#ticker"), pb = $("#ticker-pause");
-    pb.addEventListener("click", () => {
-      const p = !t.classList.contains("is-paused"); t.classList.toggle("is-paused", p);
-      pb.setAttribute("aria-pressed", String(p)); pb.setAttribute("aria-label", p ? "Play the coming-up list" : "Pause the coming-up list");
-      pb.innerHTML = p ? '<svg viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9-5.5z"/></svg>' : '<svg viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg>';
-    });
-  })();
-
-  /* ---------- Booking drawer ---------- */
-  const drawer = $("#booking"), scrim = $("#scrim");
-  const TIERS = [
-    { id: "adult", name: "Adult General Admission", meta: "Ages 25–64", price: 12.5 },
-    { id: "conc", name: "Concession", meta: "Seniors 65+, students with ID", price: 9 },
-    { id: "free", name: "Somerset Resident / Under 25", meta: "Free, reservation required", price: 0 }
-  ];
-  const MAX_EACH = 10, DONATION = 3;
-  const bk = { eventId: "echoes", date: null, slot: null, qty: { adult: 0, conc: 0, free: 0 }, donate: false };
-
-  $("#bk-event").innerHTML = LIVE.map(e => `<option value="${e.id}">${esc(e.title)}</option>`).join("");
-  $("#bk-tiers").innerHTML = TIERS.map(t => `
-    <div class="tier">
-      <div><p class="tier__name" id="tier-${t.id}">${t.name}</p><p class="tier__meta">${t.meta} · <span class="tier__price">${t.price ? money.format(t.price) : "Free"}</span></p></div>
-      <div class="stepper" role="group" aria-labelledby="tier-${t.id}">
-        <button type="button" data-dec="${t.id}" aria-label="Remove one ${t.name} ticket">−</button>
-        <output id="qty-${t.id}" aria-label="${t.name} quantity">0</output>
-        <button type="button" data-inc="${t.id}" aria-label="Add one ${t.name} ticket">+</button>
-      </div>
-    </div>`).join("");
-
-  function hash(s) { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return Math.abs(h); }
-  function remaining(eventId, date, slot) {
-    const n = hash(`${eventId}|${iso(date)}|${slot}`) % 46;
-    return n < 4 ? 0 : n;
-  }
-  const ev = () => EVENTS.find(e => e.id === bk.eventId);
-  const totalQty = () => Object.values(bk.qty).reduce((a, b) => a + b, 0);
-  const subtotal = () => TIERS.reduce((s, t) => s + t.price * bk.qty[t.id], 0);
-  const total = () => subtotal() + (bk.donate ? DONATION : 0);
-  const selDate = () => bk.date ? new Date(bk.date + "T00:00:00") : null;
-
-  function renderDates() {
-    const e = ev();
-    $("#bk-dates").innerHTML = e.upcoming.slice(0, 12).map(d => {
-      const v = iso(d);
-      return `<label class="radio-chip"><input type="radio" name="bk-date" id="date-${v}" value="${v}" ${bk.date === v ? "checked" : ""}>
-        <span><span class="d1">${sameDay(d, TODAY) ? "Today" : fmt(d, { weekday: "short" })}</span><span class="d2">${d.getDate()}</span><span class="d3">${fmt(d, { month: "short" })}</span></span></label>`;
-    }).join("");
-  }
-  function renderTimes() {
-    const e = ev(), d = selDate(), box = $("#bk-times");
-    if (!d) { box.innerHTML = `<p class="note">Choose a date to see entry times.</p>`; return; }
-    box.innerHTML = e.slots.map(s => {
-      const r = remaining(e.id, d, s), id = `time-${s.replace(":", "")}`;
-      const status = r === 0 ? "Sold out" : r < 12 ? `${r} left` : "Available";
-      return `<label class="radio-chip"><input type="radio" name="bk-time" id="${id}" value="${s}" ${r === 0 ? "disabled" : ""} ${bk.slot === s ? "checked" : ""} aria-label="${s}, ${status}">
-        <span><span class="d2">${s}</span><span class="d3">${status}</span></span></label>`;
-    }).join("");
-  }
-  function cap() { return bk.slot && selDate() ? Math.min(remaining(bk.eventId, selDate(), bk.slot), 30) : 30; }
-
-  let shownTotal = 0, raf = 0;
-  function tweenTotal(to) {
-    const el = $("#tray-total"); cancelAnimationFrame(raf);
-    if (reduced.matches || to === shownTotal) { shownTotal = to; el.textContent = money.format(to); return; }
-    const from = shownTotal, t0 = performance.now();
-    el.classList.remove("bump"); void el.offsetWidth; el.classList.add("bump");
-    const stepT = now => { const k = Math.min(1, (now - t0) / 320), v = from + (to - from) * (1 - Math.pow(1 - k, 3));
-      el.textContent = money.format(Math.round(v * 100) / 100); if (k < 1) raf = requestAnimationFrame(stepT); else shownTotal = to; };
-    raf = requestAnimationFrame(stepT);
-  }
-  function renderTotals(announce = true) {
-    TIERS.forEach(t => {
-      $("#qty-" + t.id).textContent = bk.qty[t.id];
-      $(`[data-dec="${t.id}"]`).disabled = bk.qty[t.id] === 0;
-      $(`[data-inc="${t.id}"]`).disabled = bk.qty[t.id] >= MAX_EACH || totalQty() >= cap();
-    });
-    const e = ev(), d = selDate(), q = totalQty();
-    const when = d ? `${fmt(d, { weekday: "short", day: "numeric", month: "short" })}${bk.slot ? ", " + bk.slot : ""}` : null;
-    const rows = [];
-    rows.push(`<div><dt>${esc(e.title)}</dt><dd>${when || "Date not chosen"}</dd></div>`);
-    TIERS.forEach(t => { if (bk.qty[t.id]) rows.push(`<div><dt>${bk.qty[t.id]} × ${t.name}</dt><dd>${t.price ? money.format(t.price * bk.qty[t.id]) : "Free"}</dd></div>`); });
-    if (!q) rows.push(`<div><dt>Tickets</dt><dd>None yet</dd></div>`);
-    if (bk.donate) rows.push(`<div><dt>Rural school bus fund</dt><dd>${money.format(DONATION)}</dd></div>`);
-    rows.push(`<div><dt>Booking fee</dt><dd>${money.format(0)}</dd></div>`);
-    rows.push(`<div class="total"><dt>Total</dt><dd>${money.format(total())}</dd></div>`);
-    $("#bk-summary").innerHTML = rows.join("");
-    const t = money.format(total());
-    tweenTotal(total());
-    $("#tray-what").textContent = !d ? "Choose a date to begin" : !bk.slot ? `${when} · choose a time` : q ? `${q} ticket${q > 1 ? "s" : ""} · ${when}` : `${when} · add tickets`;
-    const btn = $("#checkout");
-    btn.textContent = `Proceed to Secure Checkout — ${t}`;
-    btn.setAttribute("aria-disabled", String(!(d && bk.slot && q)));
-    if (d && bk.slot && q) $("#tray-error").textContent = "";
-    if (announce) $("#tray-live").textContent = `Order total ${t} for ${q} ticket${q === 1 ? "" : "s"}${bk.donate ? ", including £3 donation" : ""}.`;
-    // progress
-    const done = { 1: !!(d && bk.slot), 2: q > 0, 3: q > 0, 4: !!(d && bk.slot && q) };
-    const current = [1, 2, 3, 4].find(n => !done[n]) || 4;
-    $$("#steps button").forEach(b => {
-      const n = +b.dataset.step; b.classList.toggle("is-done", done[n]);
-      n === current ? b.setAttribute("aria-current", "step") : b.removeAttribute("aria-current");
-    });
-  }
-
-  function trimToCap() {
-    let over = totalQty() - cap();
-    for (const k of ["free", "conc", "adult"]) { while (over > 0 && bk.qty[k] > 0) { bk.qty[k]--; over--; } }
-  }
-
-  $("#bk-event").addEventListener("change", e => {
-    bk.eventId = e.target.value; bk.date = null; bk.slot = null;
-    renderDates(); renderTimes(); renderTotals();
-  });
-  $("#bk-dates").addEventListener("change", e => {
-    bk.date = e.target.value; const d = selDate();
-    if (bk.slot && remaining(bk.eventId, d, bk.slot) === 0) bk.slot = null;
-    if (!bk.slot && ev().slots.length === 1 && remaining(bk.eventId, d, ev().slots[0]) > 0) bk.slot = ev().slots[0];
-    renderTimes(); trimToCap(); renderTotals();
-  });
-  $("#bk-times").addEventListener("change", e => { bk.slot = e.target.value; trimToCap(); renderTotals(); });
-  $("#bk-tiers").addEventListener("click", e => {
-    const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]");
-    if (inc && !inc.disabled) bk.qty[inc.dataset.inc]++;
-    if (dec && !dec.disabled) bk.qty[dec.dataset.dec]--;
-    if (inc || dec) {
-      renderTotals();
-      const b = inc || dec; if (b.disabled) (inc ? $(`[data-dec="${inc.dataset.inc}"]`) : $(`[data-inc="${dec.dataset.dec}"]`)).focus();
-    }
-  });
-  $("#bk-donate").addEventListener("change", e => { bk.donate = e.target.checked; renderTotals(); });
-  $("#steps").addEventListener("click", e => {
-    const b = e.target.closest("[data-step]"); if (!b) return;
-    const s = $("#step-" + b.dataset.step); s.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "start" });
-    const f = focusables(s)[0]; f && f.focus({ preventScroll: true });
-  });
-  $("#checkout").addEventListener("click", () => {
-    const d = selDate(), q = totalQty();
-    if (!d || !bk.slot || !q) {
-      const missing = !d ? "Choose a date" : !bk.slot ? "Choose an entry time" : "Add at least one ticket";
-      $("#tray-error").textContent = `${missing} before checkout.`;
-      const target = !d || !bk.slot ? $("#step-1") : $("#step-2");
-      target.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "start" });
-      return;
-    }
-    const ref = "BY-" + (hash(iso(d) + bk.slot + q + Date.now()) % 900000 + 100000);
-    $("#confirm-text").textContent = `${q} ticket${q > 1 ? "s" : ""} for ${ev().title}, ${fmt(d, { weekday: "long", day: "numeric", month: "long" })} at ${bk.slot}. Total ${money.format(total())}${bk.donate ? ", including your £3 school bus donation" : ""}.`;
-    $("#confirm-ref").textContent = ref;
-    ["#drawer-body", "#tray", "#steps"].forEach(s => $(s).hidden = true);
-    $("#confirm").hidden = false; $("#confirm").focus();
-  });
-  function resetBooking(eventId, dateIso) {
-    bk.eventId = LIVE.some(e => e.id === eventId) ? eventId : (LIVE[0] && LIVE[0].id);
-    bk.date = null; bk.slot = null; bk.qty = { adult: 0, conc: 0, free: 0 }; bk.donate = false;
-    $("#bk-event").value = bk.eventId; $("#bk-donate").checked = false; $("#tray-error").textContent = "";
-    ["#drawer-body", "#tray", "#steps"].forEach(s => $(s).hidden = false); $("#confirm").hidden = true;
-    const e = ev();
-    const pick = (dateIso && e.upcoming.find(d => iso(d) === dateIso)) || e.upcoming[0];
-    if (pick) { bk.date = iso(pick); const free = e.slots.find(s => remaining(e.id, pick, s) > 0); if (free && e.slots.length === 1) bk.slot = free; }
-    renderDates(); renderTimes(); renderTotals(false);
-    $("#drawer-body").scrollTop = 0;
-    const chosen = bk.date && $(`#date-${bk.date}`); chosen && chosen.closest(".radio-chip").scrollIntoView({ block: "nearest" });
-  }
-  $("#new-booking").addEventListener("click", () => { resetBooking(bk.eventId); $("#bk-event").focus(); });
-
-  function openBooking(eventId, opener, dateIso) {
-    resetBooking(eventId, dateIso);
-    $$("[data-book]").forEach(b => b.setAttribute("aria-expanded", "false"));
-    opener && opener.setAttribute("aria-expanded", "true");
-    showModal(drawer, () => $("#booking-close").focus(), scrim);
-  }
-  function closeBooking() {
-    $$("[data-book]").forEach(b => b.setAttribute("aria-expanded", "false"));
-    hideModal(drawer, scrim);
-  }
-  document.addEventListener("click", e => {
-    const b = e.target.closest("[data-book]"); if (!b) return;
-    e.preventDefault();
-    if (openModal === menu) { const id = b.dataset.book; menuBtn.setAttribute("aria-expanded", "false"); menu.classList.remove("is-open"); menu.hidden = true; openModal = null; lastFocus = menuBtn; openBooking(id, null); lastFocus = menuBtn; return; }
-    openBooking(b.dataset.book, b, b.dataset.date);
-  });
-  $$("[data-book]").forEach(b => { b.setAttribute("aria-controls", "booking"); b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-expanded", "false"); });
-  new MutationObserver(() => $$("#events [data-book]").forEach(b => { b.setAttribute("aria-controls", "booking"); b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-expanded", "false"); })).observe($("#events"), { childList: true });
-  $$("#events [data-book]").forEach(b => { b.setAttribute("aria-controls", "booking"); b.setAttribute("aria-haspopup", "dialog"); });
-  $("#booking-close").addEventListener("click", closeBooking);
-  scrim.addEventListener("click", closeBooking);
-
-  /* ---------- Journal sign-up ---------- */
-  const form = $("#journal-form"), email = $("#email"), err = $("#email-error");
-  let touched = false;
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  function validate() {
-    const v = email.value.trim();
-    let msg = "";
-    if (!v) msg = "Enter your email address to subscribe.";
-    else if (!EMAIL_RE.test(v)) msg = "Enter an email address in the format name@example.co.uk.";
-    err.textContent = msg; email.setAttribute("aria-invalid", msg ? "true" : "false");
-    return !msg;
-  }
-  email.addEventListener("blur", () => { if (email.value.trim()) { touched = true; validate(); } });
-  email.addEventListener("input", () => { if (touched) validate(); });
-  form.addEventListener("submit", e => {
-    e.preventDefault(); touched = true;
-    if (!validate()) { email.focus(); return; }
-    const s = $("#journal-success");
-    s.textContent = `Subscribed. The next Journal goes to ${email.value.trim()} on the first Friday of the month.`;
-    s.hidden = false; form.hidden = true;
-  });
-})();
-</script>
+<script src="assets/data.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>
