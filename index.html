@@ -213,7 +213,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
 .essay__head{grid-column:1 / span 4;display:flex;flex-direction:column;gap:var(--s2)}
 .essay__head h3{font-size:28px;font-stretch:85%;line-height:1.1}
 .essay__body{grid-column:6 / span 7;display:flex;flex-direction:column;gap:var(--s2);font-family:var(--f-serif);font-size:19px;line-height:1.6;max-width:62ch}
-.essay__body p:first-child::first-letter{font-family:var(--f-display);font-weight:800;font-stretch:72%;float:left;font-size:72px;line-height:.85;padding:6px 10px 0 0;color:var(--ochre)}
+.essay__body > p:first-child::first-letter{font-family:var(--f-display);font-weight:800;font-stretch:72%;float:left;font-size:72px;line-height:.85;padding:6px 10px 0 0;color:var(--ochre)}
 .audio{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);font-family:var(--f-display);font-size:14px;padding-top:var(--s2);border-top:1px solid var(--rule)}
 @media (max-width:860px){.sites{grid-template-columns:1fr}.site,.site + .site{padding-left:0;border-left:0;border-bottom:1px solid var(--rule)}.essay__head,.essay__body{grid-column:1 / -1}}
 
@@ -528,6 +528,27 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
   }
 }
 @keyframes progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* Essay: sticky map, pull quote, commission finder */
+@media (min-width:861px){.essay__head{position:sticky;top:calc(var(--header-h) + 24px);align-self:start}}
+.pull{margin:var(--s3) 0 0;padding:var(--s2) 0 var(--s2) var(--s3);border-left:3px solid var(--ochre)}
+.pull p{font-family:var(--f-serif);font-style:italic;font-size:clamp(26px,2.6vw,34px);line-height:1.2;color:var(--ink);text-wrap:balance}
+.commissions{margin-top:var(--s4);display:flex;flex-direction:column;gap:var(--s2);font-family:var(--f-display)}
+.commissions__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);flex-wrap:wrap}
+.commissions h4{font-size:20px;font-stretch:90%}
+.commissions ol{border-top:1px solid var(--ink)}
+.comm{width:100%;display:grid;grid-template-columns:48px 1fr auto;gap:var(--s2);align-items:start;text-align:left;padding:var(--s2) 12px var(--s2) 0;background:none;border:0;border-bottom:1px solid var(--rule);cursor:pointer;transition:background .2s,padding .3s var(--ease)}
+.comm__k{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--ink);font-family:var(--f-mono);font-size:13px;font-weight:500;transition:background .2s,color .2s,border-color .2s}
+.comm__b{display:flex;flex-direction:column;gap:4px;min-width:0}
+.comm__b b{font-size:17px}
+.comm__b span{font-family:var(--f-serif);font-size:16px;line-height:1.45;color:var(--stone)}
+.comm__m{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;text-align:right;display:flex;flex-direction:column;gap:2px;padding-top:2px}
+.comm__m small{font-size:10px;color:var(--stone);letter-spacing:.04em}
+.comm:hover{background:var(--surface);padding-left:12px}
+.comm:hover .comm__k{border-color:var(--ochre);color:var(--ochre)}
+.comm[aria-pressed="true"]{background:var(--wash);padding-left:12px}
+.comm[aria-pressed="true"] .comm__k{background:var(--ochre);border-color:var(--ochre);color:var(--on-ochre)}
+@media (max-width:560px){.comm{grid-template-columns:44px 1fr}.comm__m{grid-column:2;text-align:left;flex-direction:row;gap:6px}}
 </style>
 </head>
 <body>
@@ -691,6 +712,20 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
               <span><b>Audio guide</b> · 14 stops · 52 min</span>
               <span>Large-print and Easy Read versions at the Welcome Desk</span>
             </div>
+            <blockquote class="pull"><p>You feel that fall before you see it.</p></blockquote>
+            <section class="commissions" aria-labelledby="comm-title">
+              <div class="commissions__head">
+                <h4 id="comm-title">Four new commissions on the river</h4>
+                <p class="note" id="comm-hint">Choose one to find it on the map</p>
+              </div>
+              <ol>
+                <li><button type="button" class="comm" data-comm="0" aria-pressed="false"><span class="comm__k">N1</span><span class="comm__b"><b>Weir Line</b><span>A course of cut blue lias laid across the old weir. In winter the river runs straight over it.</span></span><span class="comm__m">180 m<small>from the gate</small></span></button></li>
+                <li><button type="button" class="comm" data-comm="1" aria-pressed="false"><span class="comm__k">N2</span><span class="comm__b"><b>Flood Mark, 1917</b><span>A bronze band set into the bank at the height the water reached in the great flood of June 1917.</span></span><span class="comm__m">420 m<small>from the gate</small></span></button></li>
+                <li><button type="button" class="comm" data-comm="2" aria-pressed="false"><span class="comm__k">N3</span><span class="comm__b"><b>Holt</b><span>A hollow form cast from an otter holt on the south bank, open at both ends so the river can pass through.</span></span><span class="comm__m">690 m<small>from the gate</small></span></button></li>
+                <li><button type="button" class="comm" data-comm="3" aria-pressed="false"><span class="comm__k">N4</span><span class="comm__b"><b>Eastern Hedge</b><span>Field stones gathered from the meadow and walked into a single line along its last hedge.</span></span><span class="comm__m">1.1 km<small>from the gate</small></span></button></li>
+              </ol>
+              <p class="note" id="comm-live" aria-live="polite"></p>
+            </section>
           </div>
         </article>
       </div>
@@ -1079,8 +1114,9 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     ctx.font = "500 10px 'IBM Plex Mono', monospace"; ctx.textBaseline = "middle";
     labels.forEach(([p, L]) => { const t = `${L}`; const w = ctx.measureText(t).width; ctx.fillStyle = surf; ctx.fillRect(p[0] - 2, p[1] - 6, w + 4, 12); ctx.fillStyle = c2; ctx.fillText(t, p[0], p[1]); });
     // commission sites
+    const marks = [];
     [0.18, 0.42, 0.63, 0.86].forEach((t, n) => {
-      const x = W * t, y = ry(x) + (n % 2 ? 14 : -14);
+      const x = W * t, y = ry(x) + (n % 2 ? 14 : -14); marks.push([x, y]);
       ctx.fillStyle = ink; ctx.fillRect(x - 4, y - 4, 8, 8);
       ctx.fillStyle = ink; ctx.font = "500 11px 'IBM Plex Mono', monospace";
       ctx.fillText(`N${n + 1}`, x + 8, y);
@@ -1092,7 +1128,27 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     ctx.font = "500 10px 'IBM Plex Mono', monospace"; ctx.fillText("200 m", 82, H - 21);
     // north
     ctx.fillText("N ↑", W - 36, 18);
-    topo = { snap: ctx.getImageData(0, 0, canvas.width, canvas.height), ry, W, H, dpr, surf };
+    topo = { snap: ctx.getImageData(0, 0, canvas.width, canvas.height), ry, W, H, dpr, surf, marks, ochre: river, ink };
+    paintTopo(performance.now());
+  }
+  let commActive = -1;
+  function overlay(ctx, now) {
+    if (!topo || commActive < 0) return;
+    const [x, y] = topo.marks[commActive];
+    const pulse = topoOn ? 3 * Math.sin(now / 260) : 0;
+    ctx.save();
+    ctx.strokeStyle = topo.ochre; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(x, y, 14 + pulse, 0, Math.PI * 2); ctx.stroke();
+    ctx.globalAlpha = .35; ctx.beginPath(); ctx.arc(x, y, 22 + pulse * 1.6, 0, Math.PI * 2); ctx.stroke();
+    ctx.globalAlpha = 1; ctx.fillStyle = topo.ochre; ctx.fillRect(x - 5, y - 5, 10, 10);
+    ctx.restore();
+  }
+  function paintTopo(now) {
+    if (!topo) return;
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.putImageData(topo.snap, 0, 0);
+    ctx.setTransform(topo.dpr, 0, 0, topo.dpr, 0, 0);
+    overlay(ctx, now);
   }
   let topo = null, topoOn = false, topoRaf = 0, topoT = 0;
   function flow(now) {
@@ -1104,6 +1160,7 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     for (let x = 0; x <= topo.W; x += 3) { const y = topo.ry(x); x ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
     ctx.setLineDash([3, 22]); ctx.lineDashOffset = -now / 60; ctx.strokeStyle = topo.surf; ctx.globalAlpha = .9; ctx.lineWidth = 1.4; ctx.lineCap = "round"; ctx.stroke();
     ctx.restore();
+    overlay(ctx, now);
     topoRaf = requestAnimationFrame(flow);
   }
   if ("IntersectionObserver" in window) new IntersectionObserver(es => es.forEach(en => {
@@ -1111,6 +1168,13 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
     if (topoOn) topoRaf = requestAnimationFrame(flow);
   })).observe(canvas);
   if ("ResizeObserver" in window) new ResizeObserver(() => drawTopo()).observe(canvas);
+  $$("[data-comm]").forEach(b => b.addEventListener("click", () => {
+    const i = +b.dataset.comm; commActive = commActive === i ? -1 : i;
+    $$("[data-comm]").forEach(o => o.setAttribute("aria-pressed", String(+o.dataset.comm === commActive)));
+    $("#comm-live").textContent = commActive < 0 ? "" : `N${commActive + 1} is marked on the map in terracotta.`;
+    if (!topoOn) paintTopo(performance.now());
+    if (matchMedia("(max-width:860px)").matches && commActive >= 0) canvas.scrollIntoView({ behavior: reduced.matches ? "auto" : "smooth", block: "center" });
+  }));
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => drawTopo());
   new MutationObserver(() => drawTopo()).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   document.fonts && document.fonts.ready.then(drawTopo);
