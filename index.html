@@ -444,13 +444,30 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
 .filler ol{display:grid;grid-template-columns:repeat(var(--fcols,1),minmax(0,1fr));gap:0 var(--s3)}
 .filler li{border-top:1px solid color-mix(in srgb, var(--ochre) 30%, transparent)}
 .filler li:last-child,.filler li:nth-last-child(-n+1){border-bottom:0}
-.filler button{width:100%;display:grid;grid-template-columns:76px 1fr auto;gap:var(--s2);align-items:baseline;text-align:left;padding:12px 0;background:none;border:0;cursor:pointer;min-height:48px}
-.filler button .d{font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums;color:var(--ochre);font-weight:500}
-.filler button .t{font-weight:600;font-size:15px;line-height:1.3}
-.filler button .go{font-size:13px;color:var(--stone);transition:transform .25s var(--ease),color .2s}
-.filler button:hover .t{text-decoration:underline;text-underline-offset:3px}
-.filler button:hover .go{transform:translateX(4px);color:var(--ink)}
-.filler .note{margin-top:auto}
+.filler ol button{width:100%;display:grid;grid-template-columns:76px 1fr auto;gap:var(--s2);align-items:baseline;text-align:left;padding:12px 0;background:none;border:0;cursor:pointer;min-height:48px}
+.filler ol button .d{font-family:var(--f-mono);font-size:12px;font-variant-numeric:tabular-nums;color:var(--ochre);font-weight:500}
+.filler ol button .t{font-weight:600;font-size:15px;line-height:1.3}
+.filler ol button .go{font-size:13px;color:var(--stone);transition:transform .25s var(--ease),color .2s}
+.filler ol button:hover .t{text-decoration:underline;text-underline-offset:3px}
+.filler ol button:hover .go{transform:translateX(4px);color:var(--ink)}
+.filler .note{font-size:13px;color:var(--stone)}
+.filler ol.swap{animation:rise .4s var(--ease) both}
+.filler li.none{padding:12px 0;font-family:var(--f-serif);font-size:16px;color:var(--stone);border-top:1px solid color-mix(in srgb, var(--ochre) 30%, transparent)}
+.strip{flex:1;margin-top:var(--s2);display:flex;flex-direction:column;gap:10px}
+.strip__head{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s2);flex-wrap:wrap}
+.strip__reset{background:none;border:0;padding:6px 0;font-size:13px;font-weight:600;color:var(--ochre);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.strip__days{flex:1;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));grid-auto-rows:minmax(58px,1fr);gap:4px}
+.day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:8px 2px 7px;min-height:58px;border:1px solid color-mix(in srgb, var(--ochre) 22%, transparent);background:var(--surface);cursor:pointer;transition:background .15s,color .15s,border-color .15s,transform .2s var(--ease)}
+.day .w{font-family:var(--f-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--stone)}
+.day .n{font-size:18px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.day .dots{display:flex;gap:3px;height:4px}
+.day .dots i{width:4px;height:4px;border-radius:50%;background:var(--ochre)}
+.day:hover:not(:disabled){border-color:var(--ink);transform:translateY(-2px)}
+.day.is-today{border-color:var(--ochre)}
+.day[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.day[aria-pressed="true"] .w{color:var(--on-ink)}
+.day[aria-pressed="true"] .dots i{background:var(--on-ink)}
+.day:disabled{background:transparent;cursor:default;opacity:.55}
 
 /* Ticker */
 .ticker{border-bottom:1px solid var(--rule);background:var(--surface);overflow:hidden}
@@ -1269,20 +1286,61 @@ figcaption{font-family:var(--f-mono);font-size:12px;color:var(--stone);line-heig
   }
   const occButton = (o, cls = "") => `<button type="button" class="${cls}" data-book="${o.e.id}" data-date="${iso(o.d)}"><span class="d">${sameDay(o.d, TODAY) ? "Today" : shortDate(o.d)}</span><span class="t">${esc(o.e.title)}</span><span class="go" aria-hidden="true">Book →</span></button>`;
 
+  let tileDay = null;
   function fillGap(list, shown) {
-    const old = $(".filler", list); old && old.remove();
-    if (state.view !== "grid" || !shown.length) return;
+    const old = $(".filler", list);
     const cols = getComputedStyle(list).gridTemplateColumns.split(" ").filter(Boolean).length;
+    const key = `${cols}|${shown.length}|${state.date}|${state.view}`;
+    if (old && old.dataset.key === key) return;
+    old && old.remove();
+    if (state.view !== "grid" || !shown.length) return;
     const rem = shown.length % cols; if (cols < 2 || rem === 0) return;
     const span = cols - rem;
-    const items = upcoming(span > 1 ? 8 : 5, dateRange(state.date));
-    if (!items.length) return;
+    const nDays = span > 1 ? 14 : 7;
+    const days = Array.from({ length: nDays }, (_, i) => addDays(TODAY, i));
+    const onDay = d => LIVE.filter(e => e.upcoming.some(x => sameDay(x, d)));
+    if (tileDay && !days.some(d => iso(d) === tileDay)) tileDay = null;
     const li = document.createElement("li");
+    li.dataset.key = key;
     li.className = "filler"; li.style.gridColumn = `span ${span}`; li.style.setProperty("--fcols", span > 1 ? 2 : 1);
-    li.innerHTML = `<p class="eyebrow eyebrow--accent">${state.date === "all" ? "Next at the Yard" : "Also in these dates"}</p>
-      <h3>Pick a date and go</h3>
-      <ol>${items.map(o => `<li>${occButton(o)}</li>`).join("")}</ol>
-      <p class="note">Every date opens the booking drawer with that day already chosen.</p>`;
+    const draw = () => {
+      let items, eyebrow, heading;
+      if (tileDay) {
+        const d = new Date(tileDay + "T00:00:00");
+        items = onDay(d).map(e => ({ e, d }));
+        eyebrow = sameDay(d, TODAY) ? "Today" : fmt(d, { weekday: "long" });
+        heading = `On ${sameDay(d, TODAY) ? "today" : shortDate(d)}`;
+      } else {
+        items = upcoming(span > 1 ? 8 : 5, dateRange(state.date));
+        eyebrow = state.date === "all" ? "Next at the Yard" : "Also in these dates";
+        heading = "Pick a date and go";
+      }
+      const cells = days.map(d => {
+        const n = onDay(d).length, v = iso(d);
+        const label = `${fmt(d, { weekday: "long", day: "numeric", month: "long" })}: ${n ? n + (n > 1 ? " events" : " event") : "nothing on"}`;
+        return `<button type="button" class="day${sameDay(d, TODAY) ? " is-today" : ""}" data-day="${v}" aria-pressed="${tileDay === v}" aria-label="${label}" ${n ? "" : "disabled"}>
+          <span class="w" aria-hidden="true">${fmt(d, { weekday: "short" }).slice(0, 2)}</span><span class="n" aria-hidden="true">${d.getDate()}</span>
+          <span class="dots" aria-hidden="true">${"<i></i>".repeat(Math.min(n, 4))}</span></button>`;
+      }).join("");
+      li.innerHTML = `<p class="eyebrow eyebrow--accent">${eyebrow}</p>
+        <h3>${heading}</h3>
+        <ol aria-live="polite">${items.length ? items.map(o => `<li>${occButton(o)}</li>`).join("") : `<li class="none">Nothing on that day.</li>`}</ol>
+        <div class="strip">
+          <div class="strip__head"><span class="eyebrow">Next ${nDays} days</span>${tileDay ? `<button type="button" class="strip__reset" data-day-reset>Show all upcoming</button>` : `<span class="note">Choose a day to see what’s on</span>`}</div>
+          <div class="strip__days" role="group" aria-label="Choose a day">${cells}</div>
+        </div>`;
+    };
+    draw();
+    li.addEventListener("click", e => {
+      const b = e.target.closest("[data-day]"), r = e.target.closest("[data-day-reset]");
+      if (!b && !r) return;
+      const key = b ? b.dataset.day : null;
+      tileDay = r || tileDay === key ? null : key;
+      draw();
+      const f = tileDay ? $(`[data-day="${tileDay}"]`, li) : $(`[data-day]:not([disabled])`, li);
+      f && requestAnimationFrame(() => f.focus({ preventScroll: true }));
+      if (!reduced.matches) { const ol = $("ol", li); ol.classList.remove("swap"); void ol.offsetWidth; ol.classList.add("swap"); }
+    });
     list.appendChild(li);
   }
   let rendered = false;
